@@ -3,7 +3,6 @@
 from typing import Final
 
 from open_targets.adapter.acquisition_definition import AcquisitionDefinition, ExpressionNodeAcquisitionDefinition
-from open_targets.adapter.expression import BuildCurieExpression, FieldExpression, LiteralExpression
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
@@ -17,10 +16,7 @@ node_literature_entry_pmc: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNo
         dataset=DatasetEvidence,
         exploded_field=FieldEvidencePmcIds,
     ),
-    primary_id=BuildCurieExpression(
-        prefix=LiteralExpression("pmc"),
-        reference=FieldExpression(FieldEvidencePmcIdsElement),
-    ),
+    primary_id=FieldEvidencePmcIdsElement,
     label="LITERATURE_ENTRY",
     properties=[],
 )
