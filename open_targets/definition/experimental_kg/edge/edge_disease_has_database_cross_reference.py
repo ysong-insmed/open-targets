@@ -12,6 +12,8 @@ from open_targets.data.schema import (
     FieldDiseasesDbXRefsElement,
     FieldDiseasesId,
 )
+from open_targets.definition.experimental_kg.namespace import Namespace
+from open_targets.definition.helper import get_namespaced_hash_expression
 
 edge_disease_has_xref: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
@@ -20,7 +22,10 @@ edge_disease_has_xref: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAc
     ),
     primary_id=NewUuidExpression(),
     source=FieldDiseasesId,
-    target=FieldDiseasesDbXRefsElement,
-    label="HAS_XREF",
+    target=get_namespaced_hash_expression(
+        Namespace.DATABASE_CROSS_REFERENCE,
+        FieldDiseasesDbXRefsElement,
+    ),
+    label="HAS_DATABASE_CROSS_REFERENCE",
     properties=[],
 )

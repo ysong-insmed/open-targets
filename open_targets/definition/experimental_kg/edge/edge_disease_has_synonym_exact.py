@@ -1,4 +1,4 @@
-"""Acquisition definition that acquires 'has narrow synonym' edges for diseases."""
+"""Acquisition definition that acquires 'has exact synonym' edges for diseases."""
 
 from typing import Final
 
@@ -9,18 +9,18 @@ from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
     DatasetDiseases,
     FieldDiseasesId,
-    FieldDiseasesSynonymsHasNarrowSynonym,
-    FieldDiseasesSynonymsHasNarrowSynonymElement,
+    FieldDiseasesSynonymsHasExactSynonym,
+    FieldDiseasesSynonymsHasExactSynonymElement,
 )
 
-edge_disease_has_narrow_synonym: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
+edge_disease_has_synonym_exact: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
         dataset=DatasetDiseases,
-        exploded_field=FieldDiseasesSynonymsHasNarrowSynonym,
+        exploded_field=FieldDiseasesSynonymsHasExactSynonym,
     ),
     primary_id=NewUuidExpression(),
     source=FieldDiseasesId,
-    target=FieldDiseasesSynonymsHasNarrowSynonymElement,
-    label="HAS_NARROW_SYNONYM",
+    target=FieldDiseasesSynonymsHasExactSynonymElement,
+    label="HAS_SYNONYM",
     properties=[],
 )

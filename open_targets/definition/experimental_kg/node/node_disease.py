@@ -11,10 +11,7 @@ from open_targets.data.schema import (
     FieldDiseasesDescription,
     FieldDiseasesId,
     FieldDiseasesName,
-    FieldDiseasesObsoleteTerms,
     FieldDiseasesOntologyIsTherapeuticArea,
-    FieldDiseasesOntologyLeaf,
-    FieldDiseasesOntologySources,
 )
 
 node_diseases: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
@@ -25,9 +22,6 @@ node_diseases: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitio
         FieldDiseasesCode,
         FieldDiseasesDescription,
         FieldDiseasesName,
-        FieldDiseasesObsoleteTerms,
         FieldDiseasesOntologyIsTherapeuticArea,
-        FieldDiseasesOntologyLeaf,
-        FieldDiseasesOntologySources,
     ],
 )

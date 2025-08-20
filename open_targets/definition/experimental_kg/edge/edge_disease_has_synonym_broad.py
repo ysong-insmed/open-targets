@@ -1,4 +1,4 @@
-"""Acquisition definition that acquires 'is in therapeutic area' edges for diseases."""
+"""Acquisition definition that acquires 'has broad synonym' edges for diseases."""
 
 from typing import Final
 
@@ -9,18 +9,18 @@ from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
     DatasetDiseases,
     FieldDiseasesId,
-    FieldDiseasesTherapeuticAreas,
-    FieldDiseasesTherapeuticAreasElement,
+    FieldDiseasesSynonymsHasBroadSynonym,
+    FieldDiseasesSynonymsHasBroadSynonymElement,
 )
 
-edge_disease_in_therapeutic_area: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
+edge_disease_has_synonym_broad: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
         dataset=DatasetDiseases,
-        exploded_field=FieldDiseasesTherapeuticAreas,
+        exploded_field=FieldDiseasesSynonymsHasBroadSynonym,
     ),
     primary_id=NewUuidExpression(),
     source=FieldDiseasesId,
-    target=FieldDiseasesTherapeuticAreasElement,
-    label="IS_IN_THERAPEUTIC_AREA",
+    target=FieldDiseasesSynonymsHasBroadSynonymElement,
+    label="HAS_SYNONYM",
     properties=[],
 )

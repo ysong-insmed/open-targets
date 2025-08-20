@@ -21,6 +21,6 @@ edge_disease_is_a: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquis
     primary_id=NewUuidExpression(),
     source=FieldDiseasesId,
     target=FieldDiseasesParentsElement,
-    label="DISEASE_IS_A",
+    label="IS_A",
     properties=[],
 )
