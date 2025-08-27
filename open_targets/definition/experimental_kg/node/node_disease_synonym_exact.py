@@ -10,7 +10,7 @@ from open_targets.data.schema import (
     FieldDiseasesSynonymsHasExactSynonym,
     FieldDiseasesSynonymsHasExactSynonymElement,
 )
-from open_targets.definition.experimental_kg.namespace import Namespace
+from open_targets.definition.experimental_kg.constant import Namespace
 from open_targets.definition.helper import get_simple_value_node_definition
 
 node_disease_synonym_exact: Final[AcquisitionDefinition[NodeInfo]] = get_simple_value_node_definition(

@@ -12,7 +12,7 @@ from open_targets.data.schema import (
     FieldDiseasesDbXRefsElement,
     FieldDiseasesId,
 )
-from open_targets.definition.experimental_kg.namespace import Namespace
+from open_targets.definition.experimental_kg.constant import EdgeLabel, Namespace
 from open_targets.definition.helper import get_namespaced_hash_expression
 
 edge_disease_has_xref: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
@@ -26,6 +26,6 @@ edge_disease_has_xref: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAc
         Namespace.DATABASE_CROSS_REFERENCE,
         FieldDiseasesDbXRefsElement,
     ),
-    label="HAS_DATABASE_CROSS_REFERENCE",
+    label=EdgeLabel.HAS_DATABASE_CROSS_REFERENCE,
     properties=[],
 )

@@ -12,6 +12,7 @@ from open_targets.data.schema import (
     FieldDiseasesSynonymsHasExactSynonym,
     FieldDiseasesSynonymsHasExactSynonymElement,
 )
+from open_targets.definition.experimental_kg.constant import EdgeLabel
 
 edge_disease_has_synonym_exact: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
@@ -21,6 +22,6 @@ edge_disease_has_synonym_exact: Final[AcquisitionDefinition[EdgeInfo]] = Express
     primary_id=NewUuidExpression(),
     source=FieldDiseasesId,
     target=FieldDiseasesSynonymsHasExactSynonymElement,
-    label="HAS_SYNONYM",
+    label=EdgeLabel.HAS_SYNONYM,
     properties=[],
 )

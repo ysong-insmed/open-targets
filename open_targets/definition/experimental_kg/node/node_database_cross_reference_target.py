@@ -9,10 +9,8 @@ from open_targets.data.schema import (
     DatasetTargets,
     FieldTargetsDbXrefs,
 )
-from open_targets.definition.experimental_kg.namespace import Namespace
-from open_targets.definition.experimental_kg.target_database_cross_reference_value_expression import (
-    target_database_cross_reference_value_expression,
-)
+from open_targets.definition.experimental_kg.constant import Namespace
+from open_targets.definition.experimental_kg.expression import target_database_cross_reference_value_expression
 from open_targets.definition.helper import get_simple_value_node_definition
 
 node_disease_cross_reference: Final[AcquisitionDefinition[NodeInfo]] = get_simple_value_node_definition(

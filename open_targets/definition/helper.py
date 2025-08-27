@@ -12,7 +12,7 @@ from open_targets.adapter.expression import (
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ScanOperation
 from open_targets.data.schema_base import Field
-from open_targets.definition.experimental_kg.namespace import Namespace
+from open_targets.definition.experimental_kg.constant import Namespace
 
 
 def get_arrow_expression(
@@ -34,6 +34,28 @@ def get_arrow_expression(
     )
 
 
+def get_namespaced_expression(
+    namespace: str,
+    value_expression: Expression[Any] | type[Field],
+) -> Expression[str]:
+    """Get an expression that prefixes a string with a namespace.
+
+    This return an expression that produces a string like `namespace::value`.
+    This helper automatically converts the value expression to a string if the
+    expression is not already a string.
+    """
+    if isinstance(value_expression, type):
+        value_expression = FieldExpression(value_expression)
+    if get_args(type(value_expression))[0] is not str:
+        value_expression = ToStringExpression(value_expression)
+    return StringConcatenationExpression(
+        expressions=[
+            LiteralExpression(f"{namespace}::"),
+            value_expression,
+        ],
+    )
+
+
 def get_namespaced_hash_expression(
     namespace: str,
     value_expression: Expression[Any] | type[Field],
@@ -46,16 +68,9 @@ def get_namespaced_hash_expression(
     """
     if isinstance(value_expression, type):
         value_expression = FieldExpression(value_expression)
-
     if get_args(type(value_expression))[0] is not str:
         value_expression = ToStringExpression(value_expression)
-
-    return StringConcatenationExpression(
-        expressions=[
-            LiteralExpression(f"{namespace}::"),
-            StringHashExpression(value_expression),
-        ],
-    )
+    return get_namespaced_expression(namespace, StringHashExpression(value_expression))
 
 
 def get_simple_value_node_definition(

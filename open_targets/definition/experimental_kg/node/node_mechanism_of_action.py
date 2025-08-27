@@ -9,19 +9,20 @@ from open_targets.data.schema import (
     DatasetMechanismOfAction,
     FieldMechanismOfActionActionType,
     FieldMechanismOfActionChemblIds,
-    FieldMechanismOfActionChemblIdsElement,
     FieldMechanismOfActionMechanismOfAction,
     FieldMechanismOfActionTargetName,
     FieldMechanismOfActionTargetType,
 )
-from open_targets.definition.helper import get_arrow_expression
+from open_targets.definition.experimental_kg.expression.mechanism_of_action_primary_id_expression import (
+    mechanism_of_action_primary_id_expression,
+)
 
 node_mechanism_of_action: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
         dataset=DatasetMechanismOfAction,
         exploded_field=FieldMechanismOfActionChemblIds,
     ),
-    primary_id=get_arrow_expression(FieldMechanismOfActionChemblIdsElement, FieldMechanismOfActionMechanismOfAction),
+    primary_id=mechanism_of_action_primary_id_expression,
     label="MECHANISM_OF_ACTION",
     properties=[
         FieldMechanismOfActionActionType,

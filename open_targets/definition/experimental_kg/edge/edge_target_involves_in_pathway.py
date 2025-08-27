@@ -1,4 +1,4 @@
-"""Acquisition definition that acquires 'has broad synonym' edges for diseases."""
+"""Acquisition definition that acquires edges from targets to cross-references."""
 
 from typing import Final
 
@@ -7,21 +7,21 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetDiseases,
-    FieldDiseasesId,
-    FieldDiseasesSynonymsHasBroadSynonym,
-    FieldDiseasesSynonymsHasBroadSynonymElement,
+    DatasetTargets,
+    FieldTargetsId,
+    FieldTargetsPathways,
+    FieldTargetsPathwaysElementPathwayId,
 )
 from open_targets.definition.experimental_kg.constant import EdgeLabel
 
-edge_disease_has_synonym_broad: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
+edge_target_involves_in_pathway: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetDiseases,
-        exploded_field=FieldDiseasesSynonymsHasBroadSynonym,
+        dataset=DatasetTargets,
+        exploded_field=FieldTargetsPathways,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldDiseasesId,
-    target=FieldDiseasesSynonymsHasBroadSynonymElement,
-    label=EdgeLabel.HAS_SYNONYM,
+    source=FieldTargetsId,
+    target=FieldTargetsPathwaysElementPathwayId,
+    label=EdgeLabel.INVOLVES_IN,
     properties=[],
 )

@@ -10,20 +10,20 @@ from open_targets.data.schema import (
     FieldTargetsSubcellularLocations,
     FieldTargetsSubcellularLocationsElementLabelSl,
     FieldTargetsSubcellularLocationsElementLocation,
-    FieldTargetsSubcellularLocationsElementSource,
     FieldTargetsSubcellularLocationsElementTermSl,
 )
+from open_targets.definition.experimental_kg.expression import subcellular_location_primary_id_expression
 
 node_subcellular_location: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
         dataset=DatasetTargets,
         exploded_field=FieldTargetsSubcellularLocations,
     ),
-    primary_id=FieldTargetsSubcellularLocationsElementLocation,
+    primary_id=subcellular_location_primary_id_expression,
     label="SUBCELLULAR_LOCATION",
     properties=[
+        FieldTargetsSubcellularLocationsElementLocation,
         FieldTargetsSubcellularLocationsElementLabelSl,
-        FieldTargetsSubcellularLocationsElementSource,
         FieldTargetsSubcellularLocationsElementTermSl,
     ],
 )

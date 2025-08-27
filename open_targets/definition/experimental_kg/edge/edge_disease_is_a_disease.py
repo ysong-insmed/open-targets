@@ -1,4 +1,4 @@
-"""Acquisition definition that acquires 'has broad synonym' edges for diseases."""
+"""Acquisition definition that acquires 'is a' edges between diseases."""
 
 from typing import Final
 
@@ -9,19 +9,19 @@ from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
     DatasetDiseases,
     FieldDiseasesId,
-    FieldDiseasesSynonymsHasBroadSynonym,
-    FieldDiseasesSynonymsHasBroadSynonymElement,
+    FieldDiseasesParents,
+    FieldDiseasesParentsElement,
 )
 from open_targets.definition.experimental_kg.constant import EdgeLabel
 
-edge_disease_has_synonym_broad: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
+edge_disease_is_a_disease: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
         dataset=DatasetDiseases,
-        exploded_field=FieldDiseasesSynonymsHasBroadSynonym,
+        exploded_field=FieldDiseasesParents,
     ),
     primary_id=NewUuidExpression(),
     source=FieldDiseasesId,
-    target=FieldDiseasesSynonymsHasBroadSynonymElement,
-    label=EdgeLabel.HAS_SYNONYM,
+    target=FieldDiseasesParentsElement,
+    label=EdgeLabel.IS_A,
     properties=[],
 )

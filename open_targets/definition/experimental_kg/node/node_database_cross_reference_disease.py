@@ -10,7 +10,7 @@ from open_targets.data.schema import (
     FieldDiseasesDbXRefs,
     FieldDiseasesDbXRefsElement,
 )
-from open_targets.definition.experimental_kg.namespace import Namespace
+from open_targets.definition.experimental_kg.constant import Namespace
 from open_targets.definition.helper import get_simple_value_node_definition
 
 node_disease_cross_reference: Final[AcquisitionDefinition[NodeInfo]] = get_simple_value_node_definition(

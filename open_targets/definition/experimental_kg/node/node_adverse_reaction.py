@@ -10,12 +10,14 @@ from open_targets.data.schema import (
     FieldAdverseDrugReactionsMeddraCode,
     FieldAdverseDrugReactionsReactionReactionmeddrapt,
 )
+from open_targets.definition.experimental_kg.expression import adverse_reaction_primary_id_expression
 
 node_adverse_reaction: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=RowScanOperation(dataset=DatasetAdverseDrugReactions),
-    primary_id=FieldAdverseDrugReactionsMeddraCode,
+    primary_id=adverse_reaction_primary_id_expression,
     label="ADVERSE_REACTION",
     properties=[
+        FieldAdverseDrugReactionsMeddraCode,
         FieldAdverseDrugReactionsReactionReactionmeddrapt,
     ],
 )

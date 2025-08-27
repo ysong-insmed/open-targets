@@ -8,14 +8,14 @@ from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
     DatasetTargets,
     FieldTargetsHomologues,
-    FieldTargetsHomologuesElementTargetGeneId,
-    FieldTargetsHomologuesElementTargetGeneSymbol,
     FieldTargetsHomologuesElementHomologyType,
     FieldTargetsHomologuesElementIsHighConfidence,
     FieldTargetsHomologuesElementPriority,
     FieldTargetsHomologuesElementQueryPercentageIdentity,
     FieldTargetsHomologuesElementSpeciesId,
     FieldTargetsHomologuesElementSpeciesName,
+    FieldTargetsHomologuesElementTargetGeneId,
+    FieldTargetsHomologuesElementTargetGeneSymbol,
     FieldTargetsHomologuesElementTargetPercentageIdentity,
 )
 
