@@ -9,7 +9,7 @@ from open_targets.data.schema import (
     DatasetTargets,
     FieldTargetsDbXrefs,
 )
-from open_targets.definition.experimental_kg.constant import Namespace
+from open_targets.definition.experimental_kg.constant import NodeLabel
 from open_targets.definition.experimental_kg.expression import (
     database_cross_reference_target_primary_id_expression,
     database_cross_reference_target_value_expression,
@@ -21,7 +21,7 @@ node_database_cross_reference_target: Final[AcquisitionDefinition[NodeInfo]] = E
         exploded_field=FieldTargetsDbXrefs,
     ),
     primary_id=database_cross_reference_target_primary_id_expression,
-    label=Namespace.DATABASE_CROSS_REFERENCE,
+    label=NodeLabel.DATABASE_CROSS_REFERENCE,
     properties=[
         ("value", database_cross_reference_target_value_expression),
     ],

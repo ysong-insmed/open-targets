@@ -5,6 +5,13 @@ class Namespace:
     DISEASE_SYNONYM = "disease_synonym"
 
 
+class NodeLabel:
+    """Labels for experimental KG nodes."""
+
+    DATABASE_CROSS_REFERENCE = "DATABASE_CROSS_REFERENCE"
+    DISEASE_SYNONYM = "DISEASE_SYNONYM"
+
+
 class EdgeLabel:
     """Labels for experimental KG edges."""
 
@@ -20,7 +27,7 @@ class EdgeLabel:
     HAS_DRUG_WARNING = "HAS_DRUG_WARNING"
     HAS_ADVERSE_REACTION = "HAS_ADVERSE_REACTION"
     ASSOCIATED_WITH = "ASSOCIATED_WITH"
-    HAS_INTERACTION = "HAS_INTERACTION"
+    HAS_TARGET_TARGET_INTERACTION = "HAS_TARGET_TARGET_INTERACTION"
     MENTIONS = "MENTIONS"
     SUPPORTED_BY = "SUPPORTED_BY"
     IS_PART_OF = "IS_PART_OF"

@@ -34,8 +34,8 @@ from .edge_mouse_phenotype_classified_as_mouse_phenotype_class import (
 )
 from .edge_pathway_annotated_with_disease import edge_pathway_annotated_with_disease
 from .edge_pathway_is_part_of_pathway import edge_pathway_is_part_of_pathway
-from .edge_phenotype_has_database_cross_reference import (
-    edge_phenotype_has_database_cross_reference,
+from .edge_phenotype_has_database_cross_reference_database_cross_reference import (
+    edge_phenotype_has_database_cross_reference_database_cross_reference,
 )
 from .edge_phenotype_is_a_phenotype import edge_phenotype_is_a_phenotype
 from .edge_reaction_is_part_of_pathway import edge_reaction_is_part_of_pathway
@@ -71,7 +71,9 @@ from .edge_target_disease_association_inferred_from_reaction import (
 from .edge_target_disease_association_supported_by_literature import (
     edge_target_disease_association_supported_by_literature,
 )
-from .edge_target_has_database_cross_reference import edge_target_has_database_cross_reference
+from .edge_target_has_database_cross_reference_database_cross_reference import (
+    edge_target_has_database_cross_reference_database_cross_reference,
+)
 from .edge_target_has_homologue_in_species_species import (
     edge_target_has_homologue_in_species_species,
 )
@@ -115,7 +117,7 @@ __all__ = [
     "edge_mouse_phenotype_classified_as_mouse_phenotype_class",
     "edge_pathway_annotated_with_disease",
     "edge_pathway_is_part_of_pathway",
-    "edge_phenotype_has_database_cross_reference",
+    "edge_phenotype_has_database_cross_reference_database_cross_reference",
     "edge_phenotype_is_a_phenotype",
     "edge_reaction_is_part_of_pathway",
     "edge_target_associated_with_adverse_reaction",
@@ -130,7 +132,7 @@ __all__ = [
     "edge_target_disease_association_inferred_from_reaction",
     "edge_target_disease_association_object_of_disease",
     "edge_target_disease_association_supported_by_literature",
-    "edge_target_has_database_cross_reference",
+    "edge_target_has_database_cross_reference_database_cross_reference",
     "edge_target_has_homologue_in_species_species",
     "edge_target_has_target_target_interaction_target_a",
     "edge_target_has_target_target_interaction_target_b",

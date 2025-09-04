@@ -10,7 +10,7 @@ from open_targets.data.schema import (
     FieldHpoDbXRefs,
     FieldHpoDbXRefsElement,
 )
-from open_targets.definition.experimental_kg.constant import Namespace
+from open_targets.definition.experimental_kg.constant import NodeLabel
 from open_targets.definition.experimental_kg.expression import database_cross_reference_hpo_primary_id_expression
 
 node_database_cross_reference_hpo: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
@@ -19,7 +19,7 @@ node_database_cross_reference_hpo: Final[AcquisitionDefinition[NodeInfo]] = Expr
         exploded_field=FieldHpoDbXRefs,
     ),
     primary_id=database_cross_reference_hpo_primary_id_expression,
-    label=Namespace.DATABASE_CROSS_REFERENCE,
+    label=NodeLabel.DATABASE_CROSS_REFERENCE,
     properties=[
         ("value", FieldHpoDbXRefsElement),
     ],

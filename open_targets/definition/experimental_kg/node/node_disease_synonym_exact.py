@@ -10,7 +10,7 @@ from open_targets.data.schema import (
     FieldDiseasesSynonymsHasExactSynonym,
     FieldDiseasesSynonymsHasExactSynonymElement,
 )
-from open_targets.definition.experimental_kg.constant import Namespace
+from open_targets.definition.experimental_kg.constant import NodeLabel
 from open_targets.definition.experimental_kg.expression import disease_synonym_exact_primary_id_expression
 
 node_disease_synonym_exact: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
@@ -19,7 +19,7 @@ node_disease_synonym_exact: Final[AcquisitionDefinition[NodeInfo]] = ExpressionN
         exploded_field=FieldDiseasesSynonymsHasExactSynonym,
     ),
     primary_id=disease_synonym_exact_primary_id_expression,
-    label=Namespace.DISEASE_SYNONYM,
+    label=NodeLabel.DISEASE_SYNONYM,
     properties=[
         ("value", FieldDiseasesSynonymsHasExactSynonymElement),
     ],

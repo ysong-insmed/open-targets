@@ -15,7 +15,7 @@ from open_targets.data.schema import (
 from open_targets.definition.experimental_kg.constant import EdgeLabel, Namespace
 from open_targets.definition.helper import get_namespaced_hash_expression
 
-edge_phenotype_has_database_cross_reference: Final[AcquisitionDefinition[EdgeInfo]] = (
+edge_phenotype_has_database_cross_reference_database_cross_reference: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=ExplodingScanOperation(
             dataset=DatasetHpo,

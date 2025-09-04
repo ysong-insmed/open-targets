@@ -11,7 +11,6 @@ from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
     DatasetMolecule,
     FieldMoleculeBlackBoxWarning,
-    FieldMoleculeCanonicalSmiles,
     FieldMoleculeDescription,
     FieldMoleculeDrugType,
     FieldMoleculeHasBeenWithdrawn,
@@ -30,7 +29,6 @@ node_molecule: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitio
     primary_id=FieldMoleculeId,
     label="MOLECULE",
     properties=[
-        FieldMoleculeCanonicalSmiles,
         FieldMoleculeInchiKey,
         FieldMoleculeDrugType,
         FieldMoleculeBlackBoxWarning,

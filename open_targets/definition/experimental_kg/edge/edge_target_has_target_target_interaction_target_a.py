@@ -19,7 +19,7 @@ edge_target_has_target_target_interaction_target_a: Final[AcquisitionDefinition[
         primary_id=NewUuidExpression(),
         source=FieldInteractionEvidenceTargetA,
         target=target_target_interaction_primary_id_expression,
-        label=EdgeLabel.HAS_INTERACTION,
+        label=EdgeLabel.HAS_TARGET_TARGET_INTERACTION,
         properties=[],
     )
 )

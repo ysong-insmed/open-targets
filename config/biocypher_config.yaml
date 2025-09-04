@@ -1,6 +1,6 @@
 biocypher:
   strict_mode: false
-  schema_config_path: config/schema_config.yaml
+  schema_config_path: config/schema_config_experimental_kg.yaml
 
 neo4j:
   database_name: test
