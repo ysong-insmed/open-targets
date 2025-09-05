@@ -12,7 +12,6 @@ from open_targets.definition.experimental_kg.edge import (
     edge_disease_is_a_disease,
     edge_disease_phenotype_association_has_object_phenotype,
     edge_disease_subject_of_disease_phenotype_association,
-    edge_literature_mentions_entity,
     edge_mechanism_of_action_has_target_target,
     edge_molecule_derived_from_molecule,
     edge_molecule_has_adverse_reaction_adverse_reaction,
@@ -172,7 +171,8 @@ experimental_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefi
         edge_disease_is_a_disease,
         edge_disease_phenotype_association_has_object_phenotype,
         edge_disease_subject_of_disease_phenotype_association,
-        edge_literature_mentions_entity,
+        # Disabled due to unrealistically huge computational burden
+        # edge_literature_mentions_entity,
         edge_mechanism_of_action_has_target_target,
         edge_molecule_has_adverse_reaction_adverse_reaction,
         edge_molecule_derived_from_molecule,
