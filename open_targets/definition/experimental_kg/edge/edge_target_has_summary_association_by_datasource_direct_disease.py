@@ -17,7 +17,7 @@ from open_targets.data.schema import (
 )
 from open_targets.definition.experimental_kg.constant import EdgeLabel
 
-edge_target_has_summary_association_by_datasource_direct_target: Final[AcquisitionDefinition[EdgeInfo]] = (
+edge_target_has_summary_association_by_datasource_direct_disease: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=RowScanOperation(
             dataset=DatasetAssociationByDatasourceDirect,

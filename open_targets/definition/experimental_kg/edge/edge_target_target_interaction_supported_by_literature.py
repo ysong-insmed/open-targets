@@ -13,6 +13,7 @@ from open_targets.data.schema import (
 )
 from open_targets.definition.experimental_kg.constant import EdgeLabel
 from open_targets.definition.experimental_kg.expression import (
+    target_target_interaction_literature_expression,
     target_target_interaction_primary_id_expression,
 )
 
@@ -24,7 +25,7 @@ edge_target_target_interaction_supported_by_literature: Final[AcquisitionDefinit
         ),
         primary_id=NewUuidExpression(),
         source=target_target_interaction_primary_id_expression,
-        target=FieldInteractionEvidencePubmedId,
+        target=target_target_interaction_literature_expression,
         label=EdgeLabel.SUPPORTED_BY,
         properties=[],
     )
