@@ -1,82 +1,108 @@
 """Node definitions for the experimental knowledge graph."""
 
-from .node_adverse_reaction import node_adverse_reaction
-from .node_cell_line import node_cell_line
-from .node_database_cross_reference_disease import node_database_cross_reference_disease
-from .node_database_cross_reference_hpo import node_database_cross_reference_hpo
-from .node_database_cross_reference_target import node_database_cross_reference_target
-from .node_disease import node_disease
-from .node_disease_phenotype_association import node_disease_phenotype_association
-from .node_disease_synonym_broad import node_disease_synonym_broad
-from .node_disease_synonym_exact import node_disease_synonym_exact
-from .node_disease_synonym_narrow import node_disease_synonym_narrow
-from .node_disease_synonym_related import node_disease_synonym_related
-from .node_drug_warning import node_drug_warning
-from .node_go_term import node_go_term
-from .node_literature_entry import node_literature_entry
-from .node_mechanism_of_action import node_mechanism_of_action
-from .node_molecule import node_molecule
-from .node_mouse_gene import node_mouse_gene
-from .node_mouse_model import node_mouse_model
-from .node_mouse_phenotype import node_mouse_phenotype
-from .node_mouse_phenotype_class import node_mouse_phenotype_class
-from .node_pathway import node_pathway
-from .node_phenotype import node_phenotype
-from .node_reaction import node_reaction
-from .node_species import node_species
-from .node_subcellular_location import node_subcellular_location
-from .node_target import node_target
-from .node_target_classification import node_target_classification
-from .node_target_disease_association_cancer_biomarkers import (
+from open_targets.definition.experimental_kg.node.node_adverse_reaction import node_adverse_reaction
+from open_targets.definition.experimental_kg.node.node_cell_line import node_cell_line
+from open_targets.definition.experimental_kg.node.node_database_cross_reference_disease import (
+    node_database_cross_reference_disease,
+)
+from open_targets.definition.experimental_kg.node.node_database_cross_reference_hpo import (
+    node_database_cross_reference_hpo,
+)
+from open_targets.definition.experimental_kg.node.node_database_cross_reference_target import (
+    node_database_cross_reference_target,
+)
+from open_targets.definition.experimental_kg.node.node_disease import node_disease
+from open_targets.definition.experimental_kg.node.node_disease_phenotype_association import (
+    node_disease_phenotype_association,
+)
+from open_targets.definition.experimental_kg.node.node_disease_synonym_broad import node_disease_synonym_broad
+from open_targets.definition.experimental_kg.node.node_disease_synonym_exact import node_disease_synonym_exact
+from open_targets.definition.experimental_kg.node.node_disease_synonym_narrow import node_disease_synonym_narrow
+from open_targets.definition.experimental_kg.node.node_disease_synonym_related import node_disease_synonym_related
+from open_targets.definition.experimental_kg.node.node_drug_warning import node_drug_warning
+from open_targets.definition.experimental_kg.node.node_go_term import node_go_term
+from open_targets.definition.experimental_kg.node.node_literature_entry import node_literature_entry
+from open_targets.definition.experimental_kg.node.node_mechanism_of_action import node_mechanism_of_action
+from open_targets.definition.experimental_kg.node.node_molecule import node_molecule
+from open_targets.definition.experimental_kg.node.node_mouse_gene import node_mouse_gene
+from open_targets.definition.experimental_kg.node.node_mouse_model import node_mouse_model
+from open_targets.definition.experimental_kg.node.node_mouse_phenotype import node_mouse_phenotype
+from open_targets.definition.experimental_kg.node.node_mouse_phenotype_class import node_mouse_phenotype_class
+from open_targets.definition.experimental_kg.node.node_pathway import node_pathway
+from open_targets.definition.experimental_kg.node.node_phenotype import node_phenotype
+from open_targets.definition.experimental_kg.node.node_reaction import node_reaction
+from open_targets.definition.experimental_kg.node.node_species import node_species
+from open_targets.definition.experimental_kg.node.node_subcellular_location import node_subcellular_location
+from open_targets.definition.experimental_kg.node.node_target import node_target
+from open_targets.definition.experimental_kg.node.node_target_classification import node_target_classification
+from open_targets.definition.experimental_kg.node.node_target_disease_association_cancer_biomarkers import (
     node_target_disease_association_cancer_biomarkers,
 )
-from .node_target_disease_association_cancer_gene_census import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_cancer_gene_census import (
     node_target_disease_association_cancer_gene_census,
 )
-from .node_target_disease_association_chembl import node_target_disease_association_chembl
-from .node_target_disease_association_clingen import node_target_disease_association_clingen
-from .node_target_disease_association_crispr import node_target_disease_association_crispr
-from .node_target_disease_association_crispr_screen import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_chembl import (
+    node_target_disease_association_chembl,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_clingen import (
+    node_target_disease_association_clingen,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_crispr import (
+    node_target_disease_association_crispr,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_crispr_screen import (
     node_target_disease_association_crispr_screen,
 )
-from .node_target_disease_association_europepmc import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_europepmc import (
     node_target_disease_association_europepmc,
 )
-from .node_target_disease_association_eva import node_target_disease_association_eva
-from .node_target_disease_association_eva_somatic import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_eva import (
+    node_target_disease_association_eva,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_eva_somatic import (
     node_target_disease_association_eva_somatic,
 )
-from .node_target_disease_association_expression_atlas import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_expression_atlas import (
     node_target_disease_association_expression_atlas,
 )
-from .node_target_disease_association_gene2phenotype import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_gene2phenotype import (
     node_target_disease_association_gene2phenotype,
 )
-from .node_target_disease_association_gene_burden import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_gene_burden import (
     node_target_disease_association_gene_burden,
 )
-from .node_target_disease_association_genomics_england import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_genomics_england import (
     node_target_disease_association_genomics_england,
 )
-from .node_target_disease_association_impc import node_target_disease_association_impc
-from .node_target_disease_association_intogen import node_target_disease_association_intogen
-from .node_target_disease_association_orphanet import node_target_disease_association_orphanet
-from .node_target_disease_association_ot_genetics_portal import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_impc import (
+    node_target_disease_association_impc,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_intogen import (
+    node_target_disease_association_intogen,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_orphanet import (
+    node_target_disease_association_orphanet,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_ot_genetics_portal import (
     node_target_disease_association_ot_genetics_portal,
 )
-from .node_target_disease_association_progeny import node_target_disease_association_progeny
-from .node_target_disease_association_reactome import node_target_disease_association_reactome
-from .node_target_disease_association_slapenrich import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_progeny import (
+    node_target_disease_association_progeny,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_reactome import (
+    node_target_disease_association_reactome,
+)
+from open_targets.definition.experimental_kg.node.node_target_disease_association_slapenrich import (
     node_target_disease_association_slapenrich,
 )
-from .node_target_disease_association_uniprot_literature import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_uniprot_literature import (
     node_target_disease_association_uniprot_literature,
 )
-from .node_target_disease_association_uniprot_variants import (
+from open_targets.definition.experimental_kg.node.node_target_disease_association_uniprot_variants import (
     node_target_disease_association_uniprot_variants,
 )
-from .node_target_target_interaction import node_target_target_interaction
-from .node_tissue import node_tissue
+from open_targets.definition.experimental_kg.node.node_target_target_interaction import node_target_target_interaction
+from open_targets.definition.experimental_kg.node.node_tissue import node_tissue
 
 __all__ = [
     "node_adverse_reaction",

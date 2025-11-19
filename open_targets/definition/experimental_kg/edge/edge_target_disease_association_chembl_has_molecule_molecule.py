@@ -15,7 +15,7 @@ from open_targets.data.schema import (
 )
 from open_targets.definition.experimental_kg.constant import EdgeLabel
 
-edge_target_disease_association_chembl_has_molecule: Final[AcquisitionDefinition[EdgeInfo]] = (
+edge_target_disease_association_chembl_has_molecule_molecule: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=RowScanOperation(
             dataset=DatasetEvidence,
