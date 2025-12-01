@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges between diseases and phenotypes."""
+"""Definition for HAS_SUMMARY_ASSOCIATION_BY_DATASOURCE_INDIRECT edges: uses
+precomputed indirect association summary parquet to link TARGET to DISEASE with
+datasource/datatype IDs, score, and evidenceCount, capturing ontology-propagated
+source-level association strength in the KG."""
 
 from typing import Final
 

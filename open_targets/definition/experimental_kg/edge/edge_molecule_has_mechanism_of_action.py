@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires 'has mechanism' edges for molecules."""
+"""Definition for HAS_MECHANISM_OF_ACTION edges: explodes chemblIds in the
+Mechanism of Action parquet to connect each MOLECULE node (ChEMBL drug) to its
+MECHANISM_OF_ACTION node, capturing which pharmacological mechanisms are
+attributed to each drug in the KG."""
 
 from typing import Final
 

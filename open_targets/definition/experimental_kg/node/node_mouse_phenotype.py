@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of mouse phenotypes."""
+"""Definition for MOUSE_PHENOTYPE nodes: scans Mouse Phenotypes parquet to emit
+mouse phenotype terms (modelPhenotypeId/label) that mouse models and inference
+edges can point to, capturing in vivo phenotype observations in the KG."""
 
 from typing import Final
 

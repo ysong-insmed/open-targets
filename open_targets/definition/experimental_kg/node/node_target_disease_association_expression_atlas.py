@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of Expression Atlas evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_EXPRESSION_ATLAS nodes: filters
+Evidence parquet to expression_atlas source to emit differential expression
+associations with biosamples, contrasts, log2FC/value/percentile, literature,
+study overview/ID, confidence/resource scores, disease/target IDs, capturing
+expression-based evidence in the KG."""
 
 from typing import Final
 

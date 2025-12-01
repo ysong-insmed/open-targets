@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of Cancer Gene Census evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_CANCER_GENE_CENSUS nodes: filters
+Evidence parquet to cancer_gene_census source to emit reified somatic mutation
+associations with direction on trait, mapped disease, variant effect, resource
+score, study and target IDs, capturing CGC cancer relevance in the KG."""
 
 from typing import Final
 

@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of Cancer Biomarkers evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_CANCER_BIOMARKERS nodes: filters
+Evidence parquet to cancer_biomarkers source to emit reified associations with
+biomarker name, confidence, disease/drug/target IDs, and score, capturing
+biomarker-driven drug response evidence in the KG."""
 
 from typing import Final
 

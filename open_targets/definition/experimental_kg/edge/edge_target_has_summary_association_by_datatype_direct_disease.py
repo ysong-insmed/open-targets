@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires edges between diseases and phenotypes."""
+"""Definition for HAS_SUMMARY_ASSOCIATION_BY_DATATYPE_DIRECT edges: links TARGET
+to DISEASE using precomputed direct summary scores by datatype with evidenceCount,
+capturing direct association strength aggregated at datatype level in the KG."""
 
 from typing import Final
 

@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of Orphanet evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_ORPHANET nodes: filters Evidence
+parquet to orphanet source to emit rare disease associations with disease IDs,
+direction on trait, allelic requirements, variant functional consequence,
+confidence/score, allele origins, target IDs, capturing Orphanet curation in the
+KG."""
 
 from typing import Final
 

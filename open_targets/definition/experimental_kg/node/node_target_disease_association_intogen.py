@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of IntOGen evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_INTOGEN nodes: filters Evidence
+parquet to intogen source to emit driver discovery associations with cohort IDs/
+descriptions, significant driver methods, direction on trait, variant effect,
+resource/score, and target/disease IDs, capturing somatic driver evidence in the
+KG."""
 
 from typing import Final
 

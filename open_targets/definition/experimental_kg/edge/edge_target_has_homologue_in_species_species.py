@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges from targets to homologues."""
+"""Definition for HAS_HOMOLOGUE_IN_SPECIES edges: explodes homologue entries in
+the Targets parquet to link each human TARGET to a SPECIES node, carrying
+homology type, confidence, gene IDs/symbols, and percentage identity metrics to
+represent cross-species homology in the KG."""
 
 from typing import Final
 

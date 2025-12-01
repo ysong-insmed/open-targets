@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of Reactome pathways."""
+"""Definition for CELL_LINE nodes: explodes CRISPR evidence cell line entries
+from the Evidence parquet (sourceId==crispr) to emit experimental cell lines
+with IDs and names used as assay contexts in the KG."""
 
 from typing import Final
 

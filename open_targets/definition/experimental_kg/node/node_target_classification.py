@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of target classes."""
+"""Definition for TARGET_CLASSIFICATION nodes: explodes target_class entries
+from the Targets parquet to emit classification terms (label/level) that group
+targets for categorization and navigation in the KG."""
 
 from typing import Final
 

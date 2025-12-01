@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of ChEMBL evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_CHEMBL nodes: filters the Evidence
+parquet to ChEMBL clinical evidence (`sourceId == chembl`) and emits reified
+target–disease association nodes with trial phase/status, cohort, direction on
+trait, variant effect, disease IDs, study IDs/dates, and score, representing
+known-drug evidence in the KG."""
 
 from typing import Final
 

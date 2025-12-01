@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of UniProt literature evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_UNIPROT_LITERATURE nodes: filters
+Evidence parquet to uniprot_literature source to emit literature-curated
+associations with disease/target IDs, target modulation, confidence, and score,
+capturing UniProt literature evidence in the KG."""
 
 from typing import Final
 

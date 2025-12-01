@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of Genomics England evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_GENOMICS_ENGLAND nodes: filters
+Evidence parquet to genomics_england source to emit PanelApp-style associations
+with cohort phenotypes, allelic requirements, confidence, disease IDs, study
+overview/ID, score, and target IDs, capturing curated clinical evidence in the
+KG."""
 
 from typing import Final
 

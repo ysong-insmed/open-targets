@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of Gene2Phenotype evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_GENE2PHENOTYPE nodes: filters
+Evidence parquet to gene2phenotype source to emit curated gene–disease links
+with allelic requirements, direction on trait, variant functional consequence,
+disease IDs, study ID, confidence, and score, capturing G2P assertions in the
+KG."""
 
 from typing import Final
 

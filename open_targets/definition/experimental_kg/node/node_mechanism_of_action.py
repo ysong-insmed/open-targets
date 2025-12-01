@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of mechanisms of action."""
+"""Definition for MECHANISM_OF_ACTION nodes: explodes Mechanism of Action
+records by chemblId to emit reified pharmacology entries (action type,
+mechanism text, target type/name) that link molecules to their biological
+targets and provenance in the KG."""
 
 from typing import Final
 

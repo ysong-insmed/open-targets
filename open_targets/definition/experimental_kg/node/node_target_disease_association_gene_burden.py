@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of Gene Burden evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_GENE_BURDEN nodes: filters Evidence
+parquet to gene_burden source to emit rare-variant burden associations with
+beta/OR stats, p-values, ancestry/cohort info, allelic requirements, disease/
+target IDs, study metadata, and scores, capturing burden-test genetic evidence
+in the KG."""
 
 from typing import Final
 

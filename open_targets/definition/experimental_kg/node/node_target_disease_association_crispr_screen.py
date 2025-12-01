@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of CRISPR Screen evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_CRISPR_SCREEN nodes: filters
+Evidence parquet to crispr_screen source to emit screen associations with
+cell type, contrast, library, disease IDs, genetic background, log2FC, project
+ID, stats tail, study metadata, resource/score, capturing functional screen
+evidence in the KG."""
 
 from typing import Final
 

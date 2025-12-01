@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges between targets and gene expression biomarkers."""
+"""Definition for SUPPORTED_BY edges: for cancer_biomarkers evidence, explodes
+gene expression biomarkers to link each TARGET_DISEASE_ASSOCIATION node
+(evidence id) to a supporting LITERATURE_ENTRY (hashed id), capturing literature
+provenance for the association in the KG."""
 
 from typing import Final
 

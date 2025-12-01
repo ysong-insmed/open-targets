@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges from literature entries to keywords."""
+"""Definition for MENTIONS edges: links each LITERATURE_ENTRY to a keyword
+entity (target/disease/molecule/phenotype) using the literature index parquet,
+carrying keyword type and relevance so text-mined evidence can be traversed in
+the KG."""
 
 from typing import Final
 

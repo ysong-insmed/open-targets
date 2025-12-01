@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of narrow disease synonyms."""
+"""Definition for DISEASE_SYNONYM nodes (narrow): explodes narrow synonyms from
+the diseases parquet to emit synonym nodes keyed by namespaced hash, storing the
+synonym string for DISEASE synonym edges in the KG."""
 
 from typing import Final
 

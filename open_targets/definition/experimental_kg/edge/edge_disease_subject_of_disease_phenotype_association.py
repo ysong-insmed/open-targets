@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges between diseases and phenotypes."""
+"""Definition for SUBJECT_OF edges (disease → disease_phenotype_association):
+explodes disease→HPO evidence to link each DISEASE node to its reified
+DISEASE_PHENOTYPE_ASSOCIATION node, binding the disease endpoint of the
+association in the KG."""
 
 from typing import Final
 

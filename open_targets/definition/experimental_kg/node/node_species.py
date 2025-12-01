@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of homologues."""
+"""Definition for SPECIES nodes: explodes homologue entries from the Targets
+parquet to emit species (id/name) nodes used in homology edges from human
+targets to other species in the KG."""
 
 from typing import Final
 

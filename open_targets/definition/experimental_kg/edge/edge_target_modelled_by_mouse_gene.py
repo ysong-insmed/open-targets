@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires edges between mouse targets and human targets."""
+"""Definition for MODELLED_BY edges: scans Mouse Phenotypes parquet to link each
+human TARGET to its mouse gene ortholog (MOUSE_GENE) used in models, capturing
+cross-species modeling relationships in the KG."""
 
 from typing import Final
 

@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges from evidence to diseases."""
+"""Definition for HAS_TARGET_TARGET_INTERACTION edges (target B): links a TARGET
+to a TARGET_TARGET_INTERACTION node using participant B from interaction
+evidence, enabling traversal from the target to the interaction record in the
+KG."""
 
 from typing import Final
 

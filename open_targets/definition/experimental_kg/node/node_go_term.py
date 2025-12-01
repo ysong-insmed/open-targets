@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of GO terms."""
+"""Definition for GO_TERM nodes: scans the GO parquet to emit Gene Ontology
+terms with IDs and names, providing functional annotation entities that targets
+and pathways can link to in the KG."""
 
 from typing import Final
 

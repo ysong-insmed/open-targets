@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of Reactome evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_REACTOME nodes: filters Evidence
+parquet to reactome source to emit pathway-based associations with disease IDs,
+target IDs/modulation, variant amino acid descriptions, and score, capturing
+Reactome pathway inference evidence in the KG."""
 
 from typing import Final
 

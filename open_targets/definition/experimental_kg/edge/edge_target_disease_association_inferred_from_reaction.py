@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires edges from evidence to pathways."""
+"""Definition for INFERRED_FROM edges (association → reaction): filters Reactome
+evidence to link each TARGET_DISEASE_ASSOCIATION node (evidence id) to the
+REACTION it was inferred from, capturing reaction-level inference in the KG."""
 
 from typing import Final
 

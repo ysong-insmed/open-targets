@@ -1,4 +1,9 @@
-"""Acquisition definition that acquires nodes of EVA evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_EVA nodes: filters Evidence parquet
+to eva source to emit germline ClinVar/EVA associations with variant IDs (HGVS,
+RS, functional consequence), disease IDs, direction/allelic requirements,
+clinical significance, allele origins, cohort phenotypes, confidence/score,
+release date, study ID, and target IDs, capturing curated germline variant
+evidence in the KG."""
 
 from typing import Final
 

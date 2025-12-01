@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges between diseases and phenotypes."""
+"""Definition for SUPPORTED_BY edges (interaction → literature): links each
+TARGET_TARGET_INTERACTION node to its supporting LITERATURE_ENTRY (hashed id)
+when a PubMed ID is present, capturing provenance for protein–protein
+interactions in the KG."""
 
 from typing import Final
 

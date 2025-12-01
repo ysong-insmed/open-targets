@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of PROGENY evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_PROGENY nodes: filters Evidence
+parquet to progeny source to emit pathway activity associations with disease
+IDs, target IDs, resource/score, capturing PROGENy pathway-inference evidence in
+the KG."""
 
 from typing import Final
 

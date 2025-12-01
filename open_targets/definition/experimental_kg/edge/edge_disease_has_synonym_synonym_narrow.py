@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires 'has narrow synonym' edges for diseases."""
+"""Definition for HAS_SYNONYM edges (narrow): explodes narrow synonyms from the
+diseases parquet to link each DISEASE node to its DISEASE_SYNONYM (narrow) node,
+capturing synonym relationships in the KG."""
 
 from typing import Final
 

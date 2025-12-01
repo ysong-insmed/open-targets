@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of UniProt variants evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_UNIPROT_VARIANTS nodes: filters
+Evidence parquet to uniprot_variants source to emit variant-based associations
+with disease IDs, target modulation, variant IDs/RS/functional consequence,
+confidence, and score, capturing UniProt variant evidence in the KG."""
 
 from typing import Final
 

@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges from evidence to drugs."""
+"""Definition for HAS_MOLECULE edges (chembl): links each
+TARGET_DISEASE_ASSOCIATION_CHEMBL node (evidence id) to its drug Molecule,
+capturing the therapeutic agent in the clinical evidence for the association in
+the KG."""
 
 from typing import Final
 

@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of IMPC evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_IMPC nodes: filters Evidence
+parquet to impc source to emit mouse model associations with disease IDs,
+mouse model IDs (Ensembl/MGI), variant effect, direction on trait, resource/score,
+capturing in vivo mouse evidence mapped to human targets/diseases in the KG."""
 
 from typing import Final
 

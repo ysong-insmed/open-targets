@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of HPO phenotypes."""
+"""Definition for PHENOTYPE nodes: scans the HPO parquet to emit phenotype terms
+with IDs, names, and descriptions, anchoring clinical signs/symptoms for disease
+associations and mouse mapping in the KG."""
 
 from typing import Final
 

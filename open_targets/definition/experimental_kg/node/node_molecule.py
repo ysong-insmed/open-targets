@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of molecules."""
+"""Definition for MOLECULE nodes: scans the Molecule parquet (ChEMBL subset) to
+emit drug entities with modality, approval/withdrawn status, trade names,
+synonyms, description, max clinical phase, and structure IDs as the drug anchor
+for indications, mechanisms of action, warnings, and ADR edges in the KG."""
 
 from typing import Final
 

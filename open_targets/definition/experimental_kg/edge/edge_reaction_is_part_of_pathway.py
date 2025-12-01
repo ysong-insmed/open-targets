@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires 'is a' edges between Reactome pathways."""
+"""Definition for IS_PART_OF edges (reaction → pathway): explodes parent pathway
+links from Reactome reactions (Evidence sourceId==reactome) to connect REACTION
+nodes to their PATHWAYs, building the reaction-to-pathway hierarchy in the KG."""
 
 from typing import Final
 

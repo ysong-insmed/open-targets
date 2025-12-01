@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of Europe PMC evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_EUROPEPMC nodes: filters Evidence
+parquet to europepmc source to emit text-mined associations with mapped disease
+ID, target ID, resource score, and score, capturing literature-derived evidence
+in the KG."""
 
 from typing import Final
 

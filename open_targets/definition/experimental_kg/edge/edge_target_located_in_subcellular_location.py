@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires edges from targets to subcellular locations."""
+"""Definition for LOCATED_IN edges: explodes subcellular location annotations in
+Targets parquet to connect each TARGET to a SUBCELLULAR_LOCATION node, carrying
+the source of the localization, to provide compartment context in the KG."""
 
 from typing import Final
 

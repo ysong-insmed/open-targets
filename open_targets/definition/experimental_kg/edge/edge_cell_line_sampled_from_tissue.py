@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires edges from evidence to cell lines."""
+"""Definition for SAMPLED_FROM edges: explodes CRISPR evidence cell line entries
+to link each CELL_LINE to its TISSUE, capturing anatomical origin of assay
+models in the KG."""
 
 from typing import Final
 

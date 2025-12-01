@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of SLAPenrich evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_SLAPENRICH nodes: filters Evidence
+parquet to slapenrich source to emit pathway enrichment associations with
+disease IDs, target IDs, resource/score, capturing SLAPenrich pathway evidence
+in the KG."""
 
 from typing import Final
 

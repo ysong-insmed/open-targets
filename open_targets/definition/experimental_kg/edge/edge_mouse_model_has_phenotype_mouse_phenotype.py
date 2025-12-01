@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges between mouse targets and human targets."""
+"""Definition for HAS_PHENOTYPE edges (mouse model → mouse phenotype): explodes
+biologicalModels in the Mouse Phenotypes parquet to connect each MOUSE_MODEL to
+its observed MOUSE_PHENOTYPE term, capturing in vivo phenotype outcomes in the
+KG."""
 
 from typing import Final
 

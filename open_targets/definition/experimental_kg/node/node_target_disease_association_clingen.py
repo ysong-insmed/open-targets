@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires nodes of ClinGen evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_CLINGEN nodes: filters Evidence
+parquet to clingen source to emit curated clinical genetics associations with
+allelic requirements, confidence, disease IDs (source/mapped), study ID, score,
+and target IDs, representing ClinGen gene–disease assertions in the KG."""
 
 from typing import Final
 

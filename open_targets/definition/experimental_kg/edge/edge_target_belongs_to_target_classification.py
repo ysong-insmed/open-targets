@@ -1,4 +1,5 @@
-"""Acquisition definition that acquires edges from targets to target classes."""
+"""Definition for BELONGS_TO edges: explodes target_class entries to link each
+TARGET to its TARGET_CLASSIFICATION node, capturing target grouping in the KG."""
 
 from typing import Final
 

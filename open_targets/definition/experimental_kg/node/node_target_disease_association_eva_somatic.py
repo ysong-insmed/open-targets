@@ -1,4 +1,9 @@
-"""Acquisition definition that acquires nodes of EVA evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_EVA_SOMATIC nodes: filters Evidence
+parquet to eva_somatic source to emit somatic variant associations with variant
+IDs (HGVS, RS, functional consequence), disease IDs, direction/allelic
+requirements, clinical significance, allele origins, cohort phenotypes,
+confidence/score, release date, study ID, and target IDs, capturing somatic
+variant evidence in the KG."""
 
 from typing import Final
 

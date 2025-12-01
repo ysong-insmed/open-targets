@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires edges between molecules and drug warnings."""
+"""Definition for HAS_DRUG_WARNING edges: explodes chemblIds in the drug
+warnings parquet to link each MOLECULE node to a DRUG_WARNING node, attaching
+regulatory safety warnings to drugs in the KG."""
 
 from typing import Final
 

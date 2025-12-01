@@ -1,4 +1,8 @@
-"""Acquisition definition that acquires nodes of Open Targets Genetics Portal evidence."""
+"""Definition for TARGET_DISEASE_ASSOCIATION_OT_GENETICS_PORTAL nodes: filters
+Evidence parquet to ot_genetics_portal source to emit GWAS/L2G associations with
+p-values, beta/OR and confidence intervals, variant/consequence IDs (RS/id/qtl),
+direction on trait, project/publication info, disease/target IDs, resource/score,
+capturing OT Genetics causal gene evidence in the KG."""
 
 from typing import Final
 

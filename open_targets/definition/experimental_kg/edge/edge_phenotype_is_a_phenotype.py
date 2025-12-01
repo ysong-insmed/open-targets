@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires 'is a' edges between HPO phenotypes."""
+"""Definition for IS_A edges (phenotype hierarchy): explodes HPO parents to link
+each PHENOTYPE node to its parent PHENOTYPE, forming the HPO ontology in the
+KG."""
 
 from typing import Final
 

@@ -1,4 +1,7 @@
-"""Acquisition definition that acquires edges between targets and gene expression biomarkers."""
+"""Definition for HAS_DRUG_RESPONSE edges: links cancer_biomarkers
+TARGET_DISEASE_ASSOCIATION nodes (evidence id) to drug response entities from
+the Evidence parquet, capturing reported drug responses tied to the biomarker
+association in the KG."""
 
 from typing import Final
 

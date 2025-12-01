@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of targets."""
+"""Definition for TARGET nodes: scans the Targets parquet to emit Ensembl gene
+targets with symbol, name, biotype, and function descriptions as the core
+target entities used across drug, association, and annotation edges in the KG."""
 
 from typing import Final
 

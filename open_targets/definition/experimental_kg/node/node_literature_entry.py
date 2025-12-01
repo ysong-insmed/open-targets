@@ -1,4 +1,6 @@
-"""Acquisition definition that acquires nodes of PMC literature entries."""
+"""Definition for LITERATURE_ENTRY nodes: scans the literature index parquet to
+emit publication nodes (PMID/PMCID/date) keyed by a hashed primary ID, serving
+as reified articles that can support associations or mention entities in the KG."""
 
 from typing import Final
 
