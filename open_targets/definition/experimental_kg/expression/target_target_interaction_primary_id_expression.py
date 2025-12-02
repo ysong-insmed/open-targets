@@ -1,4 +1,6 @@
-"""Expression that builds a primary id for mechanisms of action."""
+"""Primary ID expression for TARGET_TARGET_INTERACTION nodes: hashes the pair
+of interacting targets (A,B) to create a stable identifier for the interaction
+record."""
 
 from typing import Final
 

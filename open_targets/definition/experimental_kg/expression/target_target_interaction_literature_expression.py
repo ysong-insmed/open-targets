@@ -1,4 +1,5 @@
-"""Expression that builds a primary id for literature index."""
+"""Expression that builds a namespaced ID for literature (PubMed ID) supporting
+a target–target interaction, using the literature_index namespace."""
 
 from typing import Final
 

@@ -1,9 +1,6 @@
-"""Expression that builds a cross reference values for target database.
-
-This expression builds a cross reference value for target database cross
-references that align with other datasets. This is a workaround for the
-inconsistency representation present in the target dataset.
-"""
+"""Expression that normalizes target database cross-references into `source:id`
+strings to align with other datasets (ChEMBL, Ensembl, etc.), working around
+inconsistent representation in the targets parquet."""
 
 from typing import Final
 

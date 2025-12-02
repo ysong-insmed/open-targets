@@ -1,4 +1,5 @@
-"""Expression that builds a primary id for mechanisms of action."""
+"""Primary ID expression for DRUG_WARNING nodes: namespaces the warning ID to
+provide a stable identifier for drug warning records."""
 
 from typing import Final
 

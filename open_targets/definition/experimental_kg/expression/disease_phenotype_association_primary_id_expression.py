@@ -1,8 +1,6 @@
-"""Expression that builds a primary id for disease-phenotype associations.
-
-To be honest this is a guess, but it's the only way I can think of to
-ensure that the primary id is unique.
-"""
+"""Primary ID expression for DISEASE_PHENOTYPE_ASSOCIATION nodes: hashes the
+disease ID, phenotype ID, and source disease string together to make a stable
+identifier for each reified disease–phenotype evidence record."""
 
 from typing import Final
 

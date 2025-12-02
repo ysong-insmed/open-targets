@@ -1,4 +1,5 @@
-"""Expression that builds a primary id for mechanisms of action."""
+"""Primary ID expression for SPECIES nodes: namespaces the species identifier
+from homology data to create a stable SPECIES node ID."""
 
 from typing import Final
 

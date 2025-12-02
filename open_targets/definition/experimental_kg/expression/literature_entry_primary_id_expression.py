@@ -1,4 +1,5 @@
-"""Expression that builds a primary id for literature index."""
+"""Primary ID expression for LITERATURE_ENTRY nodes: namespaces the PMID to
+produce a stable identifier for literature records."""
 
 from typing import Final
 

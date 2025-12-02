@@ -1,4 +1,5 @@
-"""Expression that builds a primary id for mechanisms of action."""
+"""Primary ID expression for ADVERSE_REACTION nodes: namespaces the MedDRA code
+to create a stable identifier used by adverse reaction nodes/edges."""
 
 from typing import Final
 

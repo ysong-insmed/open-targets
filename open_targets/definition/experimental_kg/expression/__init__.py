@@ -1,8 +1,8 @@
-"""Expressions that are reused across multiple definitions.
+"""Reusable expressions for experimental_kg definitions.
 
-This is a workaround for some of the relationships that are missing primary
-ids or inconsistencies in the data.
-"""
+These helpers build stable primary IDs (namespaced strings or hashes) and
+normalized values used across node/edge definitions, especially where source
+datasets lack explicit primary keys or have inconsistent identifier formats."""
 
 from open_targets.definition.experimental_kg.expression.adverse_reaction_primary_id_expression import (
     adverse_reaction_primary_id_expression,

@@ -1,8 +1,5 @@
-"""Expression that builds a primary id for disease-phenotype associations.
-
-To be honest this is a guess, but it's the only way I can think of to
-ensure that the primary id is unique.
-"""
+"""Primary ID expression for exact DISEASE_SYNONYM nodes: hashes each synonym
+string under the `disease_synonym` namespace to create a stable identifier."""
 
 from typing import Final
 

@@ -1,4 +1,5 @@
-"""Expression that builds a primary id for mechanisms of action."""
+"""Primary ID expression for MECHANISM_OF_ACTION nodes: hashes the mechanism of
+action text to form a stable identifier for reified MoA records."""
 
 from typing import Final
 
