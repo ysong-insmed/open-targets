@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_EVA_SOMATIC nodes: filters Evidence
+"""Summary: EVA somatic submissions (tumor variant interpretations).
+
+Definition for TARGET_DISEASE_ASSOCIATION_EVA_SOMATIC nodes: filters Evidence
 parquet to eva_somatic tumor submissions. Somatic submissions describe tumor-
 acquired variants and their clinical interpretation. Each record carries variant
 IDs (HGVS/RS), functional consequence, allele origins, allelic requirements,

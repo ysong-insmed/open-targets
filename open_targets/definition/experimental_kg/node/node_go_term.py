@@ -1,6 +1,8 @@
-"""Definition for GO_TERM nodes: scans the GO parquet to emit Gene Ontology
-terms with IDs and names, providing functional annotation entities that targets
-and pathways can link to in the KG."""
+"""Summary: Gene Ontology term nodes for functional annotation.
+
+Definition for GO_TERM nodes: scans the GO parquet to emit Gene Ontology terms
+with IDs and names, providing functional annotation entities that targets and
+pathways can link to in the KG."""
 
 from typing import Final
 

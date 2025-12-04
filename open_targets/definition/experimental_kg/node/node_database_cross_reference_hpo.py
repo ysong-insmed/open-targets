@@ -1,4 +1,6 @@
-"""Definition for DATABASE_CROSS_REFERENCE nodes (HPO xrefs): explodes `dbXRefs`
+"""Summary: HPO cross-reference nodes (hashed ID, raw value property).
+
+Definition for DATABASE_CROSS_REFERENCE nodes (HPO xrefs): explodes `dbXRefs`
 from the HPO parquet, hashes each string under the `database_cross_reference`
 namespace for the primary ID, and stores the raw string as property `value` so
 PHENOTYPE/HPO nodes can expose external identifiers."""

@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_GENE2PHENOTYPE nodes: filters
+"""Summary: Gene2Phenotype curated gene-disease assertions.
+
+Definition for TARGET_DISEASE_ASSOCIATION_GENE2PHENOTYPE nodes: filters
 Evidence parquet to gene2phenotype curated gene-disease assertions. Gene2Phenotype
 curators review human genetic evidence and specify allelic requirements, variant
 functional consequence, and direction on trait. Each record carries disease IDs,

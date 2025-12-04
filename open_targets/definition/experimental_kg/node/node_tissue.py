@@ -1,6 +1,8 @@
-"""Definition for TISSUE nodes: explodes CRISPR evidence cell line tissues from
-the Evidence parquet (sourceId==crispr) to emit tissue concepts (id/name) used
-as anatomical context for cell lines in the KG."""
+"""Summary: tissue concepts (id/name) for CRISPR cell line context.
+
+Definition for TISSUE nodes: explodes CRISPR evidence cell line tissues from the
+Evidence parquet (sourceId==crispr) to emit tissue concepts (id/name) used as
+anatomical context for cell lines in the KG."""
 
 from typing import Final
 

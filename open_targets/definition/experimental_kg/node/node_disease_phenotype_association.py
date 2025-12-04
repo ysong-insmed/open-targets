@@ -1,4 +1,6 @@
-"""Definition for DISEASE_PHENOTYPE_ASSOCIATION nodes: explodes disease→HPO
+"""Summary: reified disease–phenotype (HPO) evidence with curation metadata.
+
+Definition for DISEASE_PHENOTYPE_ASSOCIATION nodes: explodes disease->HPO
 evidence from the DiseaseToPhenotype parquet to reify each association with
 mapped aspect, evidence type, frequency, sex, and curation metadata, providing
 traceable disease–phenotype links in the KG."""

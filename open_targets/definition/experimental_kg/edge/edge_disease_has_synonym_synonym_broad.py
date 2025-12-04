@@ -1,4 +1,6 @@
-"""Definition for HAS_SYNONYM edges (broad): explodes broad synonyms from the
+"""Summary: DISEASE -> broad synonym edges.
+
+Definition for HAS_SYNONYM edges (broad): explodes broad synonyms from the
 diseases parquet to link each DISEASE node to its DISEASE_SYNONYM (broad) node,
 capturing synonym relationships in the KG."""
 

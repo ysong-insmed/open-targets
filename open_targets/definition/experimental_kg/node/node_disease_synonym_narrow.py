@@ -1,5 +1,7 @@
-"""Definition for DISEASE_SYNONYM nodes (narrow): explodes narrow synonyms from
-the diseases parquet to emit synonym nodes keyed by namespaced hash, storing the
+"""Summary: narrow disease synonym nodes (hashed ID, raw synonym value).
+
+Definition for DISEASE_SYNONYM nodes (narrow): explodes narrow synonyms from the
+diseases parquet to emit synonym nodes keyed by namespaced hash, storing the
 synonym string for DISEASE synonym edges in the KG."""
 
 from typing import Final

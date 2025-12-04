@@ -1,4 +1,6 @@
-"""Definition for IS_PART_OF edges (reaction → pathway): explodes parent pathway
+"""Summary: REACTION -> PATHWAY edges building reaction-to-pathway hierarchy.
+
+Definition for IS_PART_OF edges (reaction -> pathway): explodes parent pathway
 links from Reactome reactions (Evidence sourceId==reactome) to connect REACTION
 nodes to their PATHWAYs, building the reaction-to-pathway hierarchy in the KG."""
 

@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_CRISPR nodes: filters Evidence
+"""Summary: CRISPR perturbation screens linking targets to disease phenotypes.
+
+Definition for TARGET_DISEASE_ASSOCIATION_CRISPR nodes: filters Evidence
 parquet to crispr source to emit CRISPR functional screen associations. CRISPR
 perturbs genes in disease-relevant cell lines; if knocking out a gene changes a
 phenotype linked to the disease, the gene is implicated. Records keep disease

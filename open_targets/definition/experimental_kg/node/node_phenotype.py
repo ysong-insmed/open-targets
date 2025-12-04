@@ -1,4 +1,6 @@
-"""Definition for PHENOTYPE nodes: scans the HPO parquet to emit phenotype terms
+"""Summary: HPO phenotype terms (id/name/description) anchoring symptoms.
+
+Definition for PHENOTYPE nodes: scans the HPO parquet to emit phenotype terms
 with IDs, names, and descriptions, anchoring clinical signs/symptoms for disease
 associations and mouse mapping in the KG."""
 

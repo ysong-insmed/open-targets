@@ -1,7 +1,8 @@
-"""Definition for HAS_DATABASE_CROSS_REFERENCE edges (phenotype): explodes HPO
+"""Summary: PHENOTYPE -> DATABASE_CROSS_REFERENCE edges for HPO xrefs.
+
+Definition for HAS_DATABASE_CROSS_REFERENCE edges (phenotype): explodes HPO
 `dbXRefs` to link each PHENOTYPE node to a hashed DATABASE_CROSS_REFERENCE node
-(raw xref stored on the target node), exposing external phenotype IDs in the
-KG."""
+(raw xref stored on the target node), exposing external phenotype IDs in the KG."""
 
 from typing import Final
 

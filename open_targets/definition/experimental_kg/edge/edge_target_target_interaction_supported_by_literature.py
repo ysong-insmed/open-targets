@@ -1,7 +1,9 @@
-"""Definition for SUPPORTED_BY edges (interaction → literature): links each
+"""Summary: TARGET_TARGET_INTERACTION -> LITERATURE_ENTRY support edges.
+
+Definition for SUPPORTED_BY edges (interaction -> literature): links each
 TARGET_TARGET_INTERACTION node to its supporting LITERATURE_ENTRY (hashed id)
-when a PubMed ID is present, capturing provenance for protein–protein
-interactions in the KG."""
+when a PubMed ID is present, capturing provenance for protein–protein interactions
+in the KG."""
 
 from typing import Final
 

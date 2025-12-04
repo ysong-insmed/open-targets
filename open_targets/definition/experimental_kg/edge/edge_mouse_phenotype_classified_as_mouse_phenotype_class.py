@@ -1,5 +1,7 @@
-"""Definition for CLASSIFIED_AS edges: explodes phenotype class annotations in
-Mouse Phenotypes parquet to link each MOUSE_PHENOTYPE to its MOUSE_PHENOTYPE_CLASS,
+"""Summary: MOUSE_PHENOTYPE -> MOUSE_PHENOTYPE_CLASS classification edges.
+
+Definition for CLASSIFIED_AS edges: explodes phenotype class annotations in Mouse
+Phenotypes parquet to link each MOUSE_PHENOTYPE to its MOUSE_PHENOTYPE_CLASS,
 capturing MP class grouping in the KG."""
 
 from typing import Final

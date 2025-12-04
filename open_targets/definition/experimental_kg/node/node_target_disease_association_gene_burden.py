@@ -1,12 +1,14 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_GENE_BURDEN nodes: filters Evidence
+"""Summary: rare-variant burden tests linking genes to disease/traits.
+
+Definition for TARGET_DISEASE_ASSOCIATION_GENE_BURDEN nodes: filters Evidence
 parquet to gene_burden source to emit rare-variant burden associations. Burden
 tests collapse many rare variants in a gene into a single burden score and test
-carriers vs non-carriers for disease/trait difference. Inference: sequence rare
-variants → collapse into burden score → regress burden against phenotype → significant
-beta/OR/p-value → link gene to disease. Records store regression effects, p-values,
-ancestry/cohort info, allelic requirements, and study metadata. The KG captures
-these gene-wide rare-variant signals rather than single-variant hits.
-"""
+carriers vs non-carriers for disease/trait difference. Arrow logic: sequence rare
+variants -> collapse into burden score -> regress burden against phenotype ->
+significant beta/OR/p-value -> link gene to disease. Records store regression
+effects, p-values, ancestry/cohort info, allelic requirements, and study metadata.
+The KG captures these gene-wide rare-variant signals rather than single-variant
+hits."""
 
 from typing import Final
 

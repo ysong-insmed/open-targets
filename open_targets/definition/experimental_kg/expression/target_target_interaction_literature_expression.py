@@ -1,4 +1,6 @@
-"""Expression that builds a namespaced ID for literature (PubMed ID) supporting
+"""Summary: namespaced literature (PMID) IDs for target–target interactions.
+
+Expression that builds a namespaced ID for literature (PubMed ID) supporting
 a target–target interaction, using the literature_index namespace."""
 
 from typing import Final

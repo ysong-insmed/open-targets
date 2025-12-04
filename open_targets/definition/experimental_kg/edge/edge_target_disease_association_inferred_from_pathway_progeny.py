@@ -1,4 +1,6 @@
-"""Definition for INFERRED_FROM edges (association → pathway, PROGENY): explodes
+"""Summary: TARGET_DISEASE_ASSOCIATION -> PATHWAY inference (PROGENy).
+
+Definition for INFERRED_FROM edges (association -> pathway, PROGENY): explodes
 PROGENy pathway annotations in Evidence to link each TARGET_DISEASE_ASSOCIATION
 node (evidence id) to the PATHWAY it was inferred from, capturing pathway-based
 inference in the KG."""

@@ -1,4 +1,4 @@
-"""Node definitions for the experimental knowledge graph."""
+"""Summary: node definitions for the experimental knowledge graph."""
 
 from open_targets.definition.experimental_kg.node.node_adverse_reaction import node_adverse_reaction
 from open_targets.definition.experimental_kg.node.node_cell_line import node_cell_line

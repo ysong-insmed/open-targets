@@ -1,5 +1,7 @@
-"""Definition for HAS_MECHANISM_OF_ACTION edges: explodes chemblIds in the
-Mechanism of Action parquet to connect each MOLECULE node (ChEMBL drug) to its
+"""Summary: MOLECULE -> MECHANISM_OF_ACTION edges (pharmacology linkage).
+
+Definition for HAS_MECHANISM_OF_ACTION edges: explodes chemblIds in the Mechanism
+of Action parquet to connect each MOLECULE node (ChEMBL drug) to its
 MECHANISM_OF_ACTION node, capturing which pharmacological mechanisms are
 attributed to each drug in the KG."""
 

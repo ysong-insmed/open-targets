@@ -1,4 +1,6 @@
-"""Primary ID expression for TARGET_CLASSIFICATION nodes: namespaces the
+"""Summary: namespaced target classification label/level ID.
+
+Primary ID expression for TARGET_CLASSIFICATION nodes: namespaces the
 classification label/level to create a stable identifier."""
 
 from typing import Final

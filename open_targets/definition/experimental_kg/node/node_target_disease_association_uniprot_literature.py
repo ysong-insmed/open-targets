@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_UNIPROT_LITERATURE nodes: filters
+"""Summary: UniProt curator-reviewed literature assertions of target-disease.
+
+Definition for TARGET_DISEASE_ASSOCIATION_UNIPROT_LITERATURE nodes: filters
 Evidence parquet to uniprot_literature curated assertions. UniProt curators read
 the literature and annotate when a protein is implicated in a disease, noting
 target modulation and confidence. Records keep disease/target IDs and scores.

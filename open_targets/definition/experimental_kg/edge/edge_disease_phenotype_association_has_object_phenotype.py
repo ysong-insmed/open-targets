@@ -1,7 +1,9 @@
-"""Definition for HAS_OBJECT edges (disease_phenotype_association → phenotype):
-explodes disease→HPO evidence to link each DISEASE_PHENOTYPE_ASSOCIATION node
-to the PHENOTYPE (HPO term) it references, binding the phenotype endpoint of
-the association in the KG."""
+"""Summary: DISEASE_PHENOTYPE_ASSOCIATION -> PHENOTYPE edges.
+
+Definition for HAS_OBJECT edges (disease_phenotype_association -> phenotype):
+explodes disease->HPO evidence to link each DISEASE_PHENOTYPE_ASSOCIATION node
+to the PHENOTYPE (HPO term) it references, binding the phenotype endpoint of the
+association in the KG."""
 
 from typing import Final
 

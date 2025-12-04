@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_IMPC nodes: filters Evidence
+"""Summary: mouse knockout phenotypes mapped to human disease (IMPC).
+
+Definition for TARGET_DISEASE_ASSOCIATION_IMPC nodes: filters Evidence
 parquet to impc mouse model evidence. IMPC perturbs mouse genes, observes
 phenotypes, maps those phenotypes to human diseases, and then maps the mouse
 gene to the human ortholog. Records keep model IDs (Ensembl/MGI), variant effect,

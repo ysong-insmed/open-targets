@@ -1,6 +1,8 @@
-"""Definition for REACTION nodes: filters Evidence parquet to reactome source to
-emit reaction entries (id/name) used in pathway hierarchies and inference edges
-in the KG."""
+"""Summary: Reactome reaction nodes (id/name) for pathway inference.
+
+Definition for REACTION nodes: filters Evidence parquet to reactome source to emit
+reaction entries (id/name) used in pathway hierarchies and inference edges in the
+KG."""
 
 from typing import Final
 

@@ -1,4 +1,6 @@
-"""Definition for HAS_PHENOTYPE edges (mouse model → mouse phenotype): explodes
+"""Summary: MOUSE_MODEL -> MOUSE_PHENOTYPE edges (observed phenotypes).
+
+Definition for HAS_PHENOTYPE edges (mouse model -> mouse phenotype): explodes
 biologicalModels in the Mouse Phenotypes parquet to connect each MOUSE_MODEL to
 its observed MOUSE_PHENOTYPE term, capturing in vivo phenotype outcomes in the
 KG."""

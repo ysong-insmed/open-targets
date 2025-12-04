@@ -1,7 +1,8 @@
-"""Definition for HAS_SUMMARY_ASSOCIATION_BY_OVERALL_INDIRECT edges: links
-TARGET to DISEASE using precomputed overall indirect summary scores with
-evidenceCount, capturing propagated aggregate association strength across all
-sources in the KG."""
+"""Summary: overall indirect summary association (TARGET -> DISEASE).
+
+Definition for HAS_SUMMARY_ASSOCIATION_BY_OVERALL_INDIRECT edges: links TARGET to
+DISEASE using precomputed overall indirect summary scores with evidenceCount,
+capturing propagated aggregate association strength across all sources in the KG."""
 
 from typing import Final
 

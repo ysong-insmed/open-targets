@@ -1,5 +1,7 @@
-"""Definition for IS_A edges (disease hierarchy): explodes parent relationships
-in the diseases parquet to link each DISEASE node to its parent DISEASE, forming
+"""Summary: DISEASE hierarchy IS_A edges (child -> parent).
+
+Definition for IS_A edges (disease hierarchy): explodes parent relationships in
+the diseases parquet to link each DISEASE node to its parent DISEASE, forming
 the ontology hierarchy in the KG."""
 
 from typing import Final

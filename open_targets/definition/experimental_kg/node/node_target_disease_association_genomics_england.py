@@ -1,9 +1,11 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_GENOMICS_ENGLAND nodes: filters
+"""Summary: PanelApp expert-reviewed gene-disease associations.
+
+Definition for TARGET_DISEASE_ASSOCIATION_GENOMICS_ENGLAND nodes: filters
 Evidence parquet to genomics_england PanelApp associations. PanelApp curators
 review clinical sequencing cases and decide whether a gene is implicated in a
 disease, noting allelic requirements, confidence level, and supporting phenotypes.
 Each record carries those curations, plus disease IDs, study overview/ID, score,
-and target IDs. Inference: clinical cases → expert panel evaluation → gene–disease
+and target IDs. Inference: clinical cases -> expert panel evaluation -> gene-disease
 assertion captured for use in the KG."""
 
 from typing import Final

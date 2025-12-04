@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_INTOGEN nodes: filters Evidence
+"""Summary: IntOGen somatic driver calls (positive selection in tumors).
+
+Definition for TARGET_DISEASE_ASSOCIATION_INTOGEN nodes: filters Evidence
 parquet to intogen driver discovery results. IntOGen aggregates tumor sequencing
 studies and runs driver-calling methods to identify genes under positive selection
 in specific cancers. Records retain cohort IDs/descriptions, significant driver

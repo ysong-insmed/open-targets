@@ -1,4 +1,6 @@
-"""Primary ID expression for HPO DATABASE_CROSS_REFERENCE nodes: hashes each
+"""Summary: hashed HPO xref IDs under `database_cross_reference`.
+
+Primary ID expression for HPO DATABASE_CROSS_REFERENCE nodes: hashes each
 `dbXRefs` string under the `database_cross_reference` namespace to create a stable
 identifier (raw xref is stored on the node as value)."""
 

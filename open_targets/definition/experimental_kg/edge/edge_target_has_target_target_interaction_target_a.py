@@ -1,7 +1,9 @@
-"""Definition for HAS_TARGET_TARGET_INTERACTION edges (target A): links a TARGET
-to a TARGET_TARGET_INTERACTION node using participant A from interaction
-evidence (where participant B is present), enabling traversal from the target to
-the interaction record in the KG."""
+"""Summary: TARGET -> TARGET_TARGET_INTERACTION edges (participant A).
+
+Definition for HAS_TARGET_TARGET_INTERACTION edges (target A): links a TARGET to
+a TARGET_TARGET_INTERACTION node using participant A from interaction evidence
+(where participant B is present), enabling traversal from the target to the
+interaction record in the KG."""
 
 from typing import Final
 

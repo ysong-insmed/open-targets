@@ -1,4 +1,6 @@
-"""Definition for INVOLVES_IN edges: explodes Reactome pathway annotations in the
+"""Summary: TARGET -> PATHWAY membership edges (Reactome annotations).
+
+Definition for INVOLVES_IN edges: explodes Reactome pathway annotations in the
 Targets parquet to connect each TARGET to the PATHWAYs it participates in,
 capturing pathway membership for functional context in the KG."""
 

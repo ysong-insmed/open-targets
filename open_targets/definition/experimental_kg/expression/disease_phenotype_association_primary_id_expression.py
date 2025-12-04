@@ -1,4 +1,6 @@
-"""Primary ID expression for DISEASE_PHENOTYPE_ASSOCIATION nodes: hashes the
+"""Summary: hashed ID combining disease, phenotype, and source disease fields.
+
+Primary ID expression for DISEASE_PHENOTYPE_ASSOCIATION nodes: hashes the
 disease ID, phenotype ID, and source disease string together to make a stable
 identifier for each reified disease–phenotype evidence record."""
 

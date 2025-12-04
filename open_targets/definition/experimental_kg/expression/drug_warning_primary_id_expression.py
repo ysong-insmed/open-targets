@@ -1,4 +1,6 @@
-"""Primary ID expression for DRUG_WARNING nodes: namespaces the warning ID to
+"""Summary: namespaced ID for DRUG_WARNING records.
+
+Primary ID expression for DRUG_WARNING nodes: namespaces the warning ID to
 provide a stable identifier for drug warning records."""
 
 from typing import Final

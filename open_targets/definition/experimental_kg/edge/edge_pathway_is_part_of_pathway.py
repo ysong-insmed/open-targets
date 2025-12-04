@@ -1,6 +1,8 @@
-"""Definition for IS_PART_OF edges (pathway hierarchy): explodes parent lists in
-the Reactome parquet to link each PATHWAY node to its parent PATHWAY, building
-the Reactome hierarchy for traversal in the KG."""
+"""Summary: PATHWAY hierarchy edges (child -> parent) from Reactome.
+
+Definition for IS_PART_OF edges (pathway hierarchy): explodes parent lists in the
+Reactome parquet to link each PATHWAY node to its parent PATHWAY, building the
+Reactome hierarchy for traversal in the KG."""
 
 from typing import Final
 

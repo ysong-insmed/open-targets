@@ -1,4 +1,6 @@
-"""Definition for DERIVED_FROM edges: links child MOLECULE nodes to their parent
+"""Summary: child MOLECULE -> parent MOLECULE relationships (ChEMBL salts).
+
+Definition for DERIVED_FROM edges: links child MOLECULE nodes to their parent
 ChEMBL molecule (non-null parentId) to represent salt/child-parent relationships
 in the KG."""
 

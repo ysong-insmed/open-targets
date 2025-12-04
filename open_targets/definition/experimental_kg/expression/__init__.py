@@ -1,4 +1,4 @@
-"""Reusable expressions for experimental_kg definitions.
+"""Summary: shared expressions for stable IDs/values across definitions.
 
 These helpers build stable primary IDs (namespaced strings or hashes) and
 normalized values used across node/edge definitions, especially where source

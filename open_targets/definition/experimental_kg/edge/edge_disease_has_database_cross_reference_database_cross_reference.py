@@ -1,8 +1,10 @@
-"""Definition for HAS_DATABASE_CROSS_REFERENCE edges: explodes the scalar
-`dbXRefs` array in the diseases parquet and links each DISEASE node to its
+"""Summary: DISEASE -> DATABASE_CROSS_REFERENCE links for disease xrefs.
+
+Definition for HAS_DATABASE_CROSS_REFERENCE edges: explodes the scalar `dbXRefs`
+array in the diseases parquet and links each DISEASE node to its
 DATABASE_CROSS_REFERENCE node (ID = namespaced hash `database_cross_reference`
-of the xref string; the raw string is stored on the target node), making
-external disease IDs traversable in the KG."""
+of the xref string; the raw string is stored on the target node), making external
+disease IDs traversable in the KG."""
 
 from typing import Final
 

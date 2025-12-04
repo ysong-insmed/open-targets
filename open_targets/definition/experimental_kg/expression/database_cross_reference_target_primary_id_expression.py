@@ -1,4 +1,6 @@
-"""Primary ID expression for target DATABASE_CROSS_REFERENCE nodes: hashes the
+"""Summary: hashed target xref IDs under `database_cross_reference`.
+
+Primary ID expression for target DATABASE_CROSS_REFERENCE nodes: hashes the
 normalized target xref value (`source:id`) under the `database_cross_reference`
 namespace to create a stable identifier (raw value retained separately)."""
 

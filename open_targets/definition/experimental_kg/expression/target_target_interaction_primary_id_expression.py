@@ -1,4 +1,6 @@
-"""Primary ID expression for TARGET_TARGET_INTERACTION nodes: hashes the pair
+"""Summary: hashed pair of targets for TARGET_TARGET_INTERACTION IDs.
+
+Primary ID expression for TARGET_TARGET_INTERACTION nodes: hashes the pair
 of interacting targets (A,B) to create a stable identifier for the interaction
 record."""
 

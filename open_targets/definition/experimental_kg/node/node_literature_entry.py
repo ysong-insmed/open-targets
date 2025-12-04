@@ -1,6 +1,8 @@
-"""Definition for LITERATURE_ENTRY nodes: scans the literature index parquet to
-emit publication nodes (PMID/PMCID/date) keyed by a hashed primary ID, serving
-as reified articles that can support associations or mention entities in the KG."""
+"""Summary: literature publication nodes (PMID/PMCID/date).
+
+Definition for LITERATURE_ENTRY nodes: scans the literature index parquet to emit
+publication nodes (PMID/PMCID/date) keyed by a hashed primary ID, serving as
+reified articles that can support associations or mention entities in the KG."""
 
 from typing import Final
 

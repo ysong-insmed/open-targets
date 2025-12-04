@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_CRISPR_SCREEN nodes: filters
+"""Summary: detailed CRISPR screen associations (cell type, contrast, log2FC).
+
+Definition for TARGET_DISEASE_ASSOCIATION_CRISPR_SCREEN nodes: filters
 Evidence parquet to crispr_screen source to emit detailed CRISPR screen results.
 Screens perturb genes across cell types/libraries; significant contrasts (log2FC)
 link a gene to a disease model. Records keep cell type, library, contrast,

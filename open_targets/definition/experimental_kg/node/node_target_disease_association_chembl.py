@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_CHEMBL nodes: filters Evidence parquet
+"""Summary: clinical trial/study evidence from ChEMBL known drugs.
+
+Definition for TARGET_DISEASE_ASSOCIATION_CHEMBL nodes: filters Evidence parquet
 to chembl known-drug clinical evidence. Each record is a clinical study/trial where
 a drug modulating this target was tested in a disease. It carries trial phase/status,
 cohort phenotypes, variant effect and direction on trait, disease IDs, study IDs/dates,

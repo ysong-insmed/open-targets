@@ -1,6 +1,8 @@
-"""Definition for ADVERSE_REACTION nodes: scans the adverse drug reaction
-parquet to emit MedDRA reaction terms (PT codes/names) representing clinical
-adverse events used by pharmacovigilance edges in the KG."""
+"""Summary: MedDRA adverse reaction terms for pharmacovigilance.
+
+Definition for ADVERSE_REACTION nodes: scans the adverse drug reaction parquet to
+emit MedDRA reaction terms (PT codes/names) representing clinical adverse events
+used by pharmacovigilance edges in the KG."""
 
 from typing import Final
 

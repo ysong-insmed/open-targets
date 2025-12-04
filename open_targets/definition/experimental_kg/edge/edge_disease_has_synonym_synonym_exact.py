@@ -1,4 +1,6 @@
-"""Definition for HAS_SYNONYM edges (exact): explodes exact synonyms from the
+"""Summary: DISEASE -> exact synonym edges.
+
+Definition for HAS_SYNONYM edges (exact): explodes exact synonyms from the
 diseases parquet to link each DISEASE node to its DISEASE_SYNONYM (exact) node,
 capturing synonym relationships in the KG."""
 

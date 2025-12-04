@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_CANCER_GENE_CENSUS nodes: filters
+"""Summary: expert-curated somatic driver calls from Cancer Gene Census.
+
+Definition for TARGET_DISEASE_ASSOCIATION_CANCER_GENE_CENSUS nodes: filters
 Evidence parquet to cancer_gene_census (CGC) somatic driver calls. CGC experts
 review tumor sequencing and literature to declare genes as drivers in specific
 cancers. Each record is that curated call: disease mapping, target ID, variant

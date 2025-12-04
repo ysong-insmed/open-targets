@@ -1,4 +1,6 @@
-"""Definition for MOUSE_GENE nodes: scans Mouse Phenotypes parquet to emit mouse
+"""Summary: mouse gene orthologs used in model evidence (Ensembl/MGI).
+
+Definition for MOUSE_GENE nodes: scans Mouse Phenotypes parquet to emit mouse
 genes (Ensembl/MGI IDs, symbol) used in model annotations, anchoring mouse
 orthologs that link targets to in vivo evidence in the KG."""
 

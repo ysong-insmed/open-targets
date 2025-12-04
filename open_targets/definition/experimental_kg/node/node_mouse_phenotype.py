@@ -1,4 +1,6 @@
-"""Definition for MOUSE_PHENOTYPE nodes: scans Mouse Phenotypes parquet to emit
+"""Summary: mouse phenotype terms observed in models (MP IDs/labels).
+
+Definition for MOUSE_PHENOTYPE nodes: scans Mouse Phenotypes parquet to emit
 mouse phenotype terms (modelPhenotypeId/label) that mouse models and inference
 edges can point to, capturing in vivo phenotype observations in the KG."""
 

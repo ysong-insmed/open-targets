@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_EXPRESSION_ATLAS nodes: filters
+"""Summary: differential expression links from Expression Atlas (case vs control).
+
+Definition for TARGET_DISEASE_ASSOCIATION_EXPRESSION_ATLAS nodes: filters
 Evidence parquet to expression_atlas differential expression evidence. Genes
 measured in case vs control biosamples yield contrasts (log2FC/value/percentile);
 significant differential expression in disease-relevant tissues links the gene to

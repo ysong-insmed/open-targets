@@ -1,7 +1,9 @@
-"""Definition for SUPPORTED_BY edges: for cancer_biomarkers evidence, explodes
-gene expression biomarkers to link each TARGET_DISEASE_ASSOCIATION node
-(evidence id) to a supporting LITERATURE_ENTRY (hashed id), capturing literature
-provenance for the association in the KG."""
+"""Summary: TARGET_DISEASE_ASSOCIATION -> LITERATURE_ENTRY support edges (cancer_biomarkers).
+
+Definition for SUPPORTED_BY edges: for cancer_biomarkers evidence, explodes gene
+expression biomarker literature references to link each TARGET_DISEASE_ASSOCIATION
+node (evidence id) to a supporting LITERATURE_ENTRY (hashed id), capturing
+literature provenance for the association in the KG."""
 
 from typing import Final
 

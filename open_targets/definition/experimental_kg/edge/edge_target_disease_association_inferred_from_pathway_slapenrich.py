@@ -1,6 +1,8 @@
-"""Definition for INFERRED_FROM edges (association → pathway, SLAPenrich):
-explodes SLAPenrich pathway annotations to link each TARGET_DISEASE_ASSOCIATION
-node (evidence id) to the PATHWAY it was inferred from, capturing pathway-based
+"""Summary: TARGET_DISEASE_ASSOCIATION -> PATHWAY inference (SLAPenrich).
+
+Definition for INFERRED_FROM edges (association -> pathway, SLAPenrich): explodes
+SLAPenrich pathway annotations to link each TARGET_DISEASE_ASSOCIATION node
+(evidence id) to the PATHWAY it was inferred from, capturing pathway-based
 inference in the KG."""
 
 from typing import Final

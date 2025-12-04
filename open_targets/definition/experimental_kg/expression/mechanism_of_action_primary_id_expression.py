@@ -1,4 +1,6 @@
-"""Primary ID expression for MECHANISM_OF_ACTION nodes: hashes the mechanism of
+"""Summary: hashed MoA text for MECHANISM_OF_ACTION IDs.
+
+Primary ID expression for MECHANISM_OF_ACTION nodes: hashes the mechanism of
 action text to form a stable identifier for reified MoA records."""
 
 from typing import Final

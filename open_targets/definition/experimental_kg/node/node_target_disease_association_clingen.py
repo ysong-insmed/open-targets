@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_CLINGEN nodes: filters Evidence
+"""Summary: ClinGen expert-curated gene-disease validity.
+
+Definition for TARGET_DISEASE_ASSOCIATION_CLINGEN nodes: filters Evidence
 parquet to clingen curated clinical genetics. ClinGen experts review human
 genetic evidence and assign gene-disease validity with allelic requirements and
 confidence. Records retain disease IDs (source/mapped), study ID, score, target

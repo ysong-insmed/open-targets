@@ -1,4 +1,6 @@
-"""Definition for DRUG_WARNING nodes: scans ChEMBL drug warning records to emit
+"""Summary: ChEMBL drug warning entities for safety annotations.
+
+Definition for DRUG_WARNING nodes: scans ChEMBL drug warning records to emit
 warning entities (toxicity class, country, description, warning type, year),
 serving as safety annotations attached to molecules in the KG."""
 

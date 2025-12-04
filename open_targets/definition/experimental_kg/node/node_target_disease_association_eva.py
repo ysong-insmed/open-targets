@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_EVA nodes: filters Evidence parquet
+"""Summary: ClinVar/EVA germline variant assertions (pathogenicity to disease).
+
+Definition for TARGET_DISEASE_ASSOCIATION_EVA nodes: filters Evidence parquet
 to eva germline submissions (ClinVar/EVA). ClinVar submitters assert whether a
 germline variant is pathogenic/benign for a disease. Each record keeps variant
 IDs (HGVS/RS), functional consequence, allele origin, allelic requirements,

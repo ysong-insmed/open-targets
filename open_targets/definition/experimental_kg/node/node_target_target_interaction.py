@@ -1,7 +1,9 @@
-"""Definition for TARGET_TARGET_INTERACTION nodes: scans interaction evidence
-parquet (STRING/IntAct-like) to emit reified interaction records with methods,
-scores, participant roles/sources, host organism/tissue, and detection details,
-serving as interaction evidence nodes linked to targets in the KG."""
+"""Summary: reified protein–protein interaction records with methods/scores.
+
+Definition for TARGET_TARGET_INTERACTION nodes: scans interaction evidence parquet
+(STRING/IntAct-like) to emit reified interaction records with methods, scores,
+participant roles/sources, host organism/tissue, and detection details, serving
+as interaction evidence nodes linked to targets in the KG."""
 
 from typing import Final
 

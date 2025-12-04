@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_UNIPROT_VARIANTS nodes: filters
+"""Summary: UniProt curator-reviewed variant assertions for target-disease.
+
+Definition for TARGET_DISEASE_ASSOCIATION_UNIPROT_VARIANTS nodes: filters
 Evidence parquet to uniprot_variants curated variant assertions. UniProt curators
 review literature and databases for protein variants linked to disease, capturing
 variant IDs (RS/id), functional consequence, target modulation, confidence, and

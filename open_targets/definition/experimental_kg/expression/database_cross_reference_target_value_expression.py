@@ -1,4 +1,6 @@
-"""Expression that normalizes target database cross-references into `source:id`
+"""Summary: normalize target xrefs to `source:id` strings.
+
+Expression that normalizes target database cross-references into `source:id`
 strings to align with other datasets (ChEMBL, Ensembl, etc.), working around
 inconsistent representation in the targets parquet."""
 

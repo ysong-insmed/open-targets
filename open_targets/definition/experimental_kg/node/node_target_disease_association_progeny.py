@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_PROGENY nodes: filters Evidence
+"""Summary: PROGENy pathway-activity inference linking genes to disease.
+
+Definition for TARGET_DISEASE_ASSOCIATION_PROGENY nodes: filters Evidence
 parquet to progeny pathway-activity inference. PROGENy computes pathway activity
 scores from gene expression and tests if a pathway is perturbed in a disease.
 If a pathway is up/downregulated, the genes driving that signature are linked to

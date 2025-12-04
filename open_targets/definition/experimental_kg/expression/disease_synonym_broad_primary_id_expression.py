@@ -1,4 +1,6 @@
-"""Primary ID expression for broad DISEASE_SYNONYM nodes: hashes each synonym
+"""Summary: hashed ID for broad disease synonym string.
+
+Primary ID expression for broad DISEASE_SYNONYM nodes: hashes each synonym
 string under the `disease_synonym` namespace to create a stable identifier."""
 
 from typing import Final

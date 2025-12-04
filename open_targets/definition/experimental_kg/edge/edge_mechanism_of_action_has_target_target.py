@@ -1,7 +1,9 @@
-"""Definition for HAS_TARGET edges: explodes target lists in the Mechanism of
-Action parquet to connect each MECHANISM_OF_ACTION node (built from chemblId +
-action details) to its target Ensembl gene(s), representing the biological
-targets a drug mechanism acts on in the KG."""
+"""Summary: MECHANISM_OF_ACTION -> TARGET edges from MoA target lists.
+
+Definition for HAS_TARGET edges: explodes target lists in the Mechanism of Action
+parquet to connect each MECHANISM_OF_ACTION node (built from chemblId + action
+details) to its target Ensembl gene(s), representing the biological targets a
+drug mechanism acts on in the KG."""
 
 from typing import Final
 

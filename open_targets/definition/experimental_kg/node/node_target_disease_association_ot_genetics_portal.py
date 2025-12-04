@@ -1,4 +1,6 @@
-"""Definition for TARGET_DISEASE_ASSOCIATION_OT_GENETICS_PORTAL nodes: filters
+"""Summary: GWAS fine-mapping + L2G causal gene assignments (OT Genetics).
+
+Definition for TARGET_DISEASE_ASSOCIATION_OT_GENETICS_PORTAL nodes: filters
 Evidence parquet to ot_genetics_portal GWAS/L2G results. OT Genetics finds
 GWAS-significant loci, fine-maps variants, and runs the Locus2Gene model to
 estimate the causal gene (L2G > 0.05). Records keep p-values, beta/OR and CIs,

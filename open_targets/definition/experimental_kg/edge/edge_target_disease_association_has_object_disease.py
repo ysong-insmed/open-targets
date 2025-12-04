@@ -1,6 +1,8 @@
-"""Definition for HAS_OBJECT edges (target_disease_association → disease):
-links each TARGET_DISEASE_ASSOCIATION node (evidence id) to the DISEASE it
-references, binding the disease endpoint of the association in the KG."""
+"""Summary: TARGET_DISEASE_ASSOCIATION -> DISEASE object edges.
+
+Definition for HAS_OBJECT edges (target_disease_association -> disease): links
+each TARGET_DISEASE_ASSOCIATION node (evidence id) to the DISEASE it references,
+binding the disease endpoint of the association in the KG."""
 
 from typing import Final
 

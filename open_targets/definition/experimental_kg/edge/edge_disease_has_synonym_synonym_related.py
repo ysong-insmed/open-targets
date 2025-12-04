@@ -1,6 +1,8 @@
-"""Definition for HAS_SYNONYM edges (related): explodes related synonyms from
-the diseases parquet to link each DISEASE node to its DISEASE_SYNONYM (related)
-node, capturing synonym relationships in the KG."""
+"""Summary: DISEASE -> related synonym edges.
+
+Definition for HAS_SYNONYM edges (related): explodes related synonyms from the
+diseases parquet to link each DISEASE node to its DISEASE_SYNONYM (related) node,
+capturing synonym relationships in the KG."""
 
 from typing import Final
 

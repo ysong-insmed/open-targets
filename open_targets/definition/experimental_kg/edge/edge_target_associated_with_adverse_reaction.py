@@ -1,7 +1,9 @@
-"""Definition for ASSOCIATED_WITH edges (target ↔ adverse reaction): scans
-adverse target reaction parquet to link TARGET nodes to ADVERSE_REACTION nodes,
-carrying FAERS disproportionality statistics (LLR, A/B/C/D) and report counts to
-represent target-level safety signals in the KG."""
+"""Summary: TARGET -> ADVERSE_REACTION safety edges (FAERS disproportionality).
+
+Definition for ASSOCIATED_WITH edges (target - adverse reaction): scans adverse
+target reaction parquet to link TARGET nodes to ADVERSE_REACTION nodes, carrying
+FAERS disproportionality statistics (LLR, A/B/C/D) and report counts to represent
+target-level safety signals in the KG."""
 
 from typing import Final
 

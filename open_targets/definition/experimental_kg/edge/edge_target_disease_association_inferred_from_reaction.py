@@ -1,4 +1,6 @@
-"""Definition for INFERRED_FROM edges (association → reaction): filters Reactome
+"""Summary: TARGET_DISEASE_ASSOCIATION -> REACTION inference (Reactome).
+
+Definition for INFERRED_FROM edges (association -> reaction): filters Reactome
 evidence to link each TARGET_DISEASE_ASSOCIATION node (evidence id) to the
 REACTION it was inferred from, capturing reaction-level inference in the KG."""
 
