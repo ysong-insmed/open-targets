@@ -6,7 +6,8 @@ studies and runs driver-calling methods to identify genes under positive selecti
 in specific cancers. Records retain cohort IDs/descriptions, significant driver
 methods, direction on trait, variant effect, resource/score, and target/disease
 IDs. Inference: aggregate somatic mutations → apply driver detection → call gene
-as driver in a cancer → record as driver-based association in the KG."""
+as driver in a cancer → record as driver-based association in the KG.
+"""
 
 from typing import Final
 

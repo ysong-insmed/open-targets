@@ -5,7 +5,8 @@ Evidence parquet to uniprot_variants curated variant assertions. UniProt curator
 review literature and databases for protein variants linked to disease, capturing
 variant IDs (RS/id), functional consequence, target modulation, confidence, and
 scores. Inference: manual variant curation → variant tied to protein and disease
-→ stored as curated variant evidence in the KG."""
+→ stored as curated variant evidence in the KG.
+"""
 
 from typing import Final
 

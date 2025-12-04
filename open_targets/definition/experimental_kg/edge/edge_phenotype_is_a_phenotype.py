@@ -1,7 +1,8 @@
 """Summary: PHENOTYPE hierarchy IS_A edges (child -> parent).
 
 Definition for IS_A edges (phenotype hierarchy): explodes HPO parents to link
-each PHENOTYPE node to its parent PHENOTYPE, forming the HPO ontology in the KG."""
+each PHENOTYPE node to its parent PHENOTYPE, forming the HPO ontology in the KG.
+"""
 
 from typing import Final
 

@@ -2,7 +2,8 @@
 
 Definition for MOUSE_PHENOTYPE_CLASS nodes: explodes phenotype class entries from
 the Mouse Phenotypes parquet to emit MP class terms (id/label) used to classify
-mouse phenotypes in the KG."""
+mouse phenotypes in the KG.
+"""
 
 from typing import Final
 

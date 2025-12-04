@@ -3,7 +3,8 @@
 Definition for DISEASE nodes: scans the diseases parquet (EFO/MONDO-derived) to
 yield clinical/phenotype concepts with names, codes, descriptions, and
 therapeutic-area flags that anchor associations, indications, and ontology
-hierarchies in the KG."""
+hierarchies in the KG.
+"""
 
 from typing import Final
 

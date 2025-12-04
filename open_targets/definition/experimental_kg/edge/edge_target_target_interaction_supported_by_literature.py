@@ -3,7 +3,8 @@
 Definition for SUPPORTED_BY edges (interaction -> literature): links each
 TARGET_TARGET_INTERACTION node to its supporting LITERATURE_ENTRY (hashed id)
 when a PubMed ID is present, capturing provenance for protein–protein interactions
-in the KG."""
+in the KG.
+"""
 
 from typing import Final
 

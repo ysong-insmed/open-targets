@@ -3,7 +3,8 @@
 Definition for INFERRED_FROM edges (association -> mouse model): filters IMPC
 evidence to link each TARGET_DISEASE_ASSOCIATION node (evidence id) to the
 MOUSE_MODEL it was inferred from, capturing the in vivo inference source in the
-KG."""
+KG.
+"""
 
 from typing import Final
 

@@ -3,7 +3,8 @@
 Definition for MOUSE_MODEL nodes: explodes biologicalModels from the Mouse
 Phenotypes parquet to emit individual mouse models with allelic composition and
 genetic background, providing in vivo model entities for phenotype and inference
-edges in the KG."""
+edges in the KG.
+"""
 
 from typing import Final
 

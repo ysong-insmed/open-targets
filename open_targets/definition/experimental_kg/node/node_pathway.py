@@ -2,7 +2,8 @@
 
 Definition for PATHWAY nodes: scans the Reactome parquet to emit pathway terms
 with IDs and labels, forming the pathway hierarchy and annotation targets for
-proteins/associations in the KG."""
+proteins/associations in the KG.
+"""
 
 from typing import Final
 

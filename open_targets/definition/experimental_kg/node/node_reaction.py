@@ -2,7 +2,8 @@
 
 Definition for REACTION nodes: filters Evidence parquet to reactome source to emit
 reaction entries (id/name) used in pathway hierarchies and inference edges in the
-KG."""
+KG.
+"""
 
 from typing import Final
 

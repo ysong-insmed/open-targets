@@ -1,7 +1,8 @@
 """Summary: namespaced species identifier for homology nodes.
 
 Primary ID expression for SPECIES nodes: namespaces the species identifier
-from homology data to create a stable SPECIES node ID."""
+from homology data to create a stable SPECIES node ID.
+"""
 
 from typing import Final
 

@@ -7,7 +7,8 @@ significant differential expression in disease-relevant tissues links the gene t
 the disease. Records store biosamples, contrasts, log2FC/percentile, literature,
 study overview/ID, confidence/resource scores, and disease/target IDs. Inference:
 measure expression in disease vs baseline → observe differential expression →
-link gene to disease in the KG (note: expression evidence is not ontology-propagated)."""
+link gene to disease in the KG (note: expression evidence is not ontology-propagated).
+"""
 
 from typing import Final
 

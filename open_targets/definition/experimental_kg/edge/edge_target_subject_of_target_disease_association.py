@@ -2,7 +2,8 @@
 
 Definition for SUBJECT_OF edges (target -> target_disease_association): links
 each TARGET to its reified TARGET_DISEASE_ASSOCIATION node (evidence id) from
-the Evidence parquet, binding the target endpoint of the association in the KG."""
+the Evidence parquet, binding the target endpoint of the association in the KG.
+"""
 
 from typing import Final
 

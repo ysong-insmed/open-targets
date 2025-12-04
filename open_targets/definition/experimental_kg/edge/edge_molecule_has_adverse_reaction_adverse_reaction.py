@@ -3,7 +3,8 @@
 Definition for HAS_ADVERSE_REACTION edges: scans adverse drug reaction parquet
 (FAERS-derived) to link MOLECULE nodes to ADVERSE_REACTION nodes, carrying
 disproportionality statistics (LLR, A/B/C/D) and unique report counts to model
-pharmacovigilance signals in the KG."""
+pharmacovigilance signals in the KG.
+"""
 
 from typing import Final
 

@@ -2,7 +2,8 @@
 
 Primary ID expression for target DATABASE_CROSS_REFERENCE nodes: hashes the
 normalized target xref value (`source:id`) under the `database_cross_reference`
-namespace to create a stable identifier (raw value retained separately)."""
+namespace to create a stable identifier (raw value retained separately).
+"""
 
 from typing import Final
 

@@ -2,7 +2,8 @@
 
 Definition for HAS_MOLECULE edges (cancer_biomarkers): links each
 TARGET_DISEASE_ASSOCIATION_CANCER_BIOMARKERS node (evidence id) to its drug
-Molecule when present, capturing the biomarker-associated molecule in the KG."""
+Molecule when present, capturing the biomarker-associated molecule in the KG.
+"""
 
 from typing import Final
 

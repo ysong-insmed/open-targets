@@ -4,7 +4,8 @@ Definition for TARGET_DISEASE_ASSOCIATION_EUROPEPMC nodes: filters Evidence
 parquet to europepmc text-mined literature evidence. Co-mentions of targets and
 diseases in publications are scored (resource score/overall score) and mapped to
 target/disease IDs. Inference: mine papers → detect target–disease co-mention →
-assign relevance score → represent as literature-derived association in the KG."""
+assign relevance score → represent as literature-derived association in the KG.
+"""
 
 from typing import Final
 

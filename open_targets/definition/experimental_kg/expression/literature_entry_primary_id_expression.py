@@ -1,7 +1,8 @@
 """Summary: namespaced PMID for LITERATURE_ENTRY nodes.
 
 Primary ID expression for LITERATURE_ENTRY nodes: namespaces the PMID to
-produce a stable identifier for literature records."""
+produce a stable identifier for literature records.
+"""
 
 from typing import Final
 

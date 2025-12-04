@@ -2,7 +2,8 @@
 
 Definition for TESTED_IN edges (crispr): explodes cell line entries in CRISPR
 evidence to link each TARGET_DISEASE_ASSOCIATION_CRISPR node (evidence id) to the
-CELL_LINE it was tested in, capturing experimental context in the KG."""
+CELL_LINE it was tested in, capturing experimental context in the KG.
+"""
 
 from typing import Final
 

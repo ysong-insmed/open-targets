@@ -7,7 +7,8 @@ estimate the causal gene (L2G > 0.05). Records keep p-values, beta/OR and CIs,
 variant/consequence IDs (RS/id/QTL), direction on trait, project/publication
 info, disease/target IDs, and resource/score. Inference: GWAS locus → fine-mapping
 → L2G causal gene probability → gene–disease link recorded as genetics-based
-causal inference in the KG."""
+causal inference in the KG.
+"""
 
 from typing import Final
 

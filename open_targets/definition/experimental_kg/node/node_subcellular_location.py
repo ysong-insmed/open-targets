@@ -2,7 +2,8 @@
 
 Definition for SUBCELLULAR_LOCATION nodes: scans UniProt subcellular location
 parquet to emit localization terms (labelSL/location/termSL) that targets can
-link to for cellular compartment context in the KG."""
+link to for cellular compartment context in the KG.
+"""
 
 from typing import Final
 

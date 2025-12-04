@@ -8,7 +8,8 @@ variants -> collapse into burden score -> regress burden against phenotype ->
 significant beta/OR/p-value -> link gene to disease. Records store regression
 effects, p-values, ancestry/cohort info, allelic requirements, and study metadata.
 The KG captures these gene-wide rare-variant signals rather than single-variant
-hits."""
+hits.
+"""
 
 from typing import Final
 

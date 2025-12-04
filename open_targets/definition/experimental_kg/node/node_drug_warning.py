@@ -2,7 +2,8 @@
 
 Definition for DRUG_WARNING nodes: scans ChEMBL drug warning records to emit
 warning entities (toxicity class, country, description, warning type, year),
-serving as safety annotations attached to molecules in the KG."""
+serving as safety annotations attached to molecules in the KG.
+"""
 
 from typing import Final
 

@@ -7,7 +7,8 @@ IDs (HGVS/RS), functional consequence, allele origin, allelic requirements,
 direction on trait, clinical significance, cohort phenotypes, and confidence/
 score with disease/target IDs. Inference: clinical genetics lab submission →
 asserted variant pathogenicity → map to gene and disease → represent curated
-germline evidence in the KG."""
+germline evidence in the KG.
+"""
 
 from typing import Final
 

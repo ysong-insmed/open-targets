@@ -3,7 +3,8 @@
 Definition for DATABASE_CROSS_REFERENCE nodes (disease xrefs): explodes the scalar
 `dbXRefs` array from the diseases parquet, hashes each string under the
 `database_cross_reference` namespace for the primary ID, and stores the string as
-property `value` so DISEASE nodes can point to external ontology/DB IDs."""
+property `value` so DISEASE nodes can point to external ontology/DB IDs.
+"""
 
 from typing import Final
 

@@ -6,7 +6,8 @@ Screens perturb genes across cell types/libraries; significant contrasts (log2FC
 link a gene to a disease model. Records keep cell type, library, contrast,
 genetic background, log2FC, project/study metadata, and scores. Inference: perturb
 gene in disease-model cells → observe strong viability/phenotype shift → link
-gene to disease in the KG."""
+gene to disease in the KG.
+"""
 
 from typing import Final
 

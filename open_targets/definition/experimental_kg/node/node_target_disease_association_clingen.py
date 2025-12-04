@@ -5,7 +5,8 @@ parquet to clingen curated clinical genetics. ClinGen experts review human
 genetic evidence and assign gene-disease validity with allelic requirements and
 confidence. Records retain disease IDs (source/mapped), study ID, score, target
 IDs, and allelic requirements. The logic is human variant observations →
-expert validity assessment → gene-disease assertion captured in the KG."""
+expert validity assessment → gene-disease assertion captured in the KG.
+"""
 
 from typing import Final
 

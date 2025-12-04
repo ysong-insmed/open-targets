@@ -3,7 +3,8 @@
 Definition for DATABASE_CROSS_REFERENCE nodes (target xrefs): explodes `dbXrefs`
 from the Targets parquet, hashes each string under the `database_cross_reference`
 namespace for the primary ID, and writes the raw string to property `value` so
-TARGET nodes surface external gene identifiers."""
+TARGET nodes surface external gene identifiers.
+"""
 
 from typing import Final
 

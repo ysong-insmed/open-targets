@@ -2,7 +2,8 @@
 
 Primary ID expression for HPO DATABASE_CROSS_REFERENCE nodes: hashes each
 `dbXRefs` string under the `database_cross_reference` namespace to create a stable
-identifier (raw xref is stored on the node as value)."""
+identifier (raw xref is stored on the node as value).
+"""
 
 from typing import Final
 

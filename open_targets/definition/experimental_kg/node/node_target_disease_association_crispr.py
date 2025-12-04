@@ -5,7 +5,8 @@ parquet to crispr source to emit CRISPR functional screen associations. CRISPR
 perturbs genes in disease-relevant cell lines; if knocking out a gene changes a
 phenotype linked to the disease, the gene is implicated. Records keep disease
 IDs, target IDs/symbols, and resource/overall scores. The inference is perturb
-gene → observe phenotype change → link gene to disease in the KG."""
+gene → observe phenotype change → link gene to disease in the KG.
+"""
 
 from typing import Final
 

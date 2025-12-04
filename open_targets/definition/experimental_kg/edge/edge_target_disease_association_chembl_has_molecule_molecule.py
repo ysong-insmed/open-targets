@@ -3,7 +3,8 @@
 Definition for HAS_MOLECULE edges (chembl): links each
 TARGET_DISEASE_ASSOCIATION_CHEMBL node (evidence id) to its drug Molecule,
 capturing the therapeutic agent in the clinical evidence for the association in
-the KG."""
+the KG.
+"""
 
 from typing import Final
 

@@ -1,7 +1,8 @@
 """Summary: hashed ID for exact disease synonym string.
 
 Primary ID expression for exact DISEASE_SYNONYM nodes: hashes each synonym
-string under the `disease_synonym` namespace to create a stable identifier."""
+string under the `disease_synonym` namespace to create a stable identifier.
+"""
 
 from typing import Final
 

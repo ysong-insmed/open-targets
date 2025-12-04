@@ -5,7 +5,8 @@ Evidence parquet to uniprot_literature curated assertions. UniProt curators read
 the literature and annotate when a protein is implicated in a disease, noting
 target modulation and confidence. Records keep disease/target IDs and scores.
 Inference: manual literature curation → curator asserts protein–disease link →
-captured as curated literature evidence in the KG."""
+captured as curated literature evidence in the KG.
+"""
 
 from typing import Final
 

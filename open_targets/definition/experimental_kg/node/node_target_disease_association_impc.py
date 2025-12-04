@@ -6,7 +6,8 @@ phenotypes, maps those phenotypes to human diseases, and then maps the mouse
 gene to the human ortholog. Records keep model IDs (Ensembl/MGI), variant effect,
 direction on trait, disease IDs, and scores. Inference: mouse knockout → observed
 mouse phenotype → mapped to human disease → mapped to human ortholog gene → stored
-as in vivo evidence in the KG."""
+as in vivo evidence in the KG.
+"""
 
 from typing import Final
 

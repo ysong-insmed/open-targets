@@ -2,7 +2,8 @@
 
 Definition for HAS_DATABASE_CROSS_REFERENCE edges (target): explodes target
 `dbXrefs` to link each TARGET node to its DATABASE_CROSS_REFERENCE node (hashed
-ID, raw value on target node), exposing external gene IDs for mapping in the KG."""
+ID, raw value on target node), exposing external gene IDs for mapping in the KG.
+"""
 
 from typing import Final
 

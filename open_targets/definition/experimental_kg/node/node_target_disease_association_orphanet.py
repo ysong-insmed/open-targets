@@ -6,7 +6,8 @@ genetics for rare diseases and assert gene-disease links, noting allele origins,
 allelic requirements, direction on trait, and functional consequence. Records
 keep disease/target IDs, confidence, and scores. Inference: rare disease cases
 -> expert curation of causal gene -> recorded as curated rare-disease evidence in
-the KG."""
+the KG.
+"""
 
 from typing import Final
 

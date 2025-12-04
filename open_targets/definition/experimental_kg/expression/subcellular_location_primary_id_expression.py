@@ -1,7 +1,8 @@
 """Summary: namespaced UniProt subcellular location term ID.
 
 Primary ID expression for SUBCELLULAR_LOCATION nodes: namespaces the UniProt
-subcellular location term ID to create a stable identifier."""
+subcellular location term ID to create a stable identifier.
+"""
 
 from typing import Final
 

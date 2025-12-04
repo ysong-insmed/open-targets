@@ -2,7 +2,8 @@
 
 Definition for ANNOTATED_WITH edges (pathway -> disease): explodes Reactome
 pathway annotations in Evidence (sourceId==reactome) to link PATHWAY nodes to
-DISEASE nodes, indicating disease-relevant pathways in the KG."""
+DISEASE nodes, indicating disease-relevant pathways in the KG.
+"""
 
 from typing import Final
 

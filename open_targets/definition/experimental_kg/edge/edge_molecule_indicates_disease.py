@@ -3,7 +3,8 @@
 Definition for INDICATES edges: explodes drug indication records in the Indication
 parquet to link each MOLECULE (ChEMBL drug) to an EFO/MONDO DISEASE, carrying
 `maxPhaseForIndication` to reflect development stage of the therapeutic indication
-in the KG."""
+in the KG.
+"""
 
 from typing import Final
 

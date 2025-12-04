@@ -7,7 +7,8 @@ IDs (HGVS/RS), functional consequence, allele origins, allelic requirements,
 direction on trait, clinical significance, cohort phenotypes, and disease/target
 IDs with confidence/score. Inference: tumor sequencing → clinical interpretation
 of variant relevance → map to gene and cancer → represent curated somatic evidence
-in the KG."""
+in the KG.
+"""
 
 from typing import Final
 

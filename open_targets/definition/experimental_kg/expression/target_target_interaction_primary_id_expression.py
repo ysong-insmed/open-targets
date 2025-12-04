@@ -2,7 +2,8 @@
 
 Primary ID expression for TARGET_TARGET_INTERACTION nodes: hashes the pair
 of interacting targets (A,B) to create a stable identifier for the interaction
-record."""
+record.
+"""
 
 from typing import Final
 

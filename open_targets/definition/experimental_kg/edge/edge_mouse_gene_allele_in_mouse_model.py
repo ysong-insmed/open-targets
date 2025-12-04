@@ -2,7 +2,8 @@
 
 Definition for ALLELE_IN edges: explodes biologicalModels in Mouse Phenotypes
 parquet to link each MOUSE_GENE (Ensembl mouse gene) to the MOUSE_MODEL it
-appears in, capturing allele/model relationships in the KG."""
+appears in, capturing allele/model relationships in the KG.
+"""
 
 from typing import Final
 

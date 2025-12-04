@@ -3,7 +3,8 @@
 Definition for MECHANISM_OF_ACTION nodes: explodes Mechanism of Action records
 by chemblId to emit reified pharmacology entries (action type, mechanism text,
 target type/name) that link molecules to their biological targets and provenance
-in the KG."""
+in the KG.
+"""
 
 from typing import Final
 

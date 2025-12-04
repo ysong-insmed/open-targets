@@ -3,7 +3,8 @@
 Definition for RELATED_TO edges (target -> GO): explodes GO annotations in the
 Targets parquet to link each TARGET (Ensembl gene) to GO_TERM nodes, mapping
 evidence codes and aspects into readable labels and carrying ECO/evidence/source
-fields so functional annotations and their provenance are explicit in the KG."""
+fields so functional annotations and their provenance are explicit in the KG.
+"""
 
 from typing import Final
 

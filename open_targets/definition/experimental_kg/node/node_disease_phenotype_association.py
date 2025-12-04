@@ -3,7 +3,8 @@
 Definition for DISEASE_PHENOTYPE_ASSOCIATION nodes: explodes disease->HPO
 evidence from the DiseaseToPhenotype parquet to reify each association with
 mapped aspect, evidence type, frequency, sex, and curation metadata, providing
-traceable disease–phenotype links in the KG."""
+traceable disease–phenotype links in the KG.
+"""
 
 from typing import Final
 

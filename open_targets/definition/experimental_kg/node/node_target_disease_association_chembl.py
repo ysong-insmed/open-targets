@@ -5,7 +5,8 @@ to chembl known-drug clinical evidence. Each record is a clinical study/trial wh
 a drug modulating this target was tested in a disease. It carries trial phase/status,
 cohort phenotypes, variant effect and direction on trait, disease IDs, study IDs/dates,
 and scores. Inference: drug hits target → trial in patients with the disease → observe
-outcome/phase and direction → encode as interventional evidence in the KG."""
+outcome/phase and direction → encode as interventional evidence in the KG.
+"""
 
 from typing import Final
 

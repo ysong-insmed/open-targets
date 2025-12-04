@@ -2,7 +2,8 @@
 
 Definition for HAS_PHENOTYPE edges (mouse model -> human phenotype): explodes
 IMPC evidence human phenotype annotations to link each MOUSE_MODEL to HPO
-PHENOTYPE terms, capturing cross-species phenotype observations in the KG."""
+PHENOTYPE terms, capturing cross-species phenotype observations in the KG.
+"""
 
 from typing import Final
 

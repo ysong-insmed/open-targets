@@ -1,7 +1,8 @@
 """Summary: TARGET -> TARGET_CLASSIFICATION grouping edges.
 
 Definition for BELONGS_TO edges: explodes target_class entries to link each
-TARGET to its TARGET_CLASSIFICATION node, capturing target grouping in the KG."""
+TARGET to its TARGET_CLASSIFICATION node, capturing target grouping in the KG.
+"""
 
 from typing import Final
 
