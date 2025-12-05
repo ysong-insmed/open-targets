@@ -3,6 +3,7 @@ from typing import Any
 from unittest.mock import MagicMock
 
 import pytest
+import xxhash
 
 from open_targets.adapter.acquisition_definition import (
     ExpressionEdgeAcquisitionDefinition,
@@ -17,8 +18,10 @@ from open_targets.adapter.expression import (
     ExtractSubstringExpression,
     FieldExpression,
     LiteralExpression,
+    NewUuidExpression,
     NormaliseCurieExpression,
     StringConcatenationExpression,
+    StringHashExpression,
     StringLowerExpression,
     ToStringExpression,
     TransformExpression,
@@ -103,6 +106,18 @@ class TestExpressionAcquisitionDefinition:
 
     def test_to_string_expression(self) -> None:
         self.perform_test({MockField: 1}, ToStringExpression(FieldExpression(MockField)), "1")
+
+    def test_new_uuid_expression(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        fixed_uuid = uuid.UUID("00000000-0000-0000-0000-000000000000")
+        monkeypatch.setattr(uuid, "uuid4", lambda: fixed_uuid)
+        self.perform_test({}, NewUuidExpression(), str(fixed_uuid))
+
+    def test_string_hash_expression(self) -> None:
+        self.perform_test(
+            {MockField: "test"},
+            StringHashExpression(ToStringExpression(FieldExpression(MockField))),
+            xxhash.xxh3_64_hexdigest(b"test"),
+        )
 
     def test_string_concatenation_expression(self) -> None:
         self.perform_test(
