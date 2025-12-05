@@ -65,7 +65,7 @@ laptop, building the full graph typically takes 1-2 hours.
 
 ## Prerequisites
 
-- [Poetry](https://python-poetry.org) for dependency management
+- [uv](https://github.com/astral-sh/uv) for dependency management
 
 ## Installation
 
@@ -75,14 +75,21 @@ laptop, building the full graph typically takes 1-2 hours.
    cd open-targets
    ```
 
-2. Install dependencies using Poetry:
+2. Install dependencies using uv:
    ```bash
-   poetry install
+   uv sync
    ```
 
 3. Activate the virtual environment:
    ```bash
-   poetry shell
+   source .venv/bin/activate  # On Unix/macOS
+   # or
+   .venv\Scripts\activate  # On Windows
+   ```
+
+   Alternatively, you can run commands directly with uv:
+   ```bash
+   uv run python <script>
    ```
 
 4. The adapter can now be imported:
