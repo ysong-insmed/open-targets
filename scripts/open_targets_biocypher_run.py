@@ -2,22 +2,12 @@
 
 """A pipeline to build Open Targets platform data as a BioCypher KG."""
 
+import logging
+
 from biocypher import BioCypher
 
 from open_targets.adapter.context import AcquisitionContext
-from open_targets.definition import (
-    edge_molecule_disease,
-    edge_molecule_target,
-    edge_target_disease,
-    edge_target_go,
-    edge_target_target,
-    node_diseases,
-    node_gene_ontology,
-    node_molecule,
-    node_mouse_phenotype,
-    node_mouse_target,
-    node_targets,
-)
+from open_targets.definition.experimental_kg.kg import experimental_kg_definition
 
 
 def main():
@@ -26,36 +16,28 @@ def main():
     bc = BioCypher(
         biocypher_config_path="config/biocypher_config.yaml",
     )
+    # Set logging level to ERROR only
+    logging.getLogger("biocypher").setLevel(logging.ERROR)
 
     # Check the schema
     bc.show_ontology_structure()
 
-    node_definitions = [
-        node_targets,
-        node_diseases,
-        node_molecule,
-        node_gene_ontology,
-        node_mouse_phenotype,
-        node_mouse_target,
-    ]
-    edge_definitions = [
-        edge_target_disease,
-        edge_target_go,
-        edge_target_target,
-        edge_molecule_target,
-        edge_molecule_disease,
-    ]
-
     # Open Targets
     context = AcquisitionContext(
-        node_definitions=node_definitions,
-        edge_definitions=edge_definitions,
+        node_definitions=experimental_kg_definition.node_definitions,
+        edge_definitions=experimental_kg_definition.edge_definitions,
         datasets_location="data/ot_files",
+        # limit=1000,
     )
 
-    for node_definition in node_definitions:
+    count = 1
+    for node_definition in experimental_kg_definition.node_definitions:
+        print(f"{count}: {node_definition.label}")
+        count += 1
         bc.write_nodes(context.get_acquisition_generator(node_definition))
-    for edge_definition in edge_definitions:
+    for edge_definition in experimental_kg_definition.edge_definitions:
+        print(f"{count}: {edge_definition.label}")
+        count += 1
         bc.write_edges(context.get_acquisition_generator(edge_definition))
 
     # Post import functions
