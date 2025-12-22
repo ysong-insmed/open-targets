@@ -1,0 +1,55 @@
+"""Summary: PanelApp expert-reviewed gene-disease associations.
+
+Definition for TARGET_DISEASE_ASSOCIATION_GENOMICS_ENGLAND nodes: filters
+Evidence parquet to genomics_england PanelApp associations. PanelApp curators
+review clinical sequencing cases and decide whether a gene is implicated in a
+disease, noting allelic requirements, confidence level, and supporting phenotypes.
+Each record carries those curations, plus disease IDs, study overview/ID, score,
+and target IDs. Inference: clinical cases -> expert panel evaluation -> gene-disease
+assertion captured for use in the KG.
+"""
+
+from typing import Final
+
+from open_targets.adapter.acquisition_definition import AcquisitionDefinition, ExpressionNodeAcquisitionDefinition
+from open_targets.adapter.output import NodeInfo
+from open_targets.adapter.scan_operation import RowScanOperation
+from open_targets.adapter.scan_operation_predicate import EqualityExpression
+from open_targets.data.schema import (
+    DatasetEvidence,
+    FieldEvidenceAllelicRequirements,
+    FieldEvidenceCohortPhenotypes,
+    FieldEvidenceConfidence,
+    FieldEvidenceDiseaseFromSource,
+    FieldEvidenceDiseaseFromSourceId,
+    FieldEvidenceDiseaseFromSourceMappedId,
+    FieldEvidenceId,
+    FieldEvidenceScore,
+    FieldEvidenceSourceId,
+    FieldEvidenceStudyId,
+    FieldEvidenceStudyOverview,
+    FieldEvidenceTargetFromSourceId,
+)
+
+node_target_disease_association_genomics_england: Final[AcquisitionDefinition[NodeInfo]] = (
+    ExpressionNodeAcquisitionDefinition(
+        scan_operation=RowScanOperation(
+            dataset=DatasetEvidence,
+            predicate=EqualityExpression(FieldEvidenceSourceId, "genomics_england"),
+        ),
+        primary_id=FieldEvidenceId,
+        label="TARGET_DISEASE_ASSOCIATION_GENOMICS_ENGLAND",
+        properties=[
+            FieldEvidenceAllelicRequirements,
+            FieldEvidenceCohortPhenotypes,
+            FieldEvidenceConfidence,
+            FieldEvidenceDiseaseFromSource,
+            FieldEvidenceDiseaseFromSourceId,
+            FieldEvidenceDiseaseFromSourceMappedId,
+            FieldEvidenceScore,
+            FieldEvidenceStudyId,
+            FieldEvidenceStudyOverview,
+            FieldEvidenceTargetFromSourceId,
+        ],
+    )
+)

@@ -6,7 +6,7 @@ import pytest
 from open_targets.adapter.context import AcquisitionContext
 from open_targets.adapter.data_view import ArrayDataView, MappingBackedDataView, SequenceBackedDataView
 from open_targets.adapter.scan_operation import ExplodingScanOperation, RowScanOperation
-from open_targets.adapter.scan_operation_predicate import ScanOperationPredicate
+from open_targets.adapter.scan_operation_predicate import ScanOperationPredicateExpression
 from open_targets.data.schema_base import Dataset, Field
 from test.fixture.fake.schema import (
     DatasetFake,
@@ -31,7 +31,7 @@ def mock_get_query_result_field_value(field: type[Field]) -> Any:
 
 def mock_get_query_result(
     dataset: type[Dataset],
-    predicate: ScanOperationPredicate | None,
+    predicate: ScanOperationPredicateExpression | None,
     fields: Iterable[type[Field]],
 ) -> Iterable[tuple[Any]]:
     return [tuple(mock_get_query_result_field_value(field) for field in fields)]

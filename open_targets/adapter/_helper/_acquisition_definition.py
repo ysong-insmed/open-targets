@@ -1,6 +1,8 @@
+import uuid
 from collections.abc import Callable
 from typing import Any
 
+import xxhash  # type: ignore[reportPrivateUsage]
 from bioregistry.constants import BIOREGISTRY_PATH
 from bioregistry.resource_manager import Manager
 from bioregistry.schema import Resource
@@ -14,9 +16,12 @@ from open_targets.adapter.expression import (
     ExtractCuriePrefixExpression,
     ExtractSubstringExpression,
     FieldExpression,
+    HashAlgorithm,
     LiteralExpression,
+    NewUuidExpression,
     NormaliseCurieExpression,
     StringConcatenationExpression,
+    StringHashExpression,
     StringLowerExpression,
     ToStringExpression,
     TransformExpression,
@@ -50,6 +55,14 @@ def recursive_build_expression_function(
                 return lambda _: expression.function(None)
             func = recursive_build_expression_function(expression.expression)
             return lambda data: expression.function(func(data))
+        case NewUuidExpression():
+            return lambda _: str(uuid.uuid4())
+        case StringHashExpression():
+            func = recursive_build_expression_function(expression.expression)
+            if expression.algorithm == HashAlgorithm.xxh3:
+                return lambda data: xxhash.xxh3_64_hexdigest(func(data).encode("utf-8"))
+            msg = f"Unsupported hash algorithm: {expression.algorithm}"
+            raise ValueError(msg)
         case ToStringExpression():
             func = recursive_build_expression_function(expression.expression)
             return lambda data: str(func(data))

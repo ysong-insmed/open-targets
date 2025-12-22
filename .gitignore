@@ -3,7 +3,6 @@
 biocypher-*
 .vscode
 *.prof
-data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -135,3 +134,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .idea
+
+# Open Targets Platform data
+data
+
+# Agent space
+.agent

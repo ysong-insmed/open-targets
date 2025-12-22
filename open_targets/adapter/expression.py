@@ -3,6 +3,7 @@
 from abc import abstractmethod
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
+from enum import Enum
 from typing import Any, Final, Generic, TypeVar
 
 from open_targets.adapter.data_view import DataViewValue
@@ -61,6 +62,30 @@ class TransformExpression(HasDependentExpressionMixin, Expression[TValue]):
     def dependents(self) -> Sequence[Expression[Any]]:
         """The dependent expressions."""
         return [self.expression] if self.expression else []
+
+
+@dataclass(frozen=True)
+class NewUuidExpression(Expression[str]):
+    """Expression that generates a new UUID."""
+
+
+class HashAlgorithm(str, Enum):
+    """The algorithm to use for hashing."""
+
+    xxh3 = "xxh3"
+
+
+@dataclass(frozen=True)
+class StringHashExpression(HasDependentExpressionMixin, Expression[str]):
+    """Expression that hashes a string."""
+
+    expression: Expression[str]
+    algorithm: HashAlgorithm = HashAlgorithm.xxh3
+
+    @property
+    def dependents(self) -> Sequence[Expression[Any]]:
+        """The dependent expressions."""
+        return [self.expression]
 
 
 @dataclass(frozen=True)

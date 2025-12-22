@@ -7,7 +7,7 @@ returned items of the data stream.
 from abc import ABC
 from dataclasses import dataclass
 
-from open_targets.adapter.scan_operation_predicate import ScanOperationPredicate
+from open_targets.adapter.scan_operation_predicate import ScanOperationPredicateExpression
 from open_targets.data.schema_base import Dataset, SequenceField
 
 
@@ -19,7 +19,7 @@ class ScanOperation(ABC):
     """
 
     dataset: type[Dataset]
-    predicate: ScanOperationPredicate | None = None
+    predicate: ScanOperationPredicateExpression | None = None
 
 
 @dataclass(frozen=True)

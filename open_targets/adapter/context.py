@@ -3,17 +3,24 @@
 """Implementation of the acquisition context protocol."""
 
 from collections.abc import Iterable, Sequence
+from functools import reduce
 from os import PathLike
 from pathlib import Path
 from typing import Any, Final, cast, overload
 
-from duckdb import ColumnExpression, ConstantExpression, DuckDBPyRelation, read_parquet
+from duckdb import ColumnExpression, ConstantExpression, DuckDBPyRelation, Expression, read_parquet
 
 from open_targets.adapter.acquisition_definition import AcquisitionDefinition
 from open_targets.adapter.data_view import DataView, DataViewProtocol, SequenceBackedDataView
 from open_targets.adapter.output import EdgeInfo, NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation, RowScanOperation, ScanOperation
-from open_targets.adapter.scan_operation_predicate import PushdownEqualityPredicate, ScanOperationPredicate
+from open_targets.adapter.scan_operation_predicate import (
+    AndExpression,
+    EqualityExpression,
+    NotExpression,
+    OrExpression,
+    ScanOperationPredicateExpression,
+)
 from open_targets.data.metadata.model import OpenTargetsDatasetFieldType
 from open_targets.data.schema_base import Dataset, Field
 
@@ -189,24 +196,19 @@ class AcquisitionContext:
     def _get_query_result(
         self,
         dataset: type[Dataset],
-        predicate: ScanOperationPredicate | None,
+        predicate: ScanOperationPredicateExpression | None,
         fields: Iterable[type[Field]],
     ) -> Iterable[tuple[Any]]:
-        query = read_parquet(str(self.get_dataset_path(dataset)))
-        match predicate:
-            case PushdownEqualityPredicate():
-                query = query.filter(
-                    ColumnExpression(predicate.field.name) == ConstantExpression(predicate.value),
-                )
-            case None:
-                pass
-            case _:
-                msg = f"Unsupported predicate: {predicate}"
-                raise ValueError(msg)
+        query = read_parquet(str(self.get_dataset_path(dataset)), hive_partitioning=True)
+
+        if predicate is not None:
+            query = query.filter(self._build_duckdb_filter_expression(None, predicate))
 
         query = query.select(*[field.name for field in fields])
+
         if self.limit is not None:
             query = query.limit(self.limit)
+
         return self._get_query_result_stream(query)
 
     def _get_query_result_stream(self, query: DuckDBPyRelation) -> Iterable[tuple[Any]]:
@@ -215,3 +217,29 @@ class AcquisitionContext:
             if item is None:
                 break
             yield item
+
+    def _build_duckdb_filter_expression(
+        self,
+        duckdb_expression: Expression | None,
+        expression: ScanOperationPredicateExpression,
+    ) -> Expression:
+        match expression:
+            case EqualityExpression():
+                if expression.value is None:
+                    return ColumnExpression(expression.field.name).isnull()
+                return ColumnExpression(expression.field.name) == ConstantExpression(expression.value)
+            case NotExpression():
+                return ~self._build_duckdb_filter_expression(duckdb_expression, expression.expression)
+            case AndExpression():
+                return reduce(
+                    lambda a, b: a & b,
+                    [self._build_duckdb_filter_expression(duckdb_expression, e) for e in expression.expressions],
+                )
+            case OrExpression():
+                return reduce(
+                    lambda a, b: a | b,
+                    [self._build_duckdb_filter_expression(duckdb_expression, e) for e in expression.expressions],
+                )
+            case _:
+                msg = f"Unsupported predicate: {expression}"
+                raise ValueError(msg)

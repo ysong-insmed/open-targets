@@ -11,6 +11,7 @@ dependencies = [
     "bioregistry>=0.12.13,<0.13",
     "biocypher>=0.9.4,<0.10",
     "duckdb>=1.2.2,<2",
+    "xxhash>=3.5.0,<3.6",
 ]
 
 [tool.open-targets]
