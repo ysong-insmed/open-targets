@@ -26,8 +26,7 @@ def main():
     context = AcquisitionContext(
         node_definitions=reference_kg_definition.node_definitions,
         edge_definitions=reference_kg_definition.edge_definitions,
-        datasets_location="data/ot_files",
-        # limit=1000,
+        datasets_location="datasets",
     )
 
     count = 1
