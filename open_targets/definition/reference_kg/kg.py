@@ -1,4 +1,4 @@
-"""Experimental knowledge graph definition for Open Targets."""
+"""Reference knowledge graph definition for Open Targets."""
 
 from typing import Final
 
@@ -111,7 +111,7 @@ from open_targets.definition.reference_kg.node import (
     node_tissue,
 )
 
-experimental_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefinition(
+reference_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefinition(
     node_definitions=[
         node_adverse_reaction,
         node_cell_line,

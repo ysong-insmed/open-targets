@@ -18,7 +18,7 @@ This is a **BioCypher adapter** for Open Targets data that converts Open Targets
 
 2. **Definition Layer** (`open_targets/definition/`):
    - Predefined node and edge definitions (presets)
-   - Located in `experimental_kg/` subdirectory
+   - Located in `reference_kg/` subdirectory
    - Each definition specifies how to extract graph entities from Open Targets datasets
 
 3. **Data Schema** (`open_targets/data/`):
@@ -67,9 +67,9 @@ This is equivalent to: `normalise_curie(str(data[FieldEvidenceDiseaseId]))`
 ## File Structure Conventions
 
 - **Schema classes**: `open_targets/data/schema.py` (generated)
-- **Node definitions**: `open_targets/definition/experimental_kg/node/`
-- **Edge definitions**: `open_targets/definition/experimental_kg/edge/`
-- **Custom expressions**: `open_targets/definition/experimental_kg/expression/`
+- **Node definitions**: `open_targets/definition/reference_kg/node/`
+- **Edge definitions**: `open_targets/definition/reference_kg/edge/`
+- **Custom expressions**: `open_targets/definition/reference_kg/expression/`
 - **Configuration**: `config/` directory
 - **Data files**: Data directories containing Open Targets parquet files (not included in repository)
 
@@ -104,19 +104,19 @@ When working with data:
 
 ### Adding a New Node Definition
 
-1. Create a new file in `open_targets/definition/experimental_kg/node/`
+1. Create a new file in `open_targets/definition/reference_kg/node/`
 2. Define using `ExpressionNodeAcquisitionDefinition`
-3. Import and add to `experimental_kg_definition.node_definitions` in `kg.py`
+3. Import and add to `reference_kg_definition.node_definitions` in `kg.py`
 
 ### Adding a New Edge Definition
 
-1. Create a new file in `open_targets/definition/experimental_kg/edge/`
+1. Create a new file in `open_targets/definition/reference_kg/edge/`
 2. Define using `ExpressionEdgeAcquisitionDefinition` with `source` and `target` attributes
-3. Import and add to `experimental_kg_definition.edge_definitions` in `kg.py`
+3. Import and add to `reference_kg_definition.edge_definitions` in `kg.py`
 
 ### Creating Custom Expressions
 
-1. Create a new file in `open_targets/definition/experimental_kg/expression/`
+1. Create a new file in `open_targets/definition/reference_kg/expression/`
 2. Inherit from base expression classes in `open_targets/adapter/expression.py`
 3. Implement the transformation logic
 
@@ -194,7 +194,7 @@ The `datasets_location` parameter in `AcquisitionContext` should point to a dire
 
 1. `open_targets/adapter/context.py` - Main acquisition context
 2. `open_targets/adapter/expression.py` - Expression system
-3. `open_targets/definition/experimental_kg/kg.py` - Main KG definition
+3. `open_targets/definition/reference_kg/kg.py` - Main KG definition
 4. `scripts/open_targets_biocypher_run.py` - Execution script
 5. `code_generation/generate.py` - Code generation logic
 

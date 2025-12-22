@@ -112,8 +112,8 @@ To use a custom subset of definitions:
 ```python
 from biocypher import BioCypher
 from open_targets.adapter.context import AcquisitionContext
-from open_targets.definition.experimental_kg.node import node_target, node_disease
-from open_targets.definition.experimental_kg.edge import edge_target_disease_association_has_object_disease
+from open_targets.definition.reference_kg.node import node_target, node_disease
+from open_targets.definition.reference_kg.edge import edge_target_disease_association_has_object_disease
 
 bc = BioCypher(biocypher_config_path="config/biocypher_config.yaml")
 context = AcquisitionContext(
@@ -137,9 +137,9 @@ The adapter includes 40+ node types and 50+ edge types. **Each definition file c
 
 ### Finding Definition Files
 
-- **Node definitions**: `open_targets/definition/experimental_kg/node/`
-- **Edge definitions**: `open_targets/definition/experimental_kg/edge/`
-- **Complete list**: `open_targets/definition/experimental_kg/kg.py`
+- **Node definitions**: `open_targets/definition/reference_kg/node/`
+- **Edge definitions**: `open_targets/definition/reference_kg/edge/`
+- **Complete list**: `open_targets/definition/reference_kg/kg.py`
 
 ### Reading Docstrings
 
@@ -151,7 +151,7 @@ Each definition file (e.g., `node_target.py`, `edge_molecule_has_adverse_reactio
 
 **Example:**
 ```python
-# In open_targets/definition/experimental_kg/node/node_target.py
+# In open_targets/definition/reference_kg/node/node_target.py
 """Summary: Ensembl target gene nodes (symbol/name/biotype/functions).
 
 Definition for TARGET nodes: scans the Targets parquet to emit Ensembl gene
@@ -161,7 +161,7 @@ target entities used across drug, association, and annotation edges in the KG.
 ```
 
 To explore available definitions:
-1. Browse the files in `open_targets/definition/experimental_kg/node/` and `edge/`
+1. Browse the files in `open_targets/definition/reference_kg/node/` and `edge/`
 2. Read the docstring at the top of each file
 3. Check `kg.py` to see how definitions are organized
 

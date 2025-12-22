@@ -1,19 +1,19 @@
 class Namespace:
-    """Namespaces for experimental KG."""
+    """Namespaces for reference KG."""
 
     DATABASE_CROSS_REFERENCE = "dbxref"
     DISEASE_SYNONYM = "disease_synonym"
 
 
 class NodeLabel:
-    """Labels for experimental KG nodes."""
+    """Labels for reference KG nodes."""
 
     DATABASE_CROSS_REFERENCE = "DATABASE_CROSS_REFERENCE"
     DISEASE_SYNONYM = "DISEASE_SYNONYM"
 
 
 class EdgeLabel:
-    """Labels for experimental KG edges."""
+    """Labels for reference KG edges."""
 
     IS_A = "IS_A"
     HAS_DATABASE_CROSS_REFERENCE = "HAS_DATABASE_CROSS_REFERENCE"

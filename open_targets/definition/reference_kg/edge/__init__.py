@@ -1,4 +1,4 @@
-"""Summary: edge definitions for the experimental knowledge graph."""
+"""Summary: edge definitions for the reference knowledge graph."""
 
 from open_targets.definition.reference_kg.edge.edge_cell_line_sampled_from_tissue import (
     edge_cell_line_sampled_from_tissue,

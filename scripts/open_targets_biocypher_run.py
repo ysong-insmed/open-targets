@@ -7,7 +7,7 @@ import logging
 from biocypher import BioCypher
 
 from open_targets.adapter.context import AcquisitionContext
-from open_targets.definition.reference_kg.kg import experimental_kg_definition
+from open_targets.definition.reference_kg.kg import reference_kg_definition
 
 
 def main():
@@ -24,18 +24,18 @@ def main():
 
     # Open Targets
     context = AcquisitionContext(
-        node_definitions=experimental_kg_definition.node_definitions,
-        edge_definitions=experimental_kg_definition.edge_definitions,
+        node_definitions=reference_kg_definition.node_definitions,
+        edge_definitions=reference_kg_definition.edge_definitions,
         datasets_location="data/ot_files",
         # limit=1000,
     )
 
     count = 1
-    for node_definition in experimental_kg_definition.node_definitions:
+    for node_definition in reference_kg_definition.node_definitions:
         print(f"{count}: {node_definition.label}")
         count += 1
         bc.write_nodes(context.get_acquisition_generator(node_definition))
-    for edge_definition in experimental_kg_definition.edge_definitions:
+    for edge_definition in reference_kg_definition.edge_definitions:
         print(f"{count}: {edge_definition.label}")
         count += 1
         bc.write_edges(context.get_acquisition_generator(edge_definition))
