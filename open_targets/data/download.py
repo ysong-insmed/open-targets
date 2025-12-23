@@ -5,10 +5,14 @@ from pathlib import PurePosixPath
 from urllib.parse import urlparse
 
 from open_targets.data._ftp_client import FTPClient
-from open_targets.data.metadata import extract_croissant_filesets
 from open_targets.data.metadata.model import CroissantDatasetModel, CroissantFileObjectModel, CroissantFileSetModel
 
 FTP_LOCATION_ID = "ftp-location"
+
+
+def extract_croissant_filesets(schema: CroissantDatasetModel) -> list[CroissantFileSetModel]:
+    """Extract FileSet entries from a Croissant dataset schema."""
+    return [item for item in schema.distribution if isinstance(item, CroissantFileSetModel)]
 
 
 def find_dataset_fileset(schema: CroissantDatasetModel, dataset_name: str) -> CroissantFileSetModel:

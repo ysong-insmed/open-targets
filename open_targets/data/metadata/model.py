@@ -1,7 +1,7 @@
 """Data models for Open Targets Croissant metadata."""
 
 from enum import Enum
-from typing import Literal, TypeAlias
+from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
@@ -80,14 +80,11 @@ class CroissantFileObjectModel(ConfiguredBaseModel):
     encoding_format: str | None = None
 
 
-CroissantDistributionModel: TypeAlias = CroissantFileSetModel | CroissantFileObjectModel
-
-
 class CroissantDatasetModel(ConfiguredBaseModel):
     """Top-level Croissant dataset model."""
 
     record_set: list[CroissantRecordSetModel] = Field(default_factory=list)
-    distribution: list[CroissantDistributionModel] = Field(default_factory=list)
+    distribution: list[CroissantFileSetModel | CroissantFileObjectModel] = Field(default_factory=list)
 
 
 CroissantFieldModel.model_rebuild()
