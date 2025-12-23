@@ -1,9 +1,9 @@
 from open_targets.data import schema
-from open_targets.data.schema import DatasetTargets
+from open_targets.data.schema import DatasetTarget
 
 
 def test_dataset_importable() -> None:
-    assert DatasetTargets.id == "targets"
+    assert DatasetTarget.id == "target"
 
 
 def test_all_fields_are_assigned() -> None:

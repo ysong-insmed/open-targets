@@ -1,19 +1,23 @@
-"""Data models for Open Targets Platform data metadata in JSON."""
+"""Data models for Open Targets Croissant metadata."""
 
-from datetime import datetime
 from enum import Enum
-from typing import Annotated, Literal, TypeAlias
+from typing import Literal, TypeAlias
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
 
-class ConfiguredBaseModel(BaseModel):
-    """Base model with extra configuration.
+class Key(str, Enum):
+    """Key for a Croissant metadata entry."""
 
-    Base model configured to convert names from camel case used in JSON to snake
-    case used in Python and ignore unused properties.
-    """
+    ID = "@id"
+    TYPE = "@type"
+    CONTENT_URL = "contentUrl"
+    RECORD_SET = "recordSet"
+
+
+class ConfiguredBaseModel(BaseModel):
+    """Base model with shared configuration."""
 
     model_config = ConfigDict(
         alias_generator=to_camel,
@@ -24,107 +28,67 @@ class ConfiguredBaseModel(BaseModel):
 
 
 class OpenTargetsDatasetFieldType(str, Enum):
-    """Data type of a dataset field."""
+    """Data type of a dataset field derived from Croissant JSON."""
 
     BOOLEAN = "boolean"
     INTEGER = "integer"
-    LONG = "long"
     FLOAT = "float"
-    DOUBLE = "double"
     STRING = "string"
     DATE = "date"
     ARRAY = "array"
-    MAP = "map"
     STRUCT = "struct"
 
 
-class OpenTargetsDatasetArrayTypeModel(ConfiguredBaseModel):
-    """Data model of an array type in JSON."""
-
-    type: Literal[OpenTargetsDatasetFieldType.ARRAY]
-    element_type: "OpenTargetsDatasetFieldModelTypeModel"
-    contains_null: bool
-
-
-class OpenTargetsDatasetMapTypeModel(ConfiguredBaseModel):
-    """Data model of a map type in JSON."""
-
-    type: Literal[OpenTargetsDatasetFieldType.MAP]
-    key_type: "OpenTargetsDatasetFieldModelTypeModel"
-    value_type: "OpenTargetsDatasetFieldModelTypeModel"
-    value_contains_null: bool
-
-
-class OpenTargetsDatasetStructTypeModel(ConfiguredBaseModel):
-    """Data model of a struct type in JSON."""
-
-    type: Literal[OpenTargetsDatasetFieldType.STRUCT]
-    fields: list["OpenTargetsDatasetFieldModel"]
-
-
-OpenTargetsDatasetFieldTypePrimitiveSet: TypeAlias = Literal[
-    OpenTargetsDatasetFieldType.BOOLEAN,
-    OpenTargetsDatasetFieldType.INTEGER,
-    OpenTargetsDatasetFieldType.LONG,
-    OpenTargetsDatasetFieldType.FLOAT,
-    OpenTargetsDatasetFieldType.DOUBLE,
-    OpenTargetsDatasetFieldType.STRING,
-    OpenTargetsDatasetFieldType.DATE,
-]
-
-OpenTargetsDatasetFieldTypeComplexSet: TypeAlias = Literal[
-    OpenTargetsDatasetFieldType.ARRAY,
-    OpenTargetsDatasetFieldType.MAP,
-    OpenTargetsDatasetFieldType.STRUCT,
-]
-
-OpenTargetsDatasetComplexTypeModel: TypeAlias = (
-    OpenTargetsDatasetArrayTypeModel | OpenTargetsDatasetMapTypeModel | OpenTargetsDatasetStructTypeModel
-)
-
-OpenTargetsDatasetFieldModelTypeModel: TypeAlias = (
-    OpenTargetsDatasetFieldTypePrimitiveSet | OpenTargetsDatasetComplexTypeModel
-)
-
-
-class OpenTargetsDatasetFieldModel(ConfiguredBaseModel):
-    """Data model of a dataset field in JSON."""
+class CroissantFieldModel(ConfiguredBaseModel):
+    """Data model of a field in a Croissant record set."""
 
     name: str
-    type: OpenTargetsDatasetFieldModelTypeModel
-    nullable: bool
+    description: str | None = None
+    data_type: str | None = None
+    repeated: bool = False
+    sub_field: list["CroissantFieldModel"] = Field(default_factory=list)
 
 
-class OpenTargetsDatasetSchemaModel(OpenTargetsDatasetStructTypeModel):
-    """Data model of a dataset schema in JSON."""
+class CroissantRecordSetModel(ConfiguredBaseModel):
+    """Data model of a Croissant record set."""
+
+    id: str | None = Field(default=None, alias=Key.ID.value)
+    name: str
+    description: str | None = None
+    field: list[CroissantFieldModel] = Field(default_factory=list)
 
 
-class OpenTargetsDatasetFormat(str, Enum):
-    """Data format of a dataset."""
+class CroissantFileSetModel(ConfiguredBaseModel):
+    """Data model of a Croissant FileSet entry."""
 
-    JSON = "json"
-    PARQUET = "parquet"
-
-
-class OpenTargetsDatasetResourceModel(ConfiguredBaseModel):
-    """Data model of a dataset metadata resource in JSON."""
-
-    format: OpenTargetsDatasetFormat
-    path: str
+    type: Literal["cr:FileSet"] = Field(alias=Key.TYPE.value)
+    id: str = Field(alias=Key.ID.value)
+    name: str | None = None
+    description: str | None = None
+    includes: str
+    encoding_format: str | None = None
 
 
-class OpenTargetsDatasetMetadataModel(ConfiguredBaseModel):
-    """Data model of a dataset metadata in JSON."""
+class CroissantFileObjectModel(ConfiguredBaseModel):
+    """Data model of a Croissant FileObject entry."""
 
-    id: str
-    resource: OpenTargetsDatasetResourceModel
-    dataset_schema: Annotated[OpenTargetsDatasetSchemaModel, Field(alias="serialisedSchema")]
-    time_stamp: datetime
+    type: Literal["cr:FileObject"] = Field(alias=Key.TYPE.value)
+    id: str = Field(alias=Key.ID.value)
+    name: str | None = None
+    description: str | None = None
+    content_url: str | None = Field(default=None, alias=Key.CONTENT_URL.value)
+    encoding_format: str | None = None
 
-    @field_validator("dataset_schema", mode="before")
-    @classmethod
-    def _deserialise_schema(
-        cls: type["OpenTargetsDatasetMetadataModel"],
-        v: str,
-    ) -> OpenTargetsDatasetSchemaModel:
-        return OpenTargetsDatasetSchemaModel.model_validate_json(v)
+
+CroissantDistributionModel: TypeAlias = CroissantFileSetModel | CroissantFileObjectModel
+
+
+class CroissantDatasetModel(ConfiguredBaseModel):
+    """Top-level Croissant dataset model."""
+
+    record_set: list[CroissantRecordSetModel] = Field(default_factory=list)
+    distribution: list[CroissantDistributionModel] = Field(default_factory=list)
+
+
+CroissantFieldModel.model_rebuild()
+CroissantDatasetModel.model_rebuild()

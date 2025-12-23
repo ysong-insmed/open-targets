@@ -18,7 +18,6 @@ class Field(ABC):
     data_type: Final[OpenTargetsDatasetFieldType]
     dataset: Final[type["Dataset"]]
     path: Final[Sequence[type["Dataset"] | type["Field"]]]
-    nullable: Final[bool]
 
 
 class ScalarField(Field):
@@ -31,8 +30,3 @@ class StructField(Field):
 
 class SequenceField(Field):
     element: Final[type["Field"]]
-
-
-class MapField(Field):
-    key: Final[type["Field"]]
-    value: Final[type["Field"]]

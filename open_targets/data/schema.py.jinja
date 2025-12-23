@@ -1,28 +1,5 @@
 {% extends "open_targets/base.jinja" %}
-
-{%- macro recursive_render_classes(class_info) %}
-class {{ class_info.name }}({{ class_info.inherit_from }}):
-    {% for attribute in class_info.late_attributes %}
-    {{ attribute.name }}: {{ attribute.type }}
-    {% endfor %}
-
-
-{% for dependant in class_info.dependants %}
-{{- recursive_render_classes(dependant) -}}
-{% endfor %}
-{% endmacro %}
-
-{%- macro recursive_render_assignments(class_info) %}
-{% for attribute in class_info.late_attributes %}
-{{ class_info.name }}.{{ attribute.name }} = {{ attribute.value }}
-{% endfor %}
-
-{% for dependant in class_info.dependants %}
-{{ recursive_render_assignments(dependant) }}
-{%- endfor %}
-{% endmacro %}
-
-{%- block content %}
+{% block content %}
 # ruff: noqa: D101
 # type: ignore[generalTypeIssues]
 
@@ -30,14 +7,21 @@ from collections.abc import Sequence
 from typing import Final
 
 from open_targets.data.metadata.model import OpenTargetsDatasetFieldType
-from open_targets.data.schema_base import Dataset, Field, MapField, ScalarField, SequenceField, StructField
-
+from open_targets.data.schema_base import Dataset, Field, ScalarField, SequenceField, StructField
 
 {% for class_info in class_infos %}
-{{- recursive_render_classes(class_info) -}}
+class {{ class_info.name }}({{ class_info.inherit_from }}):
+{% for attr in class_info.late_attributes %}
+    {{ attr.name }}: {{ attr.type }}
 {% endfor %}
 
+
+{% endfor %}
 {% for class_info in class_infos %}
-{{- recursive_render_assignments(class_info) -}}
+{% for attr in class_info.late_attributes %}
+{{ class_info.name }}.{{ attr.name }} = {{ attr.value }}
+{% endfor %}
+
+
 {% endfor %}
 {% endblock %}

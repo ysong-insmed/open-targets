@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "recordSet": "cr:recordSet"
+  },
+  "@type": "sc:Dataset",
+  "name": "Open Targets Platform Datasets",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "ftp-location",
+      "contentUrl": "http://ftp.ebi.ac.uk/pub/databases/opentargets/platform/output/"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "association_by_datasource_direct-fileset",
+      "name": "Associations - direct (by data source)",
+      "includes": "association_by_datasource_direct/*.parquet"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "association_by_datasource_direct",
+      "name": "association_by_datasource_direct",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "association_by_datasource_direct/datasourceId",
+          "name": "datasourceId",
+          "dataType": "sc:Text"
+        }
+      ]
+    }
+  ]
+}

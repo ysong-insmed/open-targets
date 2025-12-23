@@ -1,52 +1,29 @@
-from io import BytesIO
+from pathlib import Path
 from typing import Final
+from urllib.request import urlopen
 
-from open_targets import config
-from open_targets.data._ftp_client import FTPClient
-from open_targets.data.metadata.model import (
-    OpenTargetsDatasetFormat,
-    OpenTargetsDatasetMetadataModel,
-)
+from open_targets.config import METADATA_URL
+from open_targets.data.metadata.model import CroissantDatasetModel, CroissantFileSetModel
 
-HOST: Final = "ftp.ebi.ac.uk"
-METADATA_PATH: Final = f"/pub/databases/opentargets/platform/{config.DATA_VERSION}/output/metadata"
+CROISSANT_URL: Final = METADATA_URL
 
 
-def fetch_open_targets_dataset_metadata(
-    filter_dataset_ids: list[str] | None = None,
-    filter_format: list[OpenTargetsDatasetFormat] | None = None,
-) -> list[OpenTargetsDatasetMetadataModel]:
-    """Fetch dataset metadata from the Open Targets Platform FTP server.
+def load_croissant_schema_from_path(path: Path) -> CroissantDatasetModel:
+    """Load Croissant schema JSON from a local path."""
+    return CroissantDatasetModel.model_validate_json(path.read_text(encoding="utf-8"))
 
-    Args:
-        filter_dataset_ids: If provided, only fetch metadata for the
-            specified dataset IDs.
-        filter_format: If provided, only fetch metadata for datasets with
-            the specified formats.
 
-    Returns:
-        A list of dataset metadata.
+def fetch_open_targets_croissant_schema() -> CroissantDatasetModel:
+    """Download Croissant schema JSON from the Open Targets FTP server."""
+    with urlopen(METADATA_URL, timeout=30) as response:  # noqa: S310
+        json_bytes = response.read()
+    return CroissantDatasetModel.model_validate_json(json_bytes)
 
-    """
-    ftp_client = FTPClient(HOST)
-    metadata_dir_file_paths = ftp_client.traverse_directory(METADATA_PATH).files
-    metadata_json_file_paths = [file_path for file_path in metadata_dir_file_paths if file_path.endswith(".json")]
-    if filter_dataset_ids is not None:
-        filters = [f"metadata/{dataset_id}" for dataset_id in filter_dataset_ids]
-        metadata_json_file_paths = [
-            file_path
-            for file_path in metadata_json_file_paths
-            if any(dataset_id in file_path for dataset_id in filters)
-        ]
 
-    jsons = list[bytes]()
-
-    for file_path in metadata_json_file_paths:
-        bytes_io = BytesIO()
-        ftp_client.retrieve_file(file_path, bytes_io.write)
-        jsons.append(bytes_io.getvalue())
-
-    metadata = [OpenTargetsDatasetMetadataModel.model_validate_json(json) for json in jsons]
-    if filter_format is not None:
-        metadata = [metadata_item for metadata_item in metadata if metadata_item.resource.format in filter_format]
-    return metadata
+def extract_croissant_filesets(schema: CroissantDatasetModel) -> list[CroissantFileSetModel]:
+    """Extract FileSet entries from a Croissant dataset schema."""
+    file_sets: list[CroissantFileSetModel] = []
+    for item in schema.distribution:
+        if isinstance(item, CroissantFileSetModel):
+            file_sets.append(item)
+    return file_sets
