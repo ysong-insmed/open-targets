@@ -2,11 +2,12 @@ from pathlib import Path
 
 from open_targets.data._ftp_client import FTPClient, FTPClientListResult
 from open_targets.data.download import get_dataset_download_urls
-from open_targets.data.metadata import load_croissant_schema_from_path
+from open_targets.data.metadata.model import CroissantDatasetModel
 
 
 def test_get_dataset_download_urls_filters_matches(monkeypatch) -> None:
-    schema = load_croissant_schema_from_path(Path("test/fixture/mock/croissant.json"))
+    path = Path("test/fixture/mock/croissant.json")
+    schema = CroissantDatasetModel.model_validate_json(path.read_text(encoding="utf-8"))
 
     def fake_traverse(self, path: str, depth=None):  # type: ignore[override]
         return FTPClientListResult(
