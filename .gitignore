@@ -136,7 +136,7 @@ dmypy.json
 .idea
 
 # Open Targets Platform data
-data
+/data
 
 # Agent space
 agent_space
