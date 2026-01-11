@@ -28,48 +28,6 @@ from open_targets.definition.reference_kg.edge.edge_disease_phenotype_associatio
     edge_disease_phenotype_association_has_object_phenotype,
 )
 from open_targets.definition.reference_kg.edge.edge_enhancer_to_gene import edge_enhancer_to_gene
-from open_targets.definition.reference_kg.edge.edge_evidence_links import (
-    edge_evidence_cancer_biomarkers_has_object_disease,
-    edge_evidence_cancer_gene_census_has_object_disease,
-    edge_evidence_chembl_has_object_disease,
-    edge_evidence_clingen_has_object_disease,
-    edge_evidence_crispr_has_object_disease,
-    edge_evidence_crispr_screen_has_object_disease,
-    edge_evidence_europepmc_has_object_disease,
-    edge_evidence_eva_has_object_disease,
-    edge_evidence_eva_somatic_has_object_disease,
-    edge_evidence_expression_atlas_has_object_disease,
-    edge_evidence_gene2_phenotype_has_object_disease,
-    edge_evidence_gene_burden_has_object_disease,
-    edge_evidence_genomics_england_has_object_disease,
-    edge_evidence_gwas_credible_sets_has_object_disease,
-    edge_evidence_impc_has_object_disease,
-    edge_evidence_intogen_has_object_disease,
-    edge_evidence_orphanet_has_object_disease,
-    edge_evidence_reactome_has_object_disease,
-    edge_evidence_uniprot_literature_has_object_disease,
-    edge_evidence_uniprot_variants_has_object_disease,
-    edge_target_subject_of_evidence_cancer_biomarkers,
-    edge_target_subject_of_evidence_cancer_gene_census,
-    edge_target_subject_of_evidence_chembl,
-    edge_target_subject_of_evidence_clingen,
-    edge_target_subject_of_evidence_crispr,
-    edge_target_subject_of_evidence_crispr_screen,
-    edge_target_subject_of_evidence_europepmc,
-    edge_target_subject_of_evidence_eva,
-    edge_target_subject_of_evidence_eva_somatic,
-    edge_target_subject_of_evidence_expression_atlas,
-    edge_target_subject_of_evidence_gene2_phenotype,
-    edge_target_subject_of_evidence_gene_burden,
-    edge_target_subject_of_evidence_genomics_england,
-    edge_target_subject_of_evidence_gwas_credible_sets,
-    edge_target_subject_of_evidence_impc,
-    edge_target_subject_of_evidence_intogen,
-    edge_target_subject_of_evidence_orphanet,
-    edge_target_subject_of_evidence_reactome,
-    edge_target_subject_of_evidence_uniprot_literature,
-    edge_target_subject_of_evidence_uniprot_variants,
-)
 from open_targets.definition.reference_kg.edge.edge_l2g_prediction import edge_l2g_prediction
 from open_targets.definition.reference_kg.edge.edge_literature_mentions_entity import edge_literature_mentions_entity
 from open_targets.definition.reference_kg.edge.edge_mechanism_of_action_has_target_target import (
@@ -181,6 +139,126 @@ from open_targets.definition.reference_kg.edge.edge_target_modelled_by_mouse_gen
     edge_target_modelled_by_mouse_gene,
 )
 from open_targets.definition.reference_kg.edge.edge_target_related_to_go_term import edge_target_related_to_go_term
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_cancer_biomarkers_has_object_disease import (
+    edge_target_disease_association_cancer_biomarkers_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_cancer_gene_census_has_object_disease import (
+    edge_target_disease_association_cancer_gene_census_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_chembl_has_object_disease import (
+    edge_target_disease_association_chembl_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_clingen_has_object_disease import (
+    edge_target_disease_association_clingen_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_crispr_has_object_disease import (
+    edge_target_disease_association_crispr_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_crispr_screen_has_object_disease import (
+    edge_target_disease_association_crispr_screen_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_europepmc_has_object_disease import (
+    edge_target_disease_association_europepmc_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_eva_has_object_disease import (
+    edge_target_disease_association_eva_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_eva_somatic_has_object_disease import (
+    edge_target_disease_association_eva_somatic_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_expression_atlas_has_object_disease import (
+    edge_target_disease_association_expression_atlas_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_gene2phenotype_has_object_disease import (
+    edge_target_disease_association_gene2phenotype_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_gene_burden_has_object_disease import (
+    edge_target_disease_association_gene_burden_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_genomics_england_has_object_disease import (
+    edge_target_disease_association_genomics_england_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_gwas_credible_sets_has_object_disease import (
+    edge_target_disease_association_gwas_credible_sets_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_impc_has_object_disease import (
+    edge_target_disease_association_impc_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_intogen_has_object_disease import (
+    edge_target_disease_association_intogen_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_orphanet_has_object_disease import (
+    edge_target_disease_association_orphanet_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_reactome_has_object_disease import (
+    edge_target_disease_association_reactome_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_uniprot_literature_has_object_disease import (
+    edge_target_disease_association_uniprot_literature_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_disease_association_uniprot_variants_has_object_disease import (
+    edge_target_disease_association_uniprot_variants_has_object_disease,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_cancer_biomarkers import (
+    edge_target_subject_of_target_disease_association_cancer_biomarkers,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_cancer_gene_census import (
+    edge_target_subject_of_target_disease_association_cancer_gene_census,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_chembl import (
+    edge_target_subject_of_target_disease_association_chembl,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_clingen import (
+    edge_target_subject_of_target_disease_association_clingen,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_crispr import (
+    edge_target_subject_of_target_disease_association_crispr,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_crispr_screen import (
+    edge_target_subject_of_target_disease_association_crispr_screen,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_europepmc import (
+    edge_target_subject_of_target_disease_association_europepmc,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_eva import (
+    edge_target_subject_of_target_disease_association_eva,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_eva_somatic import (
+    edge_target_subject_of_target_disease_association_eva_somatic,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_expression_atlas import (
+    edge_target_subject_of_target_disease_association_expression_atlas,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_gene2phenotype import (
+    edge_target_subject_of_target_disease_association_gene2phenotype,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_gene_burden import (
+    edge_target_subject_of_target_disease_association_gene_burden,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_genomics_england import (
+    edge_target_subject_of_target_disease_association_genomics_england,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_gwas_credible_sets import (
+    edge_target_subject_of_target_disease_association_gwas_credible_sets,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_impc import (
+    edge_target_subject_of_target_disease_association_impc,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_intogen import (
+    edge_target_subject_of_target_disease_association_intogen,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_orphanet import (
+    edge_target_subject_of_target_disease_association_orphanet,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_reactome import (
+    edge_target_subject_of_target_disease_association_reactome,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_uniprot_literature import (
+    edge_target_subject_of_target_disease_association_uniprot_literature,
+)
+from open_targets.definition.reference_kg.edge.edge_target_subject_of_target_disease_association_uniprot_variants import (
+    edge_target_subject_of_target_disease_association_uniprot_variants,
+)
 from open_targets.definition.reference_kg.edge.edge_target_target_interaction_supported_by_literature import (
     edge_target_target_interaction_supported_by_literature,
 )
@@ -240,46 +318,45 @@ __all__ = [
     "edge_target_located_in_subcellular_location",
     "edge_target_modelled_by_mouse_gene",
     "edge_target_related_to_go_term",
-    # "edge_target_subject_of_target_disease_association",
     "edge_target_target_interaction_supported_by_literature",
-    "edge_evidence_cancer_biomarkers_has_object_disease",
-    "edge_evidence_cancer_gene_census_has_object_disease",
-    "edge_evidence_chembl_has_object_disease",
-    "edge_evidence_clingen_has_object_disease",
-    "edge_evidence_crispr_has_object_disease",
-    "edge_evidence_crispr_screen_has_object_disease",
-    "edge_evidence_europepmc_has_object_disease",
-    "edge_evidence_eva_has_object_disease",
-    "edge_evidence_eva_somatic_has_object_disease",
-    "edge_evidence_expression_atlas_has_object_disease",
-    "edge_evidence_gene2_phenotype_has_object_disease",
-    "edge_evidence_gene_burden_has_object_disease",
-    "edge_evidence_genomics_england_has_object_disease",
-    "edge_evidence_gwas_credible_sets_has_object_disease",
-    "edge_evidence_impc_has_object_disease",
-    "edge_evidence_intogen_has_object_disease",
-    "edge_evidence_orphanet_has_object_disease",
-    "edge_evidence_reactome_has_object_disease",
-    "edge_evidence_uniprot_literature_has_object_disease",
-    "edge_evidence_uniprot_variants_has_object_disease",
-    "edge_target_subject_of_evidence_cancer_biomarkers",
-    "edge_target_subject_of_evidence_cancer_gene_census",
-    "edge_target_subject_of_evidence_chembl",
-    "edge_target_subject_of_evidence_clingen",
-    "edge_target_subject_of_evidence_crispr",
-    "edge_target_subject_of_evidence_crispr_screen",
-    "edge_target_subject_of_evidence_europepmc",
-    "edge_target_subject_of_evidence_eva",
-    "edge_target_subject_of_evidence_eva_somatic",
-    "edge_target_subject_of_evidence_expression_atlas",
-    "edge_target_subject_of_evidence_gene2_phenotype",
-    "edge_target_subject_of_evidence_gene_burden",
-    "edge_target_subject_of_evidence_genomics_england",
-    "edge_target_subject_of_evidence_gwas_credible_sets",
-    "edge_target_subject_of_evidence_impc",
-    "edge_target_subject_of_evidence_intogen",
-    "edge_target_subject_of_evidence_orphanet",
-    "edge_target_subject_of_evidence_reactome",
-    "edge_target_subject_of_evidence_uniprot_literature",
-    "edge_target_subject_of_evidence_uniprot_variants",
+    "edge_target_disease_association_cancer_biomarkers_has_object_disease",
+    "edge_target_disease_association_cancer_gene_census_has_object_disease",
+    "edge_target_disease_association_chembl_has_object_disease",
+    "edge_target_disease_association_clingen_has_object_disease",
+    "edge_target_disease_association_crispr_has_object_disease",
+    "edge_target_disease_association_crispr_screen_has_object_disease",
+    "edge_target_disease_association_europepmc_has_object_disease",
+    "edge_target_disease_association_eva_has_object_disease",
+    "edge_target_disease_association_eva_somatic_has_object_disease",
+    "edge_target_disease_association_expression_atlas_has_object_disease",
+    "edge_target_disease_association_gene2phenotype_has_object_disease",
+    "edge_target_disease_association_gene_burden_has_object_disease",
+    "edge_target_disease_association_genomics_england_has_object_disease",
+    "edge_target_disease_association_gwas_credible_sets_has_object_disease",
+    "edge_target_disease_association_impc_has_object_disease",
+    "edge_target_disease_association_intogen_has_object_disease",
+    "edge_target_disease_association_orphanet_has_object_disease",
+    "edge_target_disease_association_reactome_has_object_disease",
+    "edge_target_disease_association_uniprot_literature_has_object_disease",
+    "edge_target_disease_association_uniprot_variants_has_object_disease",
+    "edge_target_subject_of_target_disease_association_cancer_biomarkers",
+    "edge_target_subject_of_target_disease_association_cancer_gene_census",
+    "edge_target_subject_of_target_disease_association_chembl",
+    "edge_target_subject_of_target_disease_association_clingen",
+    "edge_target_subject_of_target_disease_association_crispr",
+    "edge_target_subject_of_target_disease_association_crispr_screen",
+    "edge_target_subject_of_target_disease_association_europepmc",
+    "edge_target_subject_of_target_disease_association_eva",
+    "edge_target_subject_of_target_disease_association_eva_somatic",
+    "edge_target_subject_of_target_disease_association_expression_atlas",
+    "edge_target_subject_of_target_disease_association_gene2phenotype",
+    "edge_target_subject_of_target_disease_association_gene_burden",
+    "edge_target_subject_of_target_disease_association_genomics_england",
+    "edge_target_subject_of_target_disease_association_gwas_credible_sets",
+    "edge_target_subject_of_target_disease_association_impc",
+    "edge_target_subject_of_target_disease_association_intogen",
+    "edge_target_subject_of_target_disease_association_orphanet",
+    "edge_target_subject_of_target_disease_association_reactome",
+    "edge_target_subject_of_target_disease_association_uniprot_literature",
+    "edge_target_subject_of_target_disease_association_uniprot_variants",
 ]
