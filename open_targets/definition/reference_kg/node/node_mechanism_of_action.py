@@ -12,12 +12,12 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetMechanismOfAction,
-    FieldMechanismOfActionActionType,
-    FieldMechanismOfActionChemblIds,
-    FieldMechanismOfActionMechanismOfAction,
-    FieldMechanismOfActionTargetName,
-    FieldMechanismOfActionTargetType,
+    DatasetDrugMechanismOfAction,
+    FieldDrugMechanismOfActionActionType,
+    FieldDrugMechanismOfActionChemblIds,
+    FieldDrugMechanismOfActionMechanismOfAction,
+    FieldDrugMechanismOfActionTargetName,
+    FieldDrugMechanismOfActionTargetType,
 )
 from open_targets.definition.reference_kg.expression.mechanism_of_action_primary_id_expression import (
     mechanism_of_action_primary_id_expression,
@@ -25,15 +25,15 @@ from open_targets.definition.reference_kg.expression.mechanism_of_action_primary
 
 node_mechanism_of_action: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetMechanismOfAction,
-        exploded_field=FieldMechanismOfActionChemblIds,
+        dataset=DatasetDrugMechanismOfAction,
+        exploded_field=FieldDrugMechanismOfActionChemblIds,
     ),
     primary_id=mechanism_of_action_primary_id_expression,
     label="MECHANISM_OF_ACTION",
     properties=[
-        FieldMechanismOfActionActionType,
-        FieldMechanismOfActionMechanismOfAction,
-        FieldMechanismOfActionTargetName,
-        FieldMechanismOfActionTargetType,
+        FieldDrugMechanismOfActionActionType,
+        FieldDrugMechanismOfActionMechanismOfAction,
+        FieldDrugMechanismOfActionTargetName,
+        FieldDrugMechanismOfActionTargetType,
     ],
 )

@@ -12,8 +12,8 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetTargets,
-    FieldTargetsDbXrefs,
+    DatasetTarget,
+    FieldTargetDbXrefs,
 )
 from open_targets.definition.reference_kg.constant import NodeLabel
 from open_targets.definition.reference_kg.expression import (
@@ -23,8 +23,8 @@ from open_targets.definition.reference_kg.expression import (
 
 node_database_cross_reference_target: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetTargets,
-        exploded_field=FieldTargetsDbXrefs,
+        dataset=DatasetTarget,
+        exploded_field=FieldTargetDbXrefs,
     ),
     primary_id=database_cross_reference_target_primary_id_expression,
     label=NodeLabel.DATABASE_CROSS_REFERENCE,

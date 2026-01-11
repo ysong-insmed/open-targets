@@ -11,18 +11,18 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetHpo,
-    FieldHpoDescription,
-    FieldHpoId,
-    FieldHpoName,
+    DatasetDiseaseHpo,
+    FieldDiseaseHpoDescription,
+    FieldDiseaseHpoId,
+    FieldDiseaseHpoName,
 )
 
 node_phenotype: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
-    scan_operation=RowScanOperation(dataset=DatasetHpo),
-    primary_id=FieldHpoId,
+    scan_operation=RowScanOperation(dataset=DatasetDiseaseHpo),
+    primary_id=FieldDiseaseHpoId,
     label="PHENOTYPE",
     properties=[
-        FieldHpoName,
-        FieldHpoDescription,
+        FieldDiseaseHpoName,
+        FieldDiseaseHpoDescription,
     ],
 )

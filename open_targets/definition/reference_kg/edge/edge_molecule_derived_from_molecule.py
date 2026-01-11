@@ -13,20 +13,20 @@ from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.adapter.scan_operation_predicate import EqualityExpression, NotExpression
 from open_targets.data.schema import (
-    DatasetMolecule,
-    FieldMoleculeId,
-    FieldMoleculeParentId,
+    DatasetDrugMolecule,
+    FieldDrugMoleculeId,
+    FieldDrugMoleculeParentId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_molecule_derived_from_molecule: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=RowScanOperation(
-        dataset=DatasetMolecule,
-        predicate=NotExpression(EqualityExpression(FieldMoleculeParentId, None)),
+        dataset=DatasetDrugMolecule,
+        predicate=NotExpression(EqualityExpression(FieldDrugMoleculeParentId, None)),
     ),
     primary_id=NewUuidExpression(),
-    source=FieldMoleculeId,
-    target=FieldMoleculeParentId,
+    source=FieldDrugMoleculeId,
+    target=FieldDrugMoleculeParentId,
     label=EdgeLabel.DERIVED_FROM,
     properties=[],
 )

@@ -12,21 +12,21 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetHpo,
-    FieldHpoDbXRefs,
-    FieldHpoDbXRefsElement,
+    DatasetDiseaseHpo,
+    FieldDiseaseHpoDbXRefs,
+    FieldDiseaseHpoDbXRefsElement,
 )
 from open_targets.definition.reference_kg.constant import NodeLabel
 from open_targets.definition.reference_kg.expression import database_cross_reference_hpo_primary_id_expression
 
 node_database_cross_reference_hpo: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetHpo,
-        exploded_field=FieldHpoDbXRefs,
+        dataset=DatasetDiseaseHpo,
+        exploded_field=FieldDiseaseHpoDbXRefs,
     ),
     primary_id=database_cross_reference_hpo_primary_id_expression,
     label=NodeLabel.DATABASE_CROSS_REFERENCE,
     properties=[
-        ("value", FieldHpoDbXRefsElement),
+        ("value", FieldDiseaseHpoDbXRefsElement),
     ],
 )

@@ -13,40 +13,30 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetAdverseTargetReactions,
-    FieldAdverseTargetReactionsA,
-    FieldAdverseTargetReactionsActerm,
-    FieldAdverseTargetReactionsAterm,
-    FieldAdverseTargetReactionsB,
-    FieldAdverseTargetReactionsC,
-    FieldAdverseTargetReactionsCterm,
-    FieldAdverseTargetReactionsD,
-    FieldAdverseTargetReactionsLlr,
-    FieldAdverseTargetReactionsTargetId,
-    FieldAdverseTargetReactionsUniqReportIdsByReaction,
-    FieldAdverseTargetReactionsUniqReportIdsByTarget,
+    DatasetOpenfdaSignificantAdverseTargetReactions,
+    FieldOpenfdaSignificantAdverseTargetReactionsCount,
+    FieldOpenfdaSignificantAdverseTargetReactionsCritval,
+    FieldOpenfdaSignificantAdverseTargetReactionsEvent,
+    FieldOpenfdaSignificantAdverseTargetReactionsLlr,
+    FieldOpenfdaSignificantAdverseTargetReactionsMeddraCode,
+    FieldOpenfdaSignificantAdverseTargetReactionsTargetId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import adverse_reaction_primary_id_expression
 
 edge_target_associated_with_adverse_reaction: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
-        scan_operation=RowScanOperation(dataset=DatasetAdverseTargetReactions),
+        scan_operation=RowScanOperation(dataset=DatasetOpenfdaSignificantAdverseTargetReactions),
         primary_id=NewUuidExpression(),
-        source=FieldAdverseTargetReactionsTargetId,
+        source=FieldOpenfdaSignificantAdverseTargetReactionsTargetId,
         target=adverse_reaction_primary_id_expression,
         label=EdgeLabel.ASSOCIATED_WITH,
         properties=[
-            FieldAdverseTargetReactionsActerm,
-            FieldAdverseTargetReactionsAterm,
-            FieldAdverseTargetReactionsCterm,
-            FieldAdverseTargetReactionsLlr,
-            FieldAdverseTargetReactionsA,
-            FieldAdverseTargetReactionsB,
-            FieldAdverseTargetReactionsC,
-            FieldAdverseTargetReactionsD,
-            FieldAdverseTargetReactionsUniqReportIdsByReaction,
-            FieldAdverseTargetReactionsUniqReportIdsByTarget,
+            FieldOpenfdaSignificantAdverseTargetReactionsEvent,
+            FieldOpenfdaSignificantAdverseTargetReactionsMeddraCode,
+            FieldOpenfdaSignificantAdverseTargetReactionsLlr,
+            FieldOpenfdaSignificantAdverseTargetReactionsCount,
+            FieldOpenfdaSignificantAdverseTargetReactionsCritval,
         ],
     )
 )

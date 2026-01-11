@@ -10,11 +10,11 @@ from open_targets.adapter.expression import (
     Expression,
 )
 from open_targets.data.schema import (
-    FieldTargetsSubcellularLocationsElementLocation,
+    FieldTargetSubcellularLocationsElementLocation,
 )
-from open_targets.definition.helper import get_namespaced_hash_expression
+from open_targets.definition.helper import get_namespaced_expression
 
-subcellular_location_primary_id_expression: Final[Expression[str]] = get_namespaced_hash_expression(
+subcellular_location_primary_id_expression: Final[Expression[str]] = get_namespaced_expression(
     "subcellular_location",
-    FieldTargetsSubcellularLocationsElementLocation,
+    FieldTargetSubcellularLocationsElementLocation,
 )

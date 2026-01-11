@@ -13,14 +13,14 @@ from open_targets.adapter.expression import FieldExpression, NewUuidExpression, 
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetTargets,
-    FieldTargetsGo,
-    FieldTargetsGoElementEcoId,
-    FieldTargetsGoElementEvidence,
-    FieldTargetsGoElementGeneProduct,
-    FieldTargetsGoElementId,
-    FieldTargetsGoElementSource,
-    FieldTargetsId,
+    DatasetTarget,
+    FieldTargetGo,
+    FieldTargetGoElementEcoId,
+    FieldTargetGoElementEvidence,
+    FieldTargetGoElementGeneProduct,
+    FieldTargetGoElementId,
+    FieldTargetGoElementSource,
+    FieldTargetId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
@@ -70,24 +70,24 @@ def _map_evidence_label(evidence_label: str) -> str:
 
 edge_target_related_to_go_term: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetTargets,
-        exploded_field=FieldTargetsGo,
+        dataset=DatasetTarget,
+        exploded_field=FieldTargetGo,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldTargetsId,
-    target=FieldTargetsGoElementId,
+    source=FieldTargetId,
+    target=FieldTargetGoElementId,
     label=EdgeLabel.RELATED_TO,
     properties=[
-        FieldTargetsGoElementSource,
+        FieldTargetGoElementSource,
         (
-            FieldTargetsGoElementEvidence.name,
-            TransformExpression(FieldExpression(FieldTargetsGoElementEvidence), _map_evidence_label),
+            FieldTargetGoElementEvidence.name,
+            TransformExpression(FieldExpression(FieldTargetGoElementEvidence), _map_evidence_label),
         ),
-        FieldTargetsGoElementEcoId,
+        FieldTargetGoElementEcoId,
         (
-            FieldTargetsGoElementEvidence.name,
-            TransformExpression(FieldExpression(FieldTargetsGoElementEvidence), _map_aspect),
+            FieldTargetGoElementEvidence.name,
+            TransformExpression(FieldExpression(FieldTargetGoElementEvidence), _map_aspect),
         ),
-        FieldTargetsGoElementGeneProduct,
+        FieldTargetGoElementGeneProduct,
     ],
 )

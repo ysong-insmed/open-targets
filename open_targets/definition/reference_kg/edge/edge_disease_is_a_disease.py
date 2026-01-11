@@ -12,21 +12,21 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetDiseases,
-    FieldDiseasesId,
-    FieldDiseasesParents,
-    FieldDiseasesParentsElement,
+    DatasetDisease,
+    FieldDiseaseId,
+    FieldDiseaseParents,
+    FieldDiseaseParentsElement,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_disease_is_a_disease: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetDiseases,
-        exploded_field=FieldDiseasesParents,
+        dataset=DatasetDisease,
+        exploded_field=FieldDiseaseParents,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldDiseasesId,
-    target=FieldDiseasesParentsElement,
+    source=FieldDiseaseId,
+    target=FieldDiseaseParentsElement,
     label=EdgeLabel.IS_A,
     properties=[],
 )

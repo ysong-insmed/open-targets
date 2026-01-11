@@ -12,17 +12,17 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetMousePhenotypes,
-    FieldMousePhenotypesTargetFromSourceId,
-    FieldMousePhenotypesTargetInModelEnsemblId,
+    DatasetMousePhenotype,
+    FieldMousePhenotypeTargetFromSourceId,
+    FieldMousePhenotypeTargetInModelEnsemblId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_target_modelled_by_mouse_gene: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
-    scan_operation=RowScanOperation(dataset=DatasetMousePhenotypes),
+    scan_operation=RowScanOperation(dataset=DatasetMousePhenotype),
     primary_id=NewUuidExpression(),
-    source=FieldMousePhenotypesTargetFromSourceId,
-    target=FieldMousePhenotypesTargetInModelEnsemblId,
+    source=FieldMousePhenotypeTargetFromSourceId,
+    target=FieldMousePhenotypeTargetInModelEnsemblId,
     label=EdgeLabel.MODELLED_BY,
     properties=[],
 )

@@ -15,22 +15,22 @@ from open_targets.adapter.acquisition_definition import (
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetMousePhenotypes,
-    FieldMousePhenotypesBiologicalModels,
-    FieldMousePhenotypesBiologicalModelsElementAllelicComposition,
-    FieldMousePhenotypesBiologicalModelsElementGeneticBackground,
-    FieldMousePhenotypesBiologicalModelsElementId,
+    DatasetMousePhenotype,
+    FieldMousePhenotypeBiologicalModels,
+    FieldMousePhenotypeBiologicalModelsElementAllelicComposition,
+    FieldMousePhenotypeBiologicalModelsElementGeneticBackground,
+    FieldMousePhenotypeBiologicalModelsElementId,
 )
 
 node_mouse_model: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetMousePhenotypes,
-        exploded_field=FieldMousePhenotypesBiologicalModels,
+        dataset=DatasetMousePhenotype,
+        exploded_field=FieldMousePhenotypeBiologicalModels,
     ),
-    primary_id=FieldMousePhenotypesBiologicalModelsElementId,
+    primary_id=FieldMousePhenotypeBiologicalModelsElementId,
     label="MOUSE_MODEL",
     properties=[
-        FieldMousePhenotypesBiologicalModelsElementAllelicComposition,
-        FieldMousePhenotypesBiologicalModelsElementGeneticBackground,
+        FieldMousePhenotypeBiologicalModelsElementAllelicComposition,
+        FieldMousePhenotypeBiologicalModelsElementGeneticBackground,
     ],
 )

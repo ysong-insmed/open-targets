@@ -14,40 +14,33 @@ from typing import Final
 from open_targets.adapter.acquisition_definition import AcquisitionDefinition, ExpressionNodeAcquisitionDefinition
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
-from open_targets.adapter.scan_operation_predicate import EqualityExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceAlleleOrigins,
-    FieldEvidenceAllelicRequirements,
-    FieldEvidenceDirectionOnTrait,
-    FieldEvidenceDiseaseFromSource,
-    FieldEvidenceDiseaseFromSourceId,
-    FieldEvidenceDiseaseFromSourceMappedId,
-    FieldEvidenceId,
-    FieldEvidenceScore,
-    FieldEvidenceSourceId,
-    FieldEvidenceTargetFromSourceId,
-    FieldEvidenceVariantFunctionalConsequenceId,
+    DatasetEvidenceOrphanet,
+    FieldEvidenceOrphanetAlleleOrigins,
+    FieldEvidenceOrphanetConfidence,
+    FieldEvidenceOrphanetDirectionOnTrait,
+    FieldEvidenceOrphanetDiseaseFromSource,
+    FieldEvidenceOrphanetDiseaseFromSourceId,
+    FieldEvidenceOrphanetDiseaseFromSourceMappedId,
+    FieldEvidenceOrphanetId,
+    FieldEvidenceOrphanetScore,
+    FieldEvidenceOrphanetTargetFromSourceId,
+    FieldEvidenceOrphanetVariantFunctionalConsequenceId,
 )
 
-node_target_disease_association_orphanet: Final[AcquisitionDefinition[NodeInfo]] = (
-    ExpressionNodeAcquisitionDefinition(
-        scan_operation=RowScanOperation(
-            dataset=DatasetEvidence,
-            predicate=EqualityExpression(FieldEvidenceSourceId, "orphanet"),
-        ),
-        primary_id=FieldEvidenceId,
-        label="TARGET_DISEASE_ASSOCIATION_ORPHANET",
-        properties=[
-            FieldEvidenceAlleleOrigins,
-            FieldEvidenceAllelicRequirements,
-            FieldEvidenceDirectionOnTrait,
-            FieldEvidenceDiseaseFromSource,
-            FieldEvidenceDiseaseFromSourceId,
-            FieldEvidenceDiseaseFromSourceMappedId,
-            FieldEvidenceScore,
-            FieldEvidenceTargetFromSourceId,
-            FieldEvidenceVariantFunctionalConsequenceId,
-        ],
-    )
+node_target_disease_association_orphanet: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
+    scan_operation=RowScanOperation(dataset=DatasetEvidenceOrphanet),
+    primary_id=FieldEvidenceOrphanetId,
+    label="TARGET_DISEASE_ASSOCIATION_ORPHANET",
+    properties=[
+        FieldEvidenceOrphanetAlleleOrigins,
+        FieldEvidenceOrphanetConfidence,
+        FieldEvidenceOrphanetDirectionOnTrait,
+        FieldEvidenceOrphanetDiseaseFromSource,
+        FieldEvidenceOrphanetDiseaseFromSourceId,
+        FieldEvidenceOrphanetDiseaseFromSourceMappedId,
+        FieldEvidenceOrphanetScore,
+        FieldEvidenceOrphanetTargetFromSourceId,
+        FieldEvidenceOrphanetVariantFunctionalConsequenceId,
+    ],
 )

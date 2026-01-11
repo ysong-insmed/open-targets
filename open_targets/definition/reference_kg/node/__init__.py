@@ -1,6 +1,7 @@
 """Summary: node definitions for the reference knowledge graph."""
 
 from open_targets.definition.reference_kg.node.node_adverse_reaction import node_adverse_reaction
+from open_targets.definition.reference_kg.node.node_biosample import node_biosample
 from open_targets.definition.reference_kg.node.node_cell_line import node_cell_line
 from open_targets.definition.reference_kg.node.node_database_cross_reference_disease import (
     node_database_cross_reference_disease,
@@ -31,7 +32,10 @@ from open_targets.definition.reference_kg.node.node_mouse_phenotype_class import
 from open_targets.definition.reference_kg.node.node_pathway import node_pathway
 from open_targets.definition.reference_kg.node.node_phenotype import node_phenotype
 from open_targets.definition.reference_kg.node.node_reaction import node_reaction
+from open_targets.definition.reference_kg.node.node_so_term import node_so_term
 from open_targets.definition.reference_kg.node.node_species import node_species
+from open_targets.definition.reference_kg.node.node_study import node_study
+from open_targets.definition.reference_kg.node.node_study_locus import node_study_locus
 from open_targets.definition.reference_kg.node.node_subcellular_location import node_subcellular_location
 from open_targets.definition.reference_kg.node.node_target import node_target
 from open_targets.definition.reference_kg.node.node_target_classification import node_target_classification
@@ -74,6 +78,9 @@ from open_targets.definition.reference_kg.node.node_target_disease_association_g
 from open_targets.definition.reference_kg.node.node_target_disease_association_genomics_england import (
     node_target_disease_association_genomics_england,
 )
+from open_targets.definition.reference_kg.node.node_target_disease_association_gwas_credible_sets import (
+    node_target_disease_association_gwas_credible_sets,
+)
 from open_targets.definition.reference_kg.node.node_target_disease_association_impc import (
     node_target_disease_association_impc,
 )
@@ -83,18 +90,20 @@ from open_targets.definition.reference_kg.node.node_target_disease_association_i
 from open_targets.definition.reference_kg.node.node_target_disease_association_orphanet import (
     node_target_disease_association_orphanet,
 )
-from open_targets.definition.reference_kg.node.node_target_disease_association_ot_genetics_portal import (
-    node_target_disease_association_ot_genetics_portal,
-)
-from open_targets.definition.reference_kg.node.node_target_disease_association_progeny import (
-    node_target_disease_association_progeny,
-)
+
+# from open_targets.definition.reference_kg.node.node_target_disease_association_ot_genetics_portal import (
+#     node_target_disease_association_ot_genetics_portal,
+# )
+# from open_targets.definition.reference_kg.node.node_target_disease_association_progeny import (
+#     node_target_disease_association_progeny,
+# )
 from open_targets.definition.reference_kg.node.node_target_disease_association_reactome import (
     node_target_disease_association_reactome,
 )
-from open_targets.definition.reference_kg.node.node_target_disease_association_slapenrich import (
-    node_target_disease_association_slapenrich,
-)
+
+# from open_targets.definition.reference_kg.node.node_target_disease_association_slapenrich import (
+#     node_target_disease_association_slapenrich,
+# )
 from open_targets.definition.reference_kg.node.node_target_disease_association_uniprot_literature import (
     node_target_disease_association_uniprot_literature,
 )
@@ -103,9 +112,11 @@ from open_targets.definition.reference_kg.node.node_target_disease_association_u
 )
 from open_targets.definition.reference_kg.node.node_target_target_interaction import node_target_target_interaction
 from open_targets.definition.reference_kg.node.node_tissue import node_tissue
+from open_targets.definition.reference_kg.node.node_variant import node_variant
 
 __all__ = [
     "node_adverse_reaction",
+    "node_biosample",
     "node_cell_line",
     "node_database_cross_reference_disease",
     "node_database_cross_reference_hpo",
@@ -128,7 +139,10 @@ __all__ = [
     "node_pathway",
     "node_phenotype",
     "node_reaction",
+    "node_so_term",
     "node_species",
+    "node_study",
+    "node_study_locus",
     "node_subcellular_location",
     "node_target",
     "node_target_classification",
@@ -145,15 +159,17 @@ __all__ = [
     "node_target_disease_association_gene2phenotype",
     "node_target_disease_association_gene_burden",
     "node_target_disease_association_genomics_england",
+    "node_target_disease_association_gwas_credible_sets",
     "node_target_disease_association_impc",
     "node_target_disease_association_intogen",
     "node_target_disease_association_orphanet",
-    "node_target_disease_association_ot_genetics_portal",
-    "node_target_disease_association_progeny",
+    # "node_target_disease_association_ot_genetics_portal",
+    # "node_target_disease_association_progeny",
     "node_target_disease_association_reactome",
-    "node_target_disease_association_slapenrich",
+    # "node_target_disease_association_slapenrich",
     "node_target_disease_association_uniprot_literature",
     "node_target_disease_association_uniprot_variants",
     "node_target_target_interaction",
     "node_tissue",
+    "node_variant",
 ]

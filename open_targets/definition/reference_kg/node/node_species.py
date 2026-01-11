@@ -11,22 +11,22 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetTargets,
-    FieldTargetsHomologues,
-    FieldTargetsHomologuesElementSpeciesId,
-    FieldTargetsHomologuesElementSpeciesName,
+    DatasetTarget,
+    FieldTargetHomologues,
+    FieldTargetHomologuesElementSpeciesId,
+    FieldTargetHomologuesElementSpeciesName,
 )
 from open_targets.definition.reference_kg.expression import species_primary_id_expression
 
 node_species: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetTargets,
-        exploded_field=FieldTargetsHomologues,
+        dataset=DatasetTarget,
+        exploded_field=FieldTargetHomologues,
     ),
     primary_id=species_primary_id_expression,
     label="SPECIES",
     properties=[
-        FieldTargetsHomologuesElementSpeciesId,
-        FieldTargetsHomologuesElementSpeciesName,
+        FieldTargetHomologuesElementSpeciesId,
+        FieldTargetHomologuesElementSpeciesName,
     ],
 )

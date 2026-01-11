@@ -13,13 +13,13 @@ from open_targets.adapter.expression import FieldExpression, TransformExpression
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetDiseaseToPhenotype,
-    FieldDiseaseToPhenotypeEvidence,
-    FieldDiseaseToPhenotypeEvidenceElementAspect,
-    FieldDiseaseToPhenotypeEvidenceElementBioCuration,
-    FieldDiseaseToPhenotypeEvidenceElementEvidenceType,
-    FieldDiseaseToPhenotypeEvidenceElementFrequency,
-    FieldDiseaseToPhenotypeEvidenceElementSex,
+    DatasetDiseasePhenotype,
+    FieldDiseasePhenotypeEvidence,
+    FieldDiseasePhenotypeEvidenceElementAspect,
+    FieldDiseasePhenotypeEvidenceElementBioCuration,
+    FieldDiseasePhenotypeEvidenceElementEvidenceType,
+    FieldDiseasePhenotypeEvidenceElementFrequency,
+    FieldDiseasePhenotypeEvidenceElementSex,
 )
 from open_targets.definition.reference_kg.expression import disease_phenotype_association_primary_id_expression
 
@@ -48,25 +48,25 @@ def _map_evidence_type(evidence_type: str) -> str:
 
 node_disease_phenotype_association: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetDiseaseToPhenotype,
-        exploded_field=FieldDiseaseToPhenotypeEvidence,
+        dataset=DatasetDiseasePhenotype,
+        exploded_field=FieldDiseasePhenotypeEvidence,
     ),
     primary_id=disease_phenotype_association_primary_id_expression,
     label="DISEASE_PHENOTYPE_ASSOCIATION",
     properties=[
         (
-            FieldDiseaseToPhenotypeEvidenceElementAspect.name,
-            TransformExpression(FieldExpression(FieldDiseaseToPhenotypeEvidenceElementAspect), _map_aspect),
+            FieldDiseasePhenotypeEvidenceElementAspect.name,
+            TransformExpression(FieldExpression(FieldDiseasePhenotypeEvidenceElementAspect), _map_aspect),
         ),
-        FieldDiseaseToPhenotypeEvidenceElementBioCuration,
+        FieldDiseasePhenotypeEvidenceElementBioCuration,
         (
-            FieldDiseaseToPhenotypeEvidenceElementEvidenceType.name,
+            FieldDiseasePhenotypeEvidenceElementEvidenceType.name,
             TransformExpression(
-                FieldExpression(FieldDiseaseToPhenotypeEvidenceElementEvidenceType),
+                FieldExpression(FieldDiseasePhenotypeEvidenceElementEvidenceType),
                 _map_evidence_type,
             ),
         ),
-        FieldDiseaseToPhenotypeEvidenceElementFrequency,
-        FieldDiseaseToPhenotypeEvidenceElementSex,
+        FieldDiseasePhenotypeEvidenceElementFrequency,
+        FieldDiseasePhenotypeEvidenceElementSex,
     ],
 )

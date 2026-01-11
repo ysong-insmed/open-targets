@@ -15,17 +15,15 @@ from open_targets.adapter.expression import (
     ToStringExpression,
 )
 from open_targets.data.schema import (
-    FieldDiseaseToPhenotypeDisease,
-    FieldDiseaseToPhenotypeEvidenceElementDiseaseFromSource,
-    FieldDiseaseToPhenotypePhenotype,
+    FieldDiseasePhenotypeDisease,
+    FieldDiseasePhenotypePhenotype,
 )
 
 disease_phenotype_association_primary_id_expression: Final[Expression[str]] = StringHashExpression(
     StringConcatenationExpression(
         [
-            ToStringExpression(FieldExpression(FieldDiseaseToPhenotypeDisease)),
-            ToStringExpression(FieldExpression(FieldDiseaseToPhenotypePhenotype)),
-            ToStringExpression(FieldExpression(FieldDiseaseToPhenotypeEvidenceElementDiseaseFromSource)),
+            ToStringExpression(FieldExpression(FieldDiseasePhenotypeDisease)),
+            ToStringExpression(FieldExpression(FieldDiseasePhenotypePhenotype)),
         ],
     ),
 )

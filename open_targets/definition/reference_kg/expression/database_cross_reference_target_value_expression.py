@@ -15,14 +15,14 @@ from open_targets.adapter.expression import (
     ToStringExpression,
 )
 from open_targets.data.schema import (
-    FieldTargetsDbXrefsElementId,
-    FieldTargetsDbXrefsElementSource,
+    FieldTargetDbXrefsElementId,
+    FieldTargetDbXrefsElementSource,
 )
 
 database_cross_reference_target_value_expression: Final[Expression[str]] = StringConcatenationExpression(
     [
-        ToStringExpression(FieldExpression(FieldTargetsDbXrefsElementSource)),
+        ToStringExpression(FieldExpression(FieldTargetDbXrefsElementSource)),
         LiteralExpression(":"),
-        ToStringExpression(FieldExpression(FieldTargetsDbXrefsElementId)),
+        ToStringExpression(FieldExpression(FieldTargetDbXrefsElementId)),
     ],
 )

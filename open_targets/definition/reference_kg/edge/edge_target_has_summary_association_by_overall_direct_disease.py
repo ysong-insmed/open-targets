@@ -12,26 +12,26 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetAssociationByOverallDirect,
-    FieldAssociationByOverallDirectDiseaseId,
-    FieldAssociationByOverallDirectEvidenceCount,
-    FieldAssociationByOverallDirectScore,
-    FieldAssociationByOverallDirectTargetId,
+    DatasetAssociationOverallDirect,
+    FieldAssociationOverallDirectDiseaseId,
+    FieldAssociationOverallDirectEvidenceCount,
+    FieldAssociationOverallDirectScore,
+    FieldAssociationOverallDirectTargetId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_target_has_summary_association_by_overall_direct_disease: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=RowScanOperation(
-            dataset=DatasetAssociationByOverallDirect,
+            dataset=DatasetAssociationOverallDirect,
         ),
         primary_id=NewUuidExpression(),
-        source=FieldAssociationByOverallDirectTargetId,
-        target=FieldAssociationByOverallDirectDiseaseId,
+        source=FieldAssociationOverallDirectTargetId,
+        target=FieldAssociationOverallDirectDiseaseId,
         label=EdgeLabel.HAS_SUMMARY_ASSOCIATION_BY_OVERALL_DIRECT,
         properties=[
-            FieldAssociationByOverallDirectScore,
-            FieldAssociationByOverallDirectEvidenceCount,
+            FieldAssociationOverallDirectScore,
+            FieldAssociationOverallDirectEvidenceCount,
         ],
     )
 )

@@ -11,25 +11,22 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
-from open_targets.adapter.scan_operation_predicate import EqualityExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceDiseaseId,
-    FieldEvidencePathways,
-    FieldEvidencePathwaysElementId,
-    FieldEvidenceSourceId,
+    DatasetEvidenceReactome,
+    FieldEvidenceReactomeDiseaseFromSourceMappedId,
+    FieldEvidenceReactomePathways,
+    FieldEvidenceReactomePathwaysElementId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_pathway_annotated_with_disease: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetEvidence,
-        exploded_field=FieldEvidencePathways,
-        predicate=EqualityExpression(FieldEvidenceSourceId, "reactome"),
+        dataset=DatasetEvidenceReactome,
+        exploded_field=FieldEvidenceReactomePathways,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldEvidencePathwaysElementId,
-    target=FieldEvidenceDiseaseId,
+    source=FieldEvidenceReactomePathwaysElementId,
+    target=FieldEvidenceReactomeDiseaseFromSourceMappedId,
     label=EdgeLabel.ANNOTATED_WITH,
     properties=[],
 )

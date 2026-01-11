@@ -13,40 +13,30 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetAdverseDrugReactions,
-    FieldAdverseDrugReactionsA,
-    FieldAdverseDrugReactionsActerm,
-    FieldAdverseDrugReactionsAterm,
-    FieldAdverseDrugReactionsB,
-    FieldAdverseDrugReactionsC,
-    FieldAdverseDrugReactionsChemblId,
-    FieldAdverseDrugReactionsCterm,
-    FieldAdverseDrugReactionsD,
-    FieldAdverseDrugReactionsLlr,
-    FieldAdverseDrugReactionsUniqReportIdsByDrug,
-    FieldAdverseDrugReactionsUniqReportIdsByReaction,
+    DatasetOpenfdaSignificantAdverseDrugReactions,
+    FieldOpenfdaSignificantAdverseDrugReactionsChemblId,
+    FieldOpenfdaSignificantAdverseDrugReactionsCount,
+    FieldOpenfdaSignificantAdverseDrugReactionsCritval,
+    FieldOpenfdaSignificantAdverseDrugReactionsEvent,
+    FieldOpenfdaSignificantAdverseDrugReactionsLlr,
+    FieldOpenfdaSignificantAdverseDrugReactionsMeddraCode,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import adverse_reaction_primary_id_expression
 
 edge_molecule_has_adverse_reaction_adverse_reaction: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
-        scan_operation=RowScanOperation(dataset=DatasetAdverseDrugReactions),
+        scan_operation=RowScanOperation(dataset=DatasetOpenfdaSignificantAdverseDrugReactions),
         primary_id=NewUuidExpression(),
-        source=FieldAdverseDrugReactionsChemblId,
+        source=FieldOpenfdaSignificantAdverseDrugReactionsChemblId,
         target=adverse_reaction_primary_id_expression,
         label=EdgeLabel.HAS_ADVERSE_REACTION,
         properties=[
-            FieldAdverseDrugReactionsActerm,
-            FieldAdverseDrugReactionsAterm,
-            FieldAdverseDrugReactionsCterm,
-            FieldAdverseDrugReactionsLlr,
-            FieldAdverseDrugReactionsA,
-            FieldAdverseDrugReactionsB,
-            FieldAdverseDrugReactionsC,
-            FieldAdverseDrugReactionsD,
-            FieldAdverseDrugReactionsUniqReportIdsByDrug,
-            FieldAdverseDrugReactionsUniqReportIdsByReaction,
+            FieldOpenfdaSignificantAdverseDrugReactionsEvent,
+            FieldOpenfdaSignificantAdverseDrugReactionsMeddraCode,
+            FieldOpenfdaSignificantAdverseDrugReactionsLlr,
+            FieldOpenfdaSignificantAdverseDrugReactionsCount,
+            FieldOpenfdaSignificantAdverseDrugReactionsCritval,
         ],
     )
 )

@@ -10,11 +10,11 @@ from open_targets.adapter.expression import (
     Expression,
 )
 from open_targets.data.schema import (
-    FieldDiseasesSynonymsHasNarrowSynonymElement,
+    FieldDiseaseSynonymsHasNarrowSynonymElement,
 )
 from open_targets.definition.helper import get_namespaced_hash_expression
 
 disease_synonym_narrow_primary_id_expression: Final[Expression[str]] = get_namespaced_hash_expression(
     "disease_synonym",
-    FieldDiseasesSynonymsHasNarrowSynonymElement,
+    FieldDiseaseSynonymsHasNarrowSynonymElement,
 )

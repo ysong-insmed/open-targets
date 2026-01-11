@@ -11,9 +11,9 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetTargets,
-    FieldTargetsId,
-    FieldTargetsTargetClass,
+    DatasetTarget,
+    FieldTargetId,
+    FieldTargetTargetClass,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import target_classification_primary_id_expression
@@ -21,11 +21,11 @@ from open_targets.definition.reference_kg.expression import target_classificatio
 edge_target_belongs_to_target_classification: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=ExplodingScanOperation(
-            dataset=DatasetTargets,
-            exploded_field=FieldTargetsTargetClass,
+            dataset=DatasetTarget,
+            exploded_field=FieldTargetTargetClass,
         ),
         primary_id=NewUuidExpression(),
-        source=FieldTargetsId,
+        source=FieldTargetId,
         target=target_classification_primary_id_expression,
         label=EdgeLabel.BELONGS_TO,
         properties=[],

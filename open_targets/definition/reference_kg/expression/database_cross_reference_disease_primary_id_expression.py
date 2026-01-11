@@ -10,10 +10,10 @@ from typing import Final
 from open_targets.adapter.expression import (
     Expression,
 )
-from open_targets.data.schema import FieldDiseasesDbXRefsElement
+from open_targets.data.schema import FieldDiseaseDbXRefsElement
 from open_targets.definition.helper import get_namespaced_hash_expression
 
 database_cross_reference_disease_primary_id_expression: Final[Expression[str]] = get_namespaced_hash_expression(
     "database_cross_reference",
-    FieldDiseasesDbXRefsElement,
+    FieldDiseaseDbXRefsElement,
 )

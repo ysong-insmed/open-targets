@@ -12,12 +12,10 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
-from open_targets.adapter.scan_operation_predicate import EqualityExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceBiomarkersGeneExpression,
-    FieldEvidenceId,
-    FieldEvidenceSourceId,
+    DatasetEvidenceCancerBiomarkers,
+    FieldEvidenceCancerBiomarkersBiomarkersGeneExpression,
+    FieldEvidenceCancerBiomarkersId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import target_disease_association_literature_expression
@@ -25,12 +23,11 @@ from open_targets.definition.reference_kg.expression import target_disease_assoc
 edge_target_disease_association_supported_by_literature: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=ExplodingScanOperation(
-            dataset=DatasetEvidence,
-            exploded_field=FieldEvidenceBiomarkersGeneExpression,
-            predicate=EqualityExpression(FieldEvidenceSourceId, "cancer_biomarkers"),
+            dataset=DatasetEvidenceCancerBiomarkers,
+            exploded_field=FieldEvidenceCancerBiomarkersBiomarkersGeneExpression,
         ),
         primary_id=NewUuidExpression(),
-        source=FieldEvidenceId,
+        source=FieldEvidenceCancerBiomarkersId,
         target=target_disease_association_literature_expression,
         label=EdgeLabel.SUPPORTED_BY,
         properties=[],

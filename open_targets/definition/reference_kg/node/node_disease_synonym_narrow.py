@@ -11,21 +11,21 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetDiseases,
-    FieldDiseasesSynonymsHasNarrowSynonym,
-    FieldDiseasesSynonymsHasNarrowSynonymElement,
+    DatasetDisease,
+    FieldDiseaseSynonymsHasNarrowSynonym,
+    FieldDiseaseSynonymsHasNarrowSynonymElement,
 )
 from open_targets.definition.reference_kg.constant import NodeLabel
 from open_targets.definition.reference_kg.expression import disease_synonym_narrow_primary_id_expression
 
 node_disease_synonym_narrow: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetDiseases,
-        exploded_field=FieldDiseasesSynonymsHasNarrowSynonym,
+        dataset=DatasetDisease,
+        exploded_field=FieldDiseaseSynonymsHasNarrowSynonym,
     ),
     primary_id=disease_synonym_narrow_primary_id_expression,
     label=NodeLabel.DISEASE_SYNONYM,
     properties=[
-        ("value", FieldDiseasesSynonymsHasNarrowSynonymElement),
+        ("value", FieldDiseaseSynonymsHasNarrowSynonymElement),
     ],
 )

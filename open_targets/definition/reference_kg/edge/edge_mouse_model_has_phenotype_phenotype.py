@@ -11,25 +11,22 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
-from open_targets.adapter.scan_operation_predicate import EqualityExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceBiologicalModelId,
-    FieldEvidenceDiseaseModelAssociatedHumanPhenotypes,
-    FieldEvidenceDiseaseModelAssociatedHumanPhenotypesElementId,
-    FieldEvidenceSourceId,
+    DatasetEvidenceImpc,
+    FieldEvidenceImpcBiologicalModelId,
+    FieldEvidenceImpcDiseaseModelAssociatedHumanPhenotypes,
+    FieldEvidenceImpcDiseaseModelAssociatedHumanPhenotypesElementId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_mouse_model_has_phenotype_phenotype: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetEvidence,
-        exploded_field=FieldEvidenceDiseaseModelAssociatedHumanPhenotypes,
-        predicate=EqualityExpression(FieldEvidenceSourceId, "impc"),
+        dataset=DatasetEvidenceImpc,
+        exploded_field=FieldEvidenceImpcDiseaseModelAssociatedHumanPhenotypes,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldEvidenceBiologicalModelId,
-    target=FieldEvidenceDiseaseModelAssociatedHumanPhenotypesElementId,
+    source=FieldEvidenceImpcBiologicalModelId,
+    target=FieldEvidenceImpcDiseaseModelAssociatedHumanPhenotypesElementId,
     label=EdgeLabel.HAS_PHENOTYPE,
     properties=[],
 )

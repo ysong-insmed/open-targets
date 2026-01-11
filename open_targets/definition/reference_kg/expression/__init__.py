@@ -5,9 +5,6 @@ normalized values used across node/edge definitions, especially where source
 datasets lack explicit primary keys or have inconsistent identifier formats.
 """
 
-from open_targets.definition.reference_kg.expression.adverse_reaction_primary_id_expression import (
-    adverse_reaction_primary_id_expression,
-)
 from open_targets.definition.reference_kg.expression.database_cross_reference_disease_primary_id_expression import (
     database_cross_reference_disease_primary_id_expression,
 )
@@ -64,7 +61,6 @@ from open_targets.definition.reference_kg.expression.target_target_interaction_p
 )
 
 __all__ = [
-    "adverse_reaction_primary_id_expression",
     "database_cross_reference_disease_primary_id_expression",
     "database_cross_reference_hpo_primary_id_expression",
     "database_cross_reference_target_primary_id_expression",

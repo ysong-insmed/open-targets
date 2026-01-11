@@ -11,24 +11,19 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
-from open_targets.adapter.scan_operation_predicate import EqualityExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceId,
-    FieldEvidenceReactionId,
-    FieldEvidenceSourceId,
+    DatasetEvidenceReactome,
+    FieldEvidenceReactomeId,
+    FieldEvidenceReactomeReactionId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_target_disease_association_inferred_from_reaction: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
-        scan_operation=RowScanOperation(
-            dataset=DatasetEvidence,
-            predicate=EqualityExpression(FieldEvidenceSourceId, "reactome"),
-        ),
+        scan_operation=RowScanOperation(dataset=DatasetEvidenceReactome),
         primary_id=NewUuidExpression(),
-        source=FieldEvidenceId,
-        target=FieldEvidenceReactionId,
+        source=FieldEvidenceReactomeId,
+        target=FieldEvidenceReactomeReactionId,
         label=EdgeLabel.INFERRED_FROM,
         properties=[],
     )

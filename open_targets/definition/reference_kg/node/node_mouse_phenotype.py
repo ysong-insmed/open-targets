@@ -14,16 +14,16 @@ from open_targets.adapter.acquisition_definition import (
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetMousePhenotypes,
-    FieldMousePhenotypesModelPhenotypeId,
-    FieldMousePhenotypesModelPhenotypeLabel,
+    DatasetMousePhenotype,
+    FieldMousePhenotypeModelPhenotypeId,
+    FieldMousePhenotypeModelPhenotypeLabel,
 )
 
 node_mouse_phenotype: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
-    scan_operation=RowScanOperation(dataset=DatasetMousePhenotypes),
-    primary_id=FieldMousePhenotypesModelPhenotypeId,
+    scan_operation=RowScanOperation(dataset=DatasetMousePhenotype),
+    primary_id=FieldMousePhenotypeModelPhenotypeId,
     label="MOUSE_PHENOTYPE",
     properties=[
-        FieldMousePhenotypesModelPhenotypeLabel,
+        FieldMousePhenotypeModelPhenotypeLabel,
     ],
 )

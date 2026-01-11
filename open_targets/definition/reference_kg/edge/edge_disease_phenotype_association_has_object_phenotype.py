@@ -13,9 +13,9 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetDiseaseToPhenotype,
-    FieldDiseaseToPhenotypeEvidence,
-    FieldDiseaseToPhenotypePhenotype,
+    DatasetDiseasePhenotype,
+    FieldDiseasePhenotypeEvidence,
+    FieldDiseasePhenotypePhenotype,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import disease_phenotype_association_primary_id_expression
@@ -23,12 +23,12 @@ from open_targets.definition.reference_kg.expression import disease_phenotype_as
 edge_disease_phenotype_association_has_object_phenotype: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=ExplodingScanOperation(
-            dataset=DatasetDiseaseToPhenotype,
-            exploded_field=FieldDiseaseToPhenotypeEvidence,
+            dataset=DatasetDiseasePhenotype,
+            exploded_field=FieldDiseasePhenotypeEvidence,
         ),
         primary_id=NewUuidExpression(),
         source=disease_phenotype_association_primary_id_expression,
-        target=FieldDiseaseToPhenotypePhenotype,
+        target=FieldDiseasePhenotypePhenotype,
         label=EdgeLabel.HAS_OBJECT,
         properties=[],
     )

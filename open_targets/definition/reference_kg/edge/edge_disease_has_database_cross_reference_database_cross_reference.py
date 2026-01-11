@@ -14,9 +14,9 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetDiseases,
-    FieldDiseasesDbXRefs,
-    FieldDiseasesId,
+    DatasetDisease,
+    FieldDiseaseDbXRefs,
+    FieldDiseaseId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import database_cross_reference_disease_primary_id_expression
@@ -24,11 +24,11 @@ from open_targets.definition.reference_kg.expression import database_cross_refer
 edge_disease_has_database_cross_reference_database_cross_reference: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=ExplodingScanOperation(
-            dataset=DatasetDiseases,
-            exploded_field=FieldDiseasesDbXRefs,
+            dataset=DatasetDisease,
+            exploded_field=FieldDiseaseDbXRefs,
         ),
         primary_id=NewUuidExpression(),
-        source=FieldDiseasesId,
+        source=FieldDiseaseId,
         target=database_cross_reference_disease_primary_id_expression,
         label=EdgeLabel.HAS_DATABASE_CROSS_REFERENCE,
         properties=[],

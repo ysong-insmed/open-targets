@@ -11,29 +11,23 @@ from open_targets.adapter.acquisition_definition import AcquisitionDefinition, E
 from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
-from open_targets.adapter.scan_operation_predicate import AndExpression, EqualityExpression, NotExpression
+from open_targets.adapter.scan_operation_predicate import EqualityExpression, NotExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceDrugId,
-    FieldEvidenceId,
-    FieldEvidenceSourceId,
+    DatasetEvidenceCancerBiomarkers,
+    FieldEvidenceCancerBiomarkersDrugId,
+    FieldEvidenceCancerBiomarkersId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_target_disease_association_cancer_biomarkers_has_molecule_molecule: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=RowScanOperation(
-            dataset=DatasetEvidence,
-            predicate=AndExpression(
-                [
-                    EqualityExpression(FieldEvidenceSourceId, "cancer_biomarkers"),
-                    NotExpression(EqualityExpression(FieldEvidenceDrugId, None)),
-                ],
-            ),
+            dataset=DatasetEvidenceCancerBiomarkers,
+            predicate=NotExpression(EqualityExpression(FieldEvidenceCancerBiomarkersDrugId, None)),
         ),
         primary_id=NewUuidExpression(),
-        source=FieldEvidenceId,
-        target=FieldEvidenceDrugId,
+        source=FieldEvidenceCancerBiomarkersId,
+        target=FieldEvidenceCancerBiomarkersDrugId,
         label=EdgeLabel.HAS_MOLECULE,
         properties=[],
     )

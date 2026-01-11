@@ -13,36 +13,31 @@ from typing import Final
 from open_targets.adapter.acquisition_definition import AcquisitionDefinition, ExpressionNodeAcquisitionDefinition
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
-from open_targets.adapter.scan_operation_predicate import EqualityExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceAllelicRequirements,
-    FieldEvidenceConfidence,
-    FieldEvidenceDiseaseFromSource,
-    FieldEvidenceDiseaseFromSourceId,
-    FieldEvidenceDiseaseFromSourceMappedId,
-    FieldEvidenceId,
-    FieldEvidenceScore,
-    FieldEvidenceSourceId,
-    FieldEvidenceStudyId,
-    FieldEvidenceTargetFromSourceId,
+    DatasetEvidenceClingen,
+    FieldEvidenceClingenAllelicRequirements,
+    FieldEvidenceClingenConfidence,
+    FieldEvidenceClingenDiseaseFromSource,
+    FieldEvidenceClingenDiseaseFromSourceId,
+    FieldEvidenceClingenDiseaseFromSourceMappedId,
+    FieldEvidenceClingenId,
+    FieldEvidenceClingenScore,
+    FieldEvidenceClingenStudyId,
+    FieldEvidenceClingenTargetFromSourceId,
 )
 
 node_target_disease_association_clingen: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
-    scan_operation=RowScanOperation(
-        dataset=DatasetEvidence,
-        predicate=EqualityExpression(FieldEvidenceSourceId, "clingen"),
-    ),
-    primary_id=FieldEvidenceId,
+    scan_operation=RowScanOperation(dataset=DatasetEvidenceClingen),
+    primary_id=FieldEvidenceClingenId,
     label="TARGET_DISEASE_ASSOCIATION_CLINGEN",
     properties=[
-        FieldEvidenceAllelicRequirements,
-        FieldEvidenceConfidence,
-        FieldEvidenceDiseaseFromSource,
-        FieldEvidenceDiseaseFromSourceId,
-        FieldEvidenceDiseaseFromSourceMappedId,
-        FieldEvidenceScore,
-        FieldEvidenceStudyId,
-        FieldEvidenceTargetFromSourceId,
+        FieldEvidenceClingenAllelicRequirements,
+        FieldEvidenceClingenConfidence,
+        FieldEvidenceClingenDiseaseFromSource,
+        FieldEvidenceClingenDiseaseFromSourceId,
+        FieldEvidenceClingenDiseaseFromSourceMappedId,
+        FieldEvidenceClingenScore,
+        FieldEvidenceClingenStudyId,
+        FieldEvidenceClingenTargetFromSourceId,
     ],
 )

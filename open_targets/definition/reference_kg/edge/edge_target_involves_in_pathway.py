@@ -12,21 +12,21 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetTargets,
-    FieldTargetsId,
-    FieldTargetsPathways,
-    FieldTargetsPathwaysElementPathwayId,
+    DatasetTarget,
+    FieldTargetId,
+    FieldTargetPathways,
+    FieldTargetPathwaysElementPathwayId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_target_involves_in_pathway: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetTargets,
-        exploded_field=FieldTargetsPathways,
+        dataset=DatasetTarget,
+        exploded_field=FieldTargetPathways,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldTargetsId,
-    target=FieldTargetsPathwaysElementPathwayId,
+    source=FieldTargetId,
+    target=FieldTargetPathwaysElementPathwayId,
     label=EdgeLabel.INVOLVES_IN,
     properties=[],
 )

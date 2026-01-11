@@ -12,28 +12,27 @@ from typing import Final
 from open_targets.adapter.acquisition_definition import AcquisitionDefinition, ExpressionNodeAcquisitionDefinition
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
-from open_targets.adapter.scan_operation_predicate import EqualityExpression
 from open_targets.data.schema import (
-    DatasetEvidence,
-    FieldEvidenceDiseaseFromSourceMappedId,
-    FieldEvidenceId,
-    FieldEvidenceResourceScore,
-    FieldEvidenceScore,
-    FieldEvidenceSourceId,
-    FieldEvidenceTargetFromSourceId,
+    DatasetEvidenceEuropepmc,
+    FieldEvidenceEuropepmcDiseaseFromSourceMappedId,
+    FieldEvidenceEuropepmcId,
+    FieldEvidenceEuropepmcLiterature,
+    FieldEvidenceEuropepmcResourceScore,
+    FieldEvidenceEuropepmcScore,
+    FieldEvidenceEuropepmcTargetFromSourceId,
+    FieldEvidenceEuropepmcTextMiningSentences,
 )
 
 node_target_disease_association_europepmc: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
-    scan_operation=RowScanOperation(
-        dataset=DatasetEvidence,
-        predicate=EqualityExpression(FieldEvidenceSourceId, "europepmc"),
-    ),
-    primary_id=FieldEvidenceId,
+    scan_operation=RowScanOperation(dataset=DatasetEvidenceEuropepmc),
+    primary_id=FieldEvidenceEuropepmcId,
     label="TARGET_DISEASE_ASSOCIATION_EUROPEPMC",
     properties=[
-        FieldEvidenceDiseaseFromSourceMappedId,
-        FieldEvidenceResourceScore,
-        FieldEvidenceScore,
-        FieldEvidenceTargetFromSourceId,
+        FieldEvidenceEuropepmcDiseaseFromSourceMappedId,
+        FieldEvidenceEuropepmcLiterature,
+        FieldEvidenceEuropepmcResourceScore,
+        FieldEvidenceEuropepmcScore,
+        FieldEvidenceEuropepmcTargetFromSourceId,
+        FieldEvidenceEuropepmcTextMiningSentences,
     ],
 )

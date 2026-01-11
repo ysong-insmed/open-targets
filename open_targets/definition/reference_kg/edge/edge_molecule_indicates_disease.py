@@ -13,24 +13,24 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetIndication,
-    FieldIndicationId,
-    FieldIndicationIndications,
-    FieldIndicationIndicationsElementDisease,
-    FieldIndicationIndicationsElementMaxPhaseForIndication,
+    DatasetDrugIndication,
+    FieldDrugIndicationId,
+    FieldDrugIndicationIndications,
+    FieldDrugIndicationIndicationsElementDisease,
+    FieldDrugIndicationIndicationsElementMaxPhaseForIndication,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_molecule_indicates_disease: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetIndication,
-        exploded_field=FieldIndicationIndications,
+        dataset=DatasetDrugIndication,
+        exploded_field=FieldDrugIndicationIndications,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldIndicationId,
-    target=FieldIndicationIndicationsElementDisease,
+    source=FieldDrugIndicationId,
+    target=FieldDrugIndicationIndicationsElementDisease,
     label=EdgeLabel.INDICATES,
     properties=[
-        FieldIndicationIndicationsElementMaxPhaseForIndication,
+        FieldDrugIndicationIndicationsElementMaxPhaseForIndication,
     ],
 )

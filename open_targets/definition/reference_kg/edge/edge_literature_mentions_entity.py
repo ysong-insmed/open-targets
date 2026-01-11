@@ -12,23 +12,23 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetLiteratureIndex,
-    FieldLiteratureIndexKeywordId,
-    FieldLiteratureIndexKeywordType,
-    FieldLiteratureIndexRelevance,
+    DatasetLiterature,
+    FieldLiteratureKeywordId,
+    FieldLiteratureKeywordType,
+    FieldLiteratureRelevance,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import literature_entry_primary_id_expression
 
 edge_literature_mentions_entity: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
-    scan_operation=RowScanOperation(dataset=DatasetLiteratureIndex),
+    scan_operation=RowScanOperation(dataset=DatasetLiterature),
     primary_id=NewUuidExpression(),
     source=literature_entry_primary_id_expression,
-    target=FieldLiteratureIndexKeywordId,
+    target=FieldLiteratureKeywordId,
     label=EdgeLabel.MENTIONS,
     properties=[
-        FieldLiteratureIndexKeywordId,
-        FieldLiteratureIndexKeywordType,
-        FieldLiteratureIndexRelevance,
+        FieldLiteratureKeywordId,
+        FieldLiteratureKeywordType,
+        FieldLiteratureRelevance,
     ],
 )

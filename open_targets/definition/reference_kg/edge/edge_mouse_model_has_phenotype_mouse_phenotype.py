@@ -13,22 +13,22 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetMousePhenotypes,
-    FieldMousePhenotypesBiologicalModels,
-    FieldMousePhenotypesBiologicalModelsElementId,
-    FieldMousePhenotypesModelPhenotypeId,
+    DatasetMousePhenotype,
+    FieldMousePhenotypeBiologicalModels,
+    FieldMousePhenotypeBiologicalModelsElementId,
+    FieldMousePhenotypeModelPhenotypeId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_mouse_model_has_phenotype_mouse_phenotype: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=ExplodingScanOperation(
-            dataset=DatasetMousePhenotypes,
-            exploded_field=FieldMousePhenotypesBiologicalModels,
+            dataset=DatasetMousePhenotype,
+            exploded_field=FieldMousePhenotypeBiologicalModels,
         ),
         primary_id=NewUuidExpression(),
-        source=FieldMousePhenotypesBiologicalModelsElementId,
-        target=FieldMousePhenotypesModelPhenotypeId,
+        source=FieldMousePhenotypeBiologicalModelsElementId,
+        target=FieldMousePhenotypeModelPhenotypeId,
         label=EdgeLabel.HAS_PHENOTYPE,
         properties=[],
     )

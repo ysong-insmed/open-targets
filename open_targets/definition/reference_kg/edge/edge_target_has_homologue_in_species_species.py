@@ -13,16 +13,16 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetTargets,
-    FieldTargetsHomologues,
-    FieldTargetsHomologuesElementHomologyType,
-    FieldTargetsHomologuesElementIsHighConfidence,
-    FieldTargetsHomologuesElementPriority,
-    FieldTargetsHomologuesElementQueryPercentageIdentity,
-    FieldTargetsHomologuesElementTargetGeneId,
-    FieldTargetsHomologuesElementTargetGeneSymbol,
-    FieldTargetsHomologuesElementTargetPercentageIdentity,
-    FieldTargetsId,
+    DatasetTarget,
+    FieldTargetHomologues,
+    FieldTargetHomologuesElementHomologyType,
+    FieldTargetHomologuesElementIsHighConfidence,
+    FieldTargetHomologuesElementPriority,
+    FieldTargetHomologuesElementQueryPercentageIdentity,
+    FieldTargetHomologuesElementTargetGeneId,
+    FieldTargetHomologuesElementTargetGeneSymbol,
+    FieldTargetHomologuesElementTargetPercentageIdentity,
+    FieldTargetId,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 from open_targets.definition.reference_kg.expression import species_primary_id_expression
@@ -30,21 +30,21 @@ from open_targets.definition.reference_kg.expression import species_primary_id_e
 edge_target_has_homologue_in_species_species: Final[AcquisitionDefinition[EdgeInfo]] = (
     ExpressionEdgeAcquisitionDefinition(
         scan_operation=ExplodingScanOperation(
-            dataset=DatasetTargets,
-            exploded_field=FieldTargetsHomologues,
+            dataset=DatasetTarget,
+            exploded_field=FieldTargetHomologues,
         ),
         primary_id=NewUuidExpression(),
-        source=FieldTargetsId,
+        source=FieldTargetId,
         target=species_primary_id_expression,
         label=EdgeLabel.HAS_HOMOLOGUE_IN_SPECIES,
         properties=[
-            FieldTargetsHomologuesElementHomologyType,
-            FieldTargetsHomologuesElementTargetGeneId,
-            FieldTargetsHomologuesElementTargetGeneSymbol,
-            FieldTargetsHomologuesElementIsHighConfidence,
-            FieldTargetsHomologuesElementQueryPercentageIdentity,
-            FieldTargetsHomologuesElementTargetPercentageIdentity,
-            FieldTargetsHomologuesElementPriority,
+            FieldTargetHomologuesElementHomologyType,
+            FieldTargetHomologuesElementTargetGeneId,
+            FieldTargetHomologuesElementTargetGeneSymbol,
+            FieldTargetHomologuesElementIsHighConfidence,
+            FieldTargetHomologuesElementQueryPercentageIdentity,
+            FieldTargetHomologuesElementTargetPercentageIdentity,
+            FieldTargetHomologuesElementPriority,
         ],
     )
 )

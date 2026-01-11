@@ -11,21 +11,21 @@ from open_targets.adapter.expression import NewUuidExpression
 from open_targets.adapter.output import EdgeInfo
 from open_targets.adapter.scan_operation import ExplodingScanOperation
 from open_targets.data.schema import (
-    DatasetHpo,
-    FieldHpoId,
-    FieldHpoParents,
-    FieldHpoParentsElement,
+    DatasetDiseaseHpo,
+    FieldDiseaseHpoId,
+    FieldDiseaseHpoParents,
+    FieldDiseaseHpoParentsElement,
 )
 from open_targets.definition.reference_kg.constant import EdgeLabel
 
 edge_phenotype_is_a_phenotype: Final[AcquisitionDefinition[EdgeInfo]] = ExpressionEdgeAcquisitionDefinition(
     scan_operation=ExplodingScanOperation(
-        dataset=DatasetHpo,
-        exploded_field=FieldHpoParents,
+        dataset=DatasetDiseaseHpo,
+        exploded_field=FieldDiseaseHpoParents,
     ),
     primary_id=NewUuidExpression(),
-    source=FieldHpoId,
-    target=FieldHpoParentsElement,
+    source=FieldDiseaseHpoId,
+    target=FieldDiseaseHpoParentsElement,
     label=EdgeLabel.IS_A,
     properties=[],
 )

@@ -14,22 +14,22 @@ from open_targets.adapter.acquisition_definition import (
 from open_targets.adapter.output import NodeInfo
 from open_targets.adapter.scan_operation import RowScanOperation
 from open_targets.data.schema import (
-    DatasetTargets,
-    FieldTargetsApprovedName,
-    FieldTargetsApprovedSymbol,
-    FieldTargetsBiotype,
-    FieldTargetsFunctionDescriptions,
-    FieldTargetsId,
+    DatasetTarget,
+    FieldTargetApprovedName,
+    FieldTargetApprovedSymbol,
+    FieldTargetBiotype,
+    FieldTargetFunctionDescriptions,
+    FieldTargetId,
 )
 
 node_target: Final[AcquisitionDefinition[NodeInfo]] = ExpressionNodeAcquisitionDefinition(
-    scan_operation=RowScanOperation(dataset=DatasetTargets),
-    primary_id=FieldTargetsId,
+    scan_operation=RowScanOperation(dataset=DatasetTarget),
+    primary_id=FieldTargetId,
     label="TARGET",
     properties=[
-        FieldTargetsApprovedSymbol,
-        FieldTargetsBiotype,
-        FieldTargetsApprovedName,
-        FieldTargetsFunctionDescriptions,
+        FieldTargetApprovedSymbol,
+        FieldTargetBiotype,
+        FieldTargetApprovedName,
+        FieldTargetFunctionDescriptions,
     ],
 )
