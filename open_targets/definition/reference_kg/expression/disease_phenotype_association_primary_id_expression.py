@@ -16,6 +16,7 @@ from open_targets.adapter.expression import (
 )
 from open_targets.data.schema import (
     FieldDiseasePhenotypeDisease,
+    FieldDiseasePhenotypeEvidenceElementDiseaseFromSource,
     FieldDiseasePhenotypePhenotype,
 )
 
@@ -24,6 +25,7 @@ disease_phenotype_association_primary_id_expression: Final[Expression[str]] = St
         [
             ToStringExpression(FieldExpression(FieldDiseasePhenotypeDisease)),
             ToStringExpression(FieldExpression(FieldDiseasePhenotypePhenotype)),
+            ToStringExpression(FieldExpression(FieldDiseasePhenotypeEvidenceElementDiseaseFromSource)),
         ],
     ),
 )

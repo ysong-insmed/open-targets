@@ -3,6 +3,8 @@
 from open_targets.definition.reference_kg.node.node_adverse_reaction import node_adverse_reaction
 from open_targets.definition.reference_kg.node.node_biosample import node_biosample
 from open_targets.definition.reference_kg.node.node_cell_line import node_cell_line
+from open_targets.definition.reference_kg.node.node_colocalisation import node_colocalisation
+from open_targets.definition.reference_kg.node.node_credible_set import node_credible_set
 from open_targets.definition.reference_kg.node.node_database_cross_reference_disease import (
     node_database_cross_reference_disease,
 )
@@ -107,6 +109,8 @@ __all__ = [
     "node_adverse_reaction",
     "node_biosample",
     "node_cell_line",
+    "node_colocalisation",
+    "node_credible_set",
     "node_database_cross_reference_disease",
     "node_database_cross_reference_hpo",
     "node_database_cross_reference_target",

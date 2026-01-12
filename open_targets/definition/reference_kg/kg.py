@@ -5,7 +5,7 @@ from typing import Final
 from open_targets.definition.knowledge_graph import KnowledgeGraphDefinition
 from open_targets.definition.reference_kg.edge import (
     edge_cell_line_sampled_from_tissue,
-    edge_colocalisation,
+    edge_credible_set_has_participating_variant_variant,
     edge_disease_has_database_cross_reference_database_cross_reference,
     edge_disease_has_synonym_synonym_broad,
     edge_disease_has_synonym_synonym_exact,
@@ -14,8 +14,6 @@ from open_targets.definition.reference_kg.edge import (
     edge_disease_is_a_disease,
     edge_disease_phenotype_association_has_object_phenotype,
     edge_disease_subject_of_disease_phenotype_association,
-    edge_enhancer_to_gene,
-    edge_l2g_prediction,
     edge_mechanism_of_action_has_target_target,
     edge_molecule_derived_from_molecule,
     edge_molecule_has_adverse_reaction_adverse_reaction,
@@ -31,6 +29,11 @@ from open_targets.definition.reference_kg.edge import (
     edge_phenotype_has_database_cross_reference_database_cross_reference,
     edge_phenotype_is_a_phenotype,
     edge_reaction_is_part_of_pathway,
+    edge_study_has_publication_literature_entry,
+    edge_study_has_study_locus_study_locus,
+    edge_study_locus_has_colocalisation_colocalisation_left,
+    edge_study_locus_has_colocalisation_colocalisation_right,
+    edge_study_locus_has_credible_set_credible_set,
     edge_target_associated_with_adverse_reaction,
     edge_target_belongs_to_target_classification,
     edge_target_disease_association_cancer_biomarkers_has_drug_response_entity,
@@ -98,8 +101,9 @@ from open_targets.definition.reference_kg.edge import (
 )
 from open_targets.definition.reference_kg.node import (
     node_adverse_reaction,
-    node_biosample,
     node_cell_line,
+    node_colocalisation,
+    node_credible_set,
     node_database_cross_reference_disease,
     node_database_cross_reference_hpo,
     node_database_cross_reference_target,
@@ -121,7 +125,6 @@ from open_targets.definition.reference_kg.node import (
     node_pathway,
     node_phenotype,
     node_reaction,
-    node_so_term,
     node_species,
     node_study,
     node_study_locus,
@@ -156,8 +159,11 @@ from open_targets.definition.reference_kg.node import (
 reference_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefinition(
     node_definitions=[
         node_adverse_reaction,
-        node_biosample,
+        # Awaiting review
+        # node_biosample,
         node_cell_line,
+        node_colocalisation,
+        node_credible_set,
         node_database_cross_reference_disease,
         node_database_cross_reference_hpo,
         node_database_cross_reference_target,
@@ -179,7 +185,8 @@ reference_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefinit
         node_pathway,
         node_phenotype,
         node_reaction,
-        node_so_term,
+        # Awaiting review
+        # node_so_term,
         node_species,
         node_study,
         node_study_locus,
@@ -212,7 +219,7 @@ reference_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefinit
     ],
     edge_definitions=[
         edge_cell_line_sampled_from_tissue,
-        edge_colocalisation,
+        edge_credible_set_has_participating_variant_variant,
         edge_disease_has_database_cross_reference_database_cross_reference,
         edge_disease_has_synonym_synonym_broad,
         edge_disease_has_synonym_synonym_exact,
@@ -221,8 +228,10 @@ reference_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefinit
         edge_disease_is_a_disease,
         edge_disease_phenotype_association_has_object_phenotype,
         edge_disease_subject_of_disease_phenotype_association,
-        edge_enhancer_to_gene,
-        edge_l2g_prediction,
+        # Awaiting review
+        # edge_enhancer_to_gene,
+        # Awaiting review
+        # edge_l2g_prediction,
         # Disabled due to unrealistically huge computational burden
         # edge_literature_mentions_entity,
         edge_mechanism_of_action_has_target_target,
@@ -240,6 +249,11 @@ reference_kg_definition: Final[KnowledgeGraphDefinition] = KnowledgeGraphDefinit
         edge_phenotype_has_database_cross_reference_database_cross_reference,
         edge_phenotype_is_a_phenotype,
         edge_reaction_is_part_of_pathway,
+        edge_study_has_publication_literature_entry,
+        edge_study_has_study_locus_study_locus,
+        edge_study_locus_has_colocalisation_colocalisation_left,
+        edge_study_locus_has_colocalisation_colocalisation_right,
+        edge_study_locus_has_credible_set_credible_set,
         edge_target_associated_with_adverse_reaction,
         edge_target_belongs_to_target_classification,
         edge_target_disease_association_cancer_biomarkers_has_drug_response_entity,

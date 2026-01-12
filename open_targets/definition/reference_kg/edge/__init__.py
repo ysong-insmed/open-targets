@@ -3,7 +3,9 @@
 from open_targets.definition.reference_kg.edge.edge_cell_line_sampled_from_tissue import (
     edge_cell_line_sampled_from_tissue,
 )
-from open_targets.definition.reference_kg.edge.edge_colocalisation import edge_colocalisation
+from open_targets.definition.reference_kg.edge.edge_credible_set_has_participating_variant_variant import (
+    edge_credible_set_has_participating_variant_variant,
+)
 from open_targets.definition.reference_kg.edge.edge_disease_has_database_cross_reference_database_cross_reference import (
     edge_disease_has_database_cross_reference_database_cross_reference,
 )
@@ -64,6 +66,21 @@ from open_targets.definition.reference_kg.edge.edge_phenotype_has_database_cross
 )
 from open_targets.definition.reference_kg.edge.edge_phenotype_is_a_phenotype import edge_phenotype_is_a_phenotype
 from open_targets.definition.reference_kg.edge.edge_reaction_is_part_of_pathway import edge_reaction_is_part_of_pathway
+from open_targets.definition.reference_kg.edge.edge_study_has_publication_literature_entry import (
+    edge_study_has_publication_literature_entry,
+)
+from open_targets.definition.reference_kg.edge.edge_study_has_study_locus_study_locus import (
+    edge_study_has_study_locus_study_locus,
+)
+from open_targets.definition.reference_kg.edge.edge_study_locus_has_colocalisation_colocalisation_left import (
+    edge_study_locus_has_colocalisation_colocalisation_left,
+)
+from open_targets.definition.reference_kg.edge.edge_study_locus_has_colocalisation_colocalisation_right import (
+    edge_study_locus_has_colocalisation_colocalisation_right,
+)
+from open_targets.definition.reference_kg.edge.edge_study_locus_has_credible_set_credible_set import (
+    edge_study_locus_has_credible_set_credible_set,
+)
 from open_targets.definition.reference_kg.edge.edge_target_associated_with_adverse_reaction import (
     edge_target_associated_with_adverse_reaction,
 )
@@ -255,7 +272,7 @@ from open_targets.definition.reference_kg.edge.edge_target_target_interaction_su
 
 __all__ = [
     "edge_cell_line_sampled_from_tissue",
-    "edge_colocalisation",
+    "edge_credible_set_has_participating_variant_variant",
     "edge_disease_has_database_cross_reference_database_cross_reference",
     "edge_disease_has_synonym_synonym_broad",
     "edge_disease_has_synonym_synonym_exact",
@@ -282,6 +299,11 @@ __all__ = [
     "edge_phenotype_has_database_cross_reference_database_cross_reference",
     "edge_phenotype_is_a_phenotype",
     "edge_reaction_is_part_of_pathway",
+    "edge_study_has_publication_literature_entry",
+    "edge_study_has_study_locus_study_locus",
+    "edge_study_locus_has_colocalisation_colocalisation_left",
+    "edge_study_locus_has_colocalisation_colocalisation_right",
+    "edge_study_locus_has_credible_set_credible_set",
     "edge_target_associated_with_adverse_reaction",
     "edge_target_belongs_to_target_classification",
     "edge_target_disease_association_cancer_biomarkers_has_drug_response_entity",
