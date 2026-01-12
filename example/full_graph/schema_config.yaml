@@ -114,54 +114,58 @@ target_classification:
   represented_as: node
 
 target_disease_association:
-  input_label: [
-    TARGET_DISEASE_ASSOCIATION_CANCER_BIOMARKERS,
-    TARGET_DISEASE_ASSOCIATION_CANCER_GENE_CENSUS,
-    TARGET_DISEASE_ASSOCIATION_CHEMBL,
-    TARGET_DISEASE_ASSOCIATION_CLINGEN,
-    TARGET_DISEASE_ASSOCIATION_CRISPR,
-    TARGET_DISEASE_ASSOCIATION_CRISPR_SCREEN,
-    TARGET_DISEASE_ASSOCIATION_EUROPEPMC,
-    TARGET_DISEASE_ASSOCIATION_EVA,
-    TARGET_DISEASE_ASSOCIATION_EVA_SOMATIC,
-    TARGET_DISEASE_ASSOCIATION_EXPRESSION_ATLAS,
-    TARGET_DISEASE_ASSOCIATION_GENE2PHENOTYPE,
-    TARGET_DISEASE_ASSOCIATION_GENE_BURDEN,
-    TARGET_DISEASE_ASSOCIATION_GENOMICS_ENGLAND,
-    TARGET_DISEASE_ASSOCIATION_IMPC,
-    TARGET_DISEASE_ASSOCIATION_INTOGEN,
-    TARGET_DISEASE_ASSOCIATION_ORPHANET,
-    TARGET_DISEASE_ASSOCIATION_OT_GENETICS_PORTAL,
-    TARGET_DISEASE_ASSOCIATION_PROGENY,
-    TARGET_DISEASE_ASSOCIATION_REACTOME,
-    TARGET_DISEASE_ASSOCIATION_SLAPENRICH,
-    TARGET_DISEASE_ASSOCIATION_UNIPROT_LITERATURE,
-    TARGET_DISEASE_ASSOCIATION_UNIPROT_VARIANTS,
-  ]
-  preferred_id: [
-    cancer_biomarkers,
-    cancer_gene_census,
-    chembl,
-    clingen,
-    crispr,
-    crispr_screen,
-    europepmc,
-    eva,
-    eva_somatic,
-    expression_atlas,
-    gene2phenotype,
-    gene_burden,
-    genomics_england,
-    impc,
-    intogen,
-    orphanet,
-    ot_genetics_portal,
-    progeny,
-    reactome,
-    slapenrich,
-    uniprot_literature,
-    uniprot_variants,
-  ]
+  input_label:
+    [
+      TARGET_DISEASE_ASSOCIATION_CANCER_BIOMARKERS,
+      TARGET_DISEASE_ASSOCIATION_CANCER_GENE_CENSUS,
+      TARGET_DISEASE_ASSOCIATION_CHEMBL,
+      TARGET_DISEASE_ASSOCIATION_CLINGEN,
+      TARGET_DISEASE_ASSOCIATION_CRISPR,
+      TARGET_DISEASE_ASSOCIATION_CRISPR_SCREEN,
+      TARGET_DISEASE_ASSOCIATION_EUROPEPMC,
+      TARGET_DISEASE_ASSOCIATION_EVA,
+      TARGET_DISEASE_ASSOCIATION_EVA_SOMATIC,
+      TARGET_DISEASE_ASSOCIATION_EXPRESSION_ATLAS,
+      TARGET_DISEASE_ASSOCIATION_GENE2PHENOTYPE,
+      TARGET_DISEASE_ASSOCIATION_GENE_BURDEN,
+      TARGET_DISEASE_ASSOCIATION_GENOMICS_ENGLAND,
+      TARGET_DISEASE_ASSOCIATION_IMPC,
+      TARGET_DISEASE_ASSOCIATION_INTOGEN,
+      TARGET_DISEASE_ASSOCIATION_ORPHANET,
+      TARGET_DISEASE_ASSOCIATION_OT_GENETICS_PORTAL,
+      TARGET_DISEASE_ASSOCIATION_PROGENY,
+      TARGET_DISEASE_ASSOCIATION_REACTOME,
+      TARGET_DISEASE_ASSOCIATION_SLAPENRICH,
+      TARGET_DISEASE_ASSOCIATION_UNIPROT_LITERATURE,
+      TARGET_DISEASE_ASSOCIATION_UNIPROT_VARIANTS,
+      TARGET_DISEASE_ASSOCIATION_GWAS_CREDIBLE_SETS,
+    ]
+  preferred_id:
+    [
+      cancer_biomarkers,
+      cancer_gene_census,
+      chembl,
+      clingen,
+      crispr,
+      crispr_screen,
+      europepmc,
+      eva,
+      eva_somatic,
+      expression_atlas,
+      gene2phenotype,
+      gene_burden,
+      genomics_england,
+      impc,
+      intogen,
+      orphanet,
+      ot_genetics_portal,
+      progeny,
+      reactome,
+      slapenrich,
+      uniprot_literature,
+      uniprot_variants,
+      gwas_credible_sets,
+    ]
   is_a: named thing
   represented_as: node
 
@@ -172,6 +176,31 @@ target_target_interaction:
 
 tissue:
   input_label: TISSUE
+  is_a: named thing
+  represented_as: node
+
+colocalisation:
+  input_label: COLOCALISATION
+  is_a: named thing
+  represented_as: node
+
+credible_set:
+  input_label: CREDIBLE_SET
+  is_a: named thing
+  represented_as: node
+
+study:
+  input_label: STUDY
+  is_a: named thing
+  represented_as: node
+
+study_locus:
+  input_label: STUDY_LOCUS
+  is_a: named thing
+  represented_as: node
+
+variant:
+  input_label: VARIANT
   is_a: named thing
   represented_as: node
 
@@ -330,22 +359,49 @@ tested_in:
   is_a: association
   represented_as: edge
 
+has_colocalisation:
+  input_label: HAS_COLOCALISATION
+  is_a: association
+  represented_as: edge
+
+has_credible_set:
+  input_label: HAS_CREDIBLE_SET
+  is_a: association
+  represented_as: edge
+
+has_participating_variant:
+  input_label: HAS_PARTICIPATING_VARIANT
+  is_a: association
+  represented_as: edge
+
+has_publication:
+  input_label: HAS_PUBLICATION
+  is_a: association
+  represented_as: edge
+
+has_study_locus:
+  input_label: HAS_STUDY_LOCUS
+  is_a: association
+  represented_as: edge
+
 has_summary_association:
-  input_label: [
-    HAS_SUMMARY_ASSOCIATION_BY_DATASOURCE_DIRECT,
-    HAS_SUMMARY_ASSOCIATION_BY_DATASOURCE_INDIRECT,
-    HAS_SUMMARY_ASSOCIATION_BY_DATATYPE_DIRECT,
-    HAS_SUMMARY_ASSOCIATION_BY_DATATYPE_INDIRECT,
-    HAS_SUMMARY_ASSOCIATION_BY_OVERALL_DIRECT,
-    HAS_SUMMARY_ASSOCIATION_BY_OVERALL_INDIRECT,
-  ]
-  preferred_id: [
-    by_datasource_direct,
-    by_datasource_indirect,
-    by_datatype_direct,
-    by_datatype_indirect,
-    by_overall_direct,
-    by_overall_indirect,
-  ]
+  input_label:
+    [
+      HAS_SUMMARY_ASSOCIATION_BY_DATASOURCE_DIRECT,
+      HAS_SUMMARY_ASSOCIATION_BY_DATASOURCE_INDIRECT,
+      HAS_SUMMARY_ASSOCIATION_BY_DATATYPE_DIRECT,
+      HAS_SUMMARY_ASSOCIATION_BY_DATATYPE_INDIRECT,
+      HAS_SUMMARY_ASSOCIATION_BY_OVERALL_DIRECT,
+      HAS_SUMMARY_ASSOCIATION_BY_OVERALL_INDIRECT,
+    ]
+  preferred_id:
+    [
+      by_datasource_direct,
+      by_datasource_indirect,
+      by_datatype_direct,
+      by_datatype_indirect,
+      by_overall_direct,
+      by_overall_indirect,
+    ]
   is_a: association
   represented_as: edge
