@@ -83,9 +83,10 @@ Runnable examples are provided in the `example/` directory. Each example include
    cd example/full_graph
    ```
 3. Follow the data preparation instructions in `datasets/README.md`
-4. Run the example:
+4. **Important:** Ensure your current working directory is the project root when running example scripts:
    ```bash
-   uv run python full_graph.py
+   cd /path/to/open-targets  # Navigate to project root
+   uv run python example/full_graph/full_graph.py
    ```
 
 ### Available Examples

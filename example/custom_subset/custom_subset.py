@@ -22,7 +22,7 @@ from open_targets.definition.reference_kg.node import (
 def main() -> None:
     """Build a knowledge graph with a custom subset of definitions."""
     # Initialize BioCypher
-    biocypher_instance = BioCypher(biocypher_config_path="biocypher_config.yaml")
+    biocypher_instance = BioCypher(biocypher_config_path="example/custom_subset/biocypher_config.yaml")
 
     # Define your custom set of definitions
     node_definitions = [
@@ -41,6 +41,7 @@ def main() -> None:
         node_definitions=node_definitions,
         edge_definitions=edge_definitions,
         datasets_location="datasets",  # directory containing the downloaded datasets
+        limit=100,
     )
 
     count = 1
