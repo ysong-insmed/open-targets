@@ -1,10 +1,10 @@
-# BioCypher Open Targets Data (24.09) Adapter
+# BioCypher Open Targets Data (25.12) Adapter
 
 [![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 This repository contains a [BioCypher](https://biocypher.org) adapter for Open
-Targets data version 24.09. The project is currently under active development.
+Targets data version 25.12. The project is currently under active development.
 
 ## Table of Contents
 - [Overview](#overview)
